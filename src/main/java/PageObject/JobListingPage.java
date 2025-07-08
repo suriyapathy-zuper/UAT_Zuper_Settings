@@ -14,8 +14,8 @@ public class JobListingPage extends Baseclass{
 	  private WebDriver driver;
 
 	    // Constructor initializes WebElements
-	    public JobListingPage(WebDriver driver) {
-	        this.driver = driver;
+	    public JobListingPage() {
+	        this.driver = Baseclass.getDriver();
 	        PageFactory.initElements(driver, this);
 	    }
 
