@@ -10,11 +10,12 @@ import BaseTest.Baseclass;
 public class CompanyPage extends Baseclass{
 	
 
-	  private WebDriver driver;
+	     private WebDriver driver;
 
 	    // Constructor initializes WebElements
-	    public CompanyPage(WebDriver driver) {
-	        this.driver = driver;
+	    public CompanyPage() {
+	    //	System.out.println("Driver received: " + driver);
+	    	this.driver = Baseclass.getDriver();
 	        PageFactory.initElements(driver, this);
 	    }
 
@@ -37,7 +38,7 @@ public class CompanyPage extends Baseclass{
 	    private WebElement click_LoginButton;
 	    
 	    // Page actions
-	    public void enterCompanyName(String name) {
+	    public void enterCompanyNameDetails(String name) {
 	        enterCompanyName.clear();
 	        enterCompanyName.sendKeys(name);
 	        continueButton.click();

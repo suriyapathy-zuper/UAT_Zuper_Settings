@@ -16,21 +16,21 @@ public class TC_Company_Login extends Baseclass{
     @BeforeClass
     public void setUp() {
         initilizeConfig();           //  BaseClass setup
-        companyPage = new CompanyPage(driver);
+        companyPage = new CompanyPage();
     }
 
     @Test
     public void verify_CompanyAndLoginPage() {
-    	 companyPage.enterCompanyName(prop.getProperty("company_Name"));
+    	 companyPage.enterCompanyNameDetails(prop.getProperty("company_Name"));
          companyPage.enter_LoginSceanrio(prop.getProperty("username"), prop.getProperty("password"));
         
     }
    
     
-//    @AfterClass
-//    public void setdown() {
-//    	tearDown();
-//    }
+    @AfterClass
+    public void setdown() {
+    	tearDown();
+    }
     
     
 }

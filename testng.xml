@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests" thread-count="1">
+
+  <test name="TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation">
+    <classes>
+      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation"/>
+    </classes>
+  </test>
+
+     <test name="TC_Job_PulmbingInstallCreation">
+    <classes>
+      <class name="RunnerClass.TC_Job_PulmbingInstallCreation"/>
+    </classes>
+  </test>  
+  <test name="TC_Job_PulmbingReturnVisitCreation">
+    <classes>
+      <class name="RunnerClass.TC_Job_PulmbingReturnVisitCreation"/>
+    </classes>
+  </test> 
+
+ <!--    
+
+  <test name="TC_Job_Creation">
+    <classes>
+      <class name="RunnerClass.TC_Job_Creation"/>
+    </classes>
+  </test>  
+  
+   <test name="TC_Company_Login">
+    <classes>
+      <class name="RunnerClass.TC_Company_Login"/>
+    </classes>
+  </test>     -->
+
+  <!-- Continue one <test> per class... -->
+
+  <test name="TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation">
+    <classes>
+      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation"/>
+    </classes>
+  </test>
+
+  <test name="TC_Job_PulmbingExcavationCreation">
+    <classes>
+      <class name="RunnerClass.TC_Job_PulmbingExcavationCreation"/>
+    </classes>
+  </test>
+
+  <test name="TC_Job_WaitingStatusVerify">
+    <classes>
+      <class name="RunnerClass.TC_Job_WaitingStatusVerify"/>
+    </classes>
+  </test>
+
+ 
+
+  <test name="TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation">
+    <classes>
+      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation"/>
+    </classes>
+  </test>
+
+</suite>
