@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="1" parallel="tests" name="Failed suite [Suite]">
-  <test thread-count="1" parallel="tests" name="TC_Job_PulmbingInstallCreation(failed)">
+  <test thread-count="1" parallel="tests" name="TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation(failed)">
     <classes>
-      <class name="RunnerClass.TC_Job_PulmbingInstallCreation">
+      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation">
+        <methods>
+          <include name="setdown"/>
+          <include name="verify_CompanyAndLoginPage"/>
+          <include name="new_JobCreation"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation -->
+    </classes>
+  </test> <!-- TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation(failed) -->
+  <test thread-count="1" parallel="tests" name="TC_Job_Creation(failed)">
+    <classes>
+      <class name="RunnerClass.TC_Job_Creation">
         <methods>
           <include name="new_JobCreation"/>
+          <include name="verify_CompanyAndLoginPage"/>
           <include name="setdown"/>
           <include name="setUp"/>
-          <include name="verify_CompanyAndLoginPage"/>
         </methods>
-      </class> <!-- RunnerClass.TC_Job_PulmbingInstallCreation -->
+      </class> <!-- RunnerClass.TC_Job_Creation -->
     </classes>
-  </test> <!-- TC_Job_PulmbingInstallCreation(failed) -->
-  <test thread-count="1" parallel="tests" name="TC_Job_PulmbingReturnVisitCreation(failed)">
+  </test> <!-- TC_Job_Creation(failed) -->
+  <test thread-count="1" parallel="tests" name="TC_Job_PulmbingExcavationCreation(failed)">
     <classes>
-      <class name="RunnerClass.TC_Job_PulmbingReturnVisitCreation">
+      <class name="RunnerClass.TC_Job_PulmbingExcavationCreation">
         <methods>
-          <include name="new_JobCreation"/>
-          <include name="setdown"/>
           <include name="setUp"/>
+          <include name="setdown"/>
           <include name="verify_CompanyAndLoginPage"/>
+          <include name="new_JobCreation"/>
         </methods>
-      </class> <!-- RunnerClass.TC_Job_PulmbingReturnVisitCreation -->
+      </class> <!-- RunnerClass.TC_Job_PulmbingExcavationCreation -->
     </classes>
-  </test> <!-- TC_Job_PulmbingReturnVisitCreation(failed) -->
+  </test> <!-- TC_Job_PulmbingExcavationCreation(failed) -->
   <test thread-count="1" parallel="tests" name="TC_Job_WaitingStatusVerify(failed)">
     <classes>
       <class name="RunnerClass.TC_Job_WaitingStatusVerify">
@@ -37,16 +49,4 @@
       </class> <!-- RunnerClass.TC_Job_WaitingStatusVerify -->
     </classes>
   </test> <!-- TC_Job_WaitingStatusVerify(failed) -->
-  <test thread-count="1" parallel="tests" name="TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation(failed)">
-    <classes>
-      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation">
-        <methods>
-          <include name="setUp"/>
-          <include name="new_JobCreation"/>
-          <include name="setdown"/>
-          <include name="verify_CompanyAndLoginPage"/>
-        </methods>
-      </class> <!-- RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation -->
-    </classes>
-  </test> <!-- TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation(failed) -->
 </suite> <!-- Failed suite [Suite] -->

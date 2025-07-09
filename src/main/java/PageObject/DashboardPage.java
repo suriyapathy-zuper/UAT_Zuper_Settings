@@ -64,13 +64,13 @@ public class DashboardPage extends Baseclass{
 	    public void navigatToJobListionPage() {
 	    	elemnetGroup_JobAndChat.click();
 	    	element_JobcreationPage.click();
-	        try {
-	            Non_WebDriver_Util.waitForBeClickable(driver, alert_Popup, 10);
-	            alert_Popup.click();
-	            
-	        } catch (org.openqa.selenium.TimeoutException | org.openqa.selenium.NoSuchElementException ignored) {
-	            // popup did not appear — no problem, continue
-	        }
+//	        try {
+//	            Non_WebDriver_Util.waitForBeClickable(driver, alert_Popup, 3);
+//	            alert_Popup.click();
+//	            
+//	        } catch (org.openqa.selenium.TimeoutException | org.openqa.selenium.NoSuchElementException ignored) {
+//	            // popup did not appear — no problem, continue
+//	        }
 
 	        
 	    }
