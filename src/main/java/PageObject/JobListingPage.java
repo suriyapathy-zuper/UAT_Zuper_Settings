@@ -20,14 +20,15 @@ public class JobListingPage extends Baseclass{
 	    }
 
 	    // Page elements
-	    @FindBy(xpath = "//span[(text()='New Job')]")
+	    @FindBy(xpath = "//span[(text()='New Job')]//parent::a")
 	    private WebElement element_Jobcreationbutton;
 	    
 	 
 	    // Page actions
 	    public void naviagtetoJobCreationPage() {
+	    	Non_WebDriver_Util.waitForVisible(driver, element_Jobcreationbutton, 5);
+	    	Non_WebDriver_Util.waitForBeClickable(driver, element_Jobcreationbutton, 5);
 	    	element_Jobcreationbutton.click();
-    
 	    }
 
 }

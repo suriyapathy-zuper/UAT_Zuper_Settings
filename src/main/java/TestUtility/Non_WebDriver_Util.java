@@ -1,6 +1,9 @@
 package TestUtility;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -19,6 +22,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.netty.handler.timeout.TimeoutException;
 
 public class Non_WebDriver_Util {
+	
+	
+	
+	
 	// ==========================================
 	// ✅ WAIT UTILITIES
 	// ==========================================
@@ -154,4 +161,27 @@ public class Non_WebDriver_Util {
 	    // Fallback to JS click if normal click failed
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 	}
+	
+	
+	
+	// Returns current date formatted as per the given pattern.
+	 public static String[] getStartAndEndDateTime(String date, String timeFrame) {
+	        String[] parts = timeFrame.split(" ");
+	        String startTime = parts[0]; // "8AM"
+	        String endTime = parts[2];   // "12PM"
+
+	        String formattedStart = date + " " + convertToHHMM(startTime);
+	        String formattedEnd = date + " " + convertToHHMM(endTime);
+
+	        return new String[]{formattedStart, formattedEnd};
+	    }
+
+	    public static String convertToHHMM(String time) {
+	        time = time.toLowerCase().replaceAll("\\s", ""); // Normalize to "8AM"
+	        DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("ha");
+	        DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("hh:mma");
+
+	        return LocalTime.parse(time, inputFormat).format(outputFormat).toUpperCase();
+	    }
+	
 }

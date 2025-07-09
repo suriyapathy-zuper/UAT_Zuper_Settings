@@ -57,6 +57,11 @@ public class Baseclass {
             opts.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             opts.addArguments("–disable-background-timer-throttling");
             opts.addArguments("--disable-notifications");
+            opts.addArguments("--start-maximized");
+            opts.addArguments("--disable-dev-shm-usage");
+            opts.addArguments("--no-sandbox");
+            opts.addArguments("--disable-gpu");
+            opts.addArguments("--disable-extensions");
              localDriver = new ChromeDriver(opts);
             
             
@@ -80,7 +85,7 @@ public class Baseclass {
         WebDriver localDriver = Baseclass.getDriver();
         if (localDriver != null) {
             localDriver.quit();
-            driver.remove(); // Important to clean up ThreadLocal
+            Baseclass.driver.remove(); // Important to clean up ThreadLocal
         }
     }
 }

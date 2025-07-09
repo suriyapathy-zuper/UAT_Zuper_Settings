@@ -121,7 +121,7 @@ public class JobCreationPage extends Baseclass{
 	     */
 	    public void set_JobCategory(String jobCategory_Name) {
 	        element_JobCategory.click();
-	        Non_WebDriver_Util.waitThread(3);
+	       // Non_WebDriver_Util.waitThread(1);
 	        Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelectcategory, jobCategory_Name);
 	    }
 
@@ -134,7 +134,7 @@ public class JobCreationPage extends Baseclass{
 	        text_SearchCustomerName.clear();
 	        text_SearchCustomerName.sendKeys(customer_Name);
 	        Non_WebDriver_Util.pressEnter(driver);
-	        Non_WebDriver_Util.waitThread(2);
+	        Non_WebDriver_Util.waitThread(1);
 
 	        select_Customer.click();
 	        choose_Customer.click();
@@ -151,9 +151,9 @@ public class JobCreationPage extends Baseclass{
 	        input_SearchFE.clear();
 	        input_SearchFE.sendKeys(user_Name);
 	        Non_WebDriver_Util.pressEnter(driver);
-	        Non_WebDriver_Util.waitThread(2);
+	        Non_WebDriver_Util.waitThread(1);
 	        Non_WebDriver_Util.clickChildElementByHeaderText(driver, User_multiSelect, user_Name);
-	        Non_WebDriver_Util.waitThread(2);
+	        Non_WebDriver_Util.waitThread(1);
 	        save_FE.click();
 	    }
 

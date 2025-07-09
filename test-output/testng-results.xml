@@ -1,146 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="14" passed="10" failed="4" skipped="0">
+<testng-results ignored="0" total="17" passed="13" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-08T00:49:31 GMT-05:00" name="Suite" finished-at="2025-07-08T01:01:13 GMT-05:00" duration-ms="701680">
+  <suite started-at="2025-07-08T11:53:24 GMT-05:00" name="Suite" finished-at="2025-07-08T12:04:57 GMT-05:00" duration-ms="693722">
     <groups>
     </groups>
-    <test started-at="2025-07-08T00:49:31 GMT-05:00" name="TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation" finished-at="2025-07-08T00:51:52 GMT-05:00" duration-ms="141419">
+    <test started-at="2025-07-08T11:53:24 GMT-05:00" name="TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation" finished-at="2025-07-08T11:54:12 GMT-05:00" duration-ms="48769">
       <class name="RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T00:49:31 GMT-05:00" name="setUp" finished-at="2025-07-08T00:49:41 GMT-05:00" duration-ms="9523" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T11:53:24 GMT-05:00" name="setUp" finished-at="2025-07-08T11:53:33 GMT-05:00" duration-ms="9523" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T00:49:41 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T00:49:45 GMT-05:00" duration-ms="4727" status="PASS">
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T11:53:33 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T11:53:38 GMT-05:00" duration-ms="5124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T00:49:45 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T00:51:51 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation.verify_CompanyAndLoginPage" duration-ms="125369" status="PASS">
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T11:53:38 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T11:54:11 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation.verify_CompanyAndLoginPage" duration-ms="32829" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: stale element not found in the current frame
+  (Session info: chrome=138.0.7204.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [01c9ff6c273ee9535e46c4f12bcc871e, getElementText {id=f.13C81857FC9D7693F638A56D9DF4D350.d.68A54CE5280C0CDF2391363E5609714F.e.498}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51646}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51646/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (01c9ff6c273ee9535e46c4f12bcc871e)] -> xpath: //div[@role='listbox']/div/div[@role='option']/span]
+Session ID: 01c9ff6c273ee9535e46c4f12bcc871e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=138.0.7204.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [01c9ff6c273ee9535e46c4f12bcc871e, getElementText {id=f.13C81857FC9D7693F638A56D9DF4D350.d.68A54CE5280C0CDF2391363E5609714F.e.498}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51646}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51646/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (01c9ff6c273ee9535e46c4f12bcc871e)] -> xpath: //div[@role='listbox']/div/div[@role='option']/span]
+Session ID: 01c9ff6c273ee9535e46c4f12bcc871e
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
+at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:74)
+at PageObject.JobDetailsPage.updateJobStatus(JobDetailsPage.java:263)
+at RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation.new_JobCreation(TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation.java:57)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1570)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T00:51:51 GMT-05:00" name="setdown" finished-at="2025-07-08T00:51:52 GMT-05:00" duration-ms="1652" status="PASS">
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation@5745ca0e]" started-at="2025-07-08T11:54:11 GMT-05:00" name="setdown" finished-at="2025-07-08T11:54:12 GMT-05:00" duration-ms="1203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setdown -->
       </class> <!-- RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation -->
     </test> <!-- TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation -->
-    <test started-at="2025-07-08T00:51:52 GMT-05:00" name="TC_Job_PulmbingInstallCreation" finished-at="2025-07-08T00:53:06 GMT-05:00" duration-ms="73640">
+    <test started-at="2025-07-08T11:54:12 GMT-05:00" name="TC_Job_PulmbingInstallCreation" finished-at="2025-07-08T11:55:51 GMT-05:00" duration-ms="98824">
       <class name="RunnerClass.TC_Job_PulmbingInstallCreation">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T00:51:52 GMT-05:00" name="setUp" finished-at="2025-07-08T00:51:57 GMT-05:00" duration-ms="5007" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T11:54:12 GMT-05:00" name="setUp" finished-at="2025-07-08T11:54:19 GMT-05:00" duration-ms="6526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T00:51:57 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T00:52:02 GMT-05:00" duration-ms="4599" status="PASS">
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T11:54:19 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T11:54:24 GMT-05:00" duration-ms="5233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T00:52:02 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T00:53:05 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_PulmbingInstallCreation.verify_CompanyAndLoginPage" duration-ms="62811" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <div class="ng-select-container">...</div> is not clickable at point (250, 517). Other element would receive the click: <p class="text-gray-700 group flex items-center text-base">...</p>
-  (Session info: chrome=137.0.7151.120)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a7ea6f615c03337997946806ef9b9786, clickElement {id=f.B3657A7B661F05E6F518DDBE82B80B56.d.3C0566488001D24D3EE7DD6740BC15B2.e.582}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51666}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51666/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (a7ea6f615c03337997946806ef9b9786)] -> xpath: //ng-select[@id='job_status']//div[@class='ng-select-container']]
-Session ID: a7ea6f615c03337997946806ef9b9786]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ng-select-container">...</div> is not clickable at point (250, 517). Other element would receive the click: <p class="text-gray-700 group flex items-center text-base">...</p>
-  (Session info: chrome=137.0.7151.120)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a7ea6f615c03337997946806ef9b9786, clickElement {id=f.B3657A7B661F05E6F518DDBE82B80B56.d.3C0566488001D24D3EE7DD6740BC15B2.e.582}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51666}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51666/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (a7ea6f615c03337997946806ef9b9786)] -> xpath: //ng-select[@id='job_status']//div[@class='ng-select-container']]
-Session ID: a7ea6f615c03337997946806ef9b9786
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
-at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:287)
-at RunnerClass.TC_Job_PulmbingInstallCreation.new_JobCreation(TC_Job_PulmbingInstallCreation.java:60)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1570)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T11:54:24 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T11:55:50 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_PulmbingInstallCreation.verify_CompanyAndLoginPage" duration-ms="86013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T00:53:05 GMT-05:00" name="setdown" finished-at="2025-07-08T00:53:06 GMT-05:00" duration-ms="1209" status="PASS">
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_PulmbingInstallCreation@626abbd0]" started-at="2025-07-08T11:55:50 GMT-05:00" name="setdown" finished-at="2025-07-08T11:55:51 GMT-05:00" duration-ms="1047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setdown -->
       </class> <!-- RunnerClass.TC_Job_PulmbingInstallCreation -->
     </test> <!-- TC_Job_PulmbingInstallCreation -->
-    <test started-at="2025-07-08T00:53:06 GMT-05:00" name="TC_Job_PulmbingReturnVisitCreation" finished-at="2025-07-08T00:54:27 GMT-05:00" duration-ms="80738">
+    <test started-at="2025-07-08T11:55:51 GMT-05:00" name="TC_Job_PulmbingReturnVisitCreation" finished-at="2025-07-08T11:57:26 GMT-05:00" duration-ms="94485">
       <class name="RunnerClass.TC_Job_PulmbingReturnVisitCreation">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T00:53:06 GMT-05:00" name="setUp" finished-at="2025-07-08T00:53:12 GMT-05:00" duration-ms="5735" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T11:55:51 GMT-05:00" name="setUp" finished-at="2025-07-08T11:55:57 GMT-05:00" duration-ms="6069" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T00:53:12 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T00:53:17 GMT-05:00" duration-ms="5193" status="PASS">
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T11:55:57 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T11:56:03 GMT-05:00" duration-ms="5384" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T00:53:17 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T00:54:26 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_PulmbingReturnVisitCreation.verify_CompanyAndLoginPage" duration-ms="68638" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T11:56:03 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T11:57:25 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_PulmbingReturnVisitCreation.verify_CompanyAndLoginPage" duration-ms="81954" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- new_JobCreation -->
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T11:57:25 GMT-05:00" name="setdown" finished-at="2025-07-08T11:57:26 GMT-05:00" duration-ms="1068" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setdown -->
+      </class> <!-- RunnerClass.TC_Job_PulmbingReturnVisitCreation -->
+    </test> <!-- TC_Job_PulmbingReturnVisitCreation -->
+    <test started-at="2025-07-08T11:57:26 GMT-05:00" name="TC_Job_Creation" finished-at="2025-07-08T11:58:11 GMT-05:00" duration-ms="45402">
+      <class name="RunnerClass.TC_Job_Creation">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_Creation@66ea810]" started-at="2025-07-08T11:57:26 GMT-05:00" name="setUp" finished-at="2025-07-08T11:57:31 GMT-05:00" duration-ms="5654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_Creation@66ea810]" started-at="2025-07-08T11:57:31 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T11:57:37 GMT-05:00" duration-ms="6054" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_CompanyAndLoginPage -->
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_Creation@66ea810]" started-at="2025-07-08T11:57:37 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T11:58:10 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_Creation.verify_CompanyAndLoginPage" duration-ms="32692" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[element click intercepted: Element <div class="ng-select-container">...</div> is not clickable at point (250, 517). Other element would receive the click: <p class="text-gray-700 group flex items-center text-base">...</p>
-  (Session info: chrome=137.0.7151.120)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c766c48b9194b114a2b7f013dcf6eaed, clickElement {id=f.CA3EE55B788C33DACFE2E77B3A4F9C9E.d.3223561CDE3DEAA5FAF0881650FACC78.e.582}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51760}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51760/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c766c48b9194b114a2b7f013dcf6eaed)] -> xpath: //ng-select[@id='job_status']//div[@class='ng-select-container']]
-Session ID: c766c48b9194b114a2b7f013dcf6eaed]]>
+              <![CDATA[expected [New-Ready to Assign] but found [Scheduled]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ng-select-container">...</div> is not clickable at point (250, 517). Other element would receive the click: <p class="text-gray-700 group flex items-center text-base">...</p>
-  (Session info: chrome=137.0.7151.120)
+              <![CDATA[java.lang.AssertionError: expected [New-Ready to Assign] but found [Scheduled]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at PageObject.JobDetailsPage.verify_CurrentStatus(JobDetailsPage.java:241)
+at RunnerClass.TC_Job_Creation.new_JobCreation(TC_Job_Creation.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1570)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- new_JobCreation -->
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_Creation@66ea810]" started-at="2025-07-08T11:58:10 GMT-05:00" name="setdown" finished-at="2025-07-08T11:58:11 GMT-05:00" duration-ms="992" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setdown -->
+      </class> <!-- RunnerClass.TC_Job_Creation -->
+    </test> <!-- TC_Job_Creation -->
+    <test started-at="2025-07-08T11:58:11 GMT-05:00" name="TC_Company_Login" finished-at="2025-07-08T11:58:23 GMT-05:00" duration-ms="12266">
+      <class name="RunnerClass.TC_Company_Login">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Company_Login@2f953efd]" started-at="2025-07-08T11:58:11 GMT-05:00" name="setUp" finished-at="2025-07-08T11:58:18 GMT-05:00" duration-ms="6449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Company_Login@2f953efd]" started-at="2025-07-08T11:58:18 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T11:58:23 GMT-05:00" duration-ms="5074" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_CompanyAndLoginPage -->
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Company_Login@2f953efd]" started-at="2025-07-08T11:58:23 GMT-05:00" name="setdown" finished-at="2025-07-08T11:58:23 GMT-05:00" duration-ms="728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setdown -->
+      </class> <!-- RunnerClass.TC_Company_Login -->
+    </test> <!-- TC_Company_Login -->
+    <test started-at="2025-07-08T11:58:23 GMT-05:00" name="TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation" finished-at="2025-07-08T12:00:14 GMT-05:00" duration-ms="110785">
+      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@5a7fe64f]" started-at="2025-07-08T11:58:23 GMT-05:00" name="setUp" finished-at="2025-07-08T11:58:30 GMT-05:00" duration-ms="6473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@5a7fe64f]" started-at="2025-07-08T11:58:30 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T11:58:35 GMT-05:00" duration-ms="5038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_CompanyAndLoginPage -->
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@5a7fe64f]" started-at="2025-07-08T11:58:35 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T12:00:13 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation.verify_CompanyAndLoginPage" duration-ms="98049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- new_JobCreation -->
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@5a7fe64f]" started-at="2025-07-08T12:00:13 GMT-05:00" name="setdown" finished-at="2025-07-08T12:00:14 GMT-05:00" duration-ms="1221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setdown -->
+      </class> <!-- RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation -->
+    </test> <!-- TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation -->
+    <test started-at="2025-07-08T12:00:14 GMT-05:00" name="TC_Job_PulmbingExcavationCreation" finished-at="2025-07-08T12:01:28 GMT-05:00" duration-ms="73706">
+      <class name="RunnerClass.TC_Job_PulmbingExcavationCreation">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@24c1b2d2]" started-at="2025-07-08T12:00:14 GMT-05:00" name="setUp" finished-at="2025-07-08T12:00:27 GMT-05:00" duration-ms="12984" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@24c1b2d2]" started-at="2025-07-08T12:00:27 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T12:00:33 GMT-05:00" duration-ms="5398" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_CompanyAndLoginPage -->
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@24c1b2d2]" started-at="2025-07-08T12:00:33 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T12:01:27 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_PulmbingExcavationCreation.verify_CompanyAndLoginPage" duration-ms="54085" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <input _ngcontent-ng-c1200738540="" autocomplete="off" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 ng-untouched ng-pristine ng-invalid" id="Are you ready to work?_0"> is not clickable at point (818, 100). Other element would receive the click: <div class="pushActions" style="background-color:#ffffff;">...</div>
+  (Session info: chrome=138.0.7204.97)
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c766c48b9194b114a2b7f013dcf6eaed, clickElement {id=f.CA3EE55B788C33DACFE2E77B3A4F9C9E.d.3223561CDE3DEAA5FAF0881650FACC78.e.582}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51760}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51760/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c766c48b9194b114a2b7f013dcf6eaed)] -> xpath: //ng-select[@id='job_status']//div[@class='ng-select-container']]
-Session ID: c766c48b9194b114a2b7f013dcf6eaed
+Command: [ee32bfab2d84e8745aed823afc085f2e, clickElement {id=f.1D74B1833E65E2B65231C83CF499CED9.d.B5EA316C232E51201F482EE5809168EC.e.524}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52085}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52085/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ee32bfab2d84e8745aed823afc085f2e)] -> xpath: //label[text()='Yes, Ready to Work']/preceding-sibling::input]
+Session ID: ee32bfab2d84e8745aed823afc085f2e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input _ngcontent-ng-c1200738540="" autocomplete="off" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 ng-untouched ng-pristine ng-invalid" id="Are you ready to work?_0"> is not clickable at point (818, 100). Other element would receive the click: <div class="pushActions" style="background-color:#ffffff;">...</div>
+  (Session info: chrome=138.0.7204.97)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee32bfab2d84e8745aed823afc085f2e, clickElement {id=f.1D74B1833E65E2B65231C83CF499CED9.d.B5EA316C232E51201F482EE5809168EC.e.524}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52085}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52085/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ee32bfab2d84e8745aed823afc085f2e)] -> xpath: //label[text()='Yes, Ready to Work']/preceding-sibling::input]
+Session ID: ee32bfab2d84e8745aed823afc085f2e
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -157,8 +269,8 @@ at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethod
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
-at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:287)
-at RunnerClass.TC_Job_PulmbingReturnVisitCreation.new_JobCreation(TC_Job_PulmbingReturnVisitCreation.java:60)
+at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_Arrived(JobDetailsPage.java:296)
+at RunnerClass.TC_Job_PulmbingExcavationCreation.new_JobCreation(TC_Job_PulmbingExcavationCreation.java:59)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -185,74 +297,64 @@ at java.base/java.lang.Thread.run(Thread.java:1570)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_PulmbingReturnVisitCreation@3aa078fd]" started-at="2025-07-08T00:54:26 GMT-05:00" name="setdown" finished-at="2025-07-08T00:54:27 GMT-05:00" duration-ms="1156" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setdown -->
-      </class> <!-- RunnerClass.TC_Job_PulmbingReturnVisitCreation -->
-    </test> <!-- TC_Job_PulmbingReturnVisitCreation -->
-    <test started-at="2025-07-08T00:54:27 GMT-05:00" name="TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation" finished-at="2025-07-08T00:56:43 GMT-05:00" duration-ms="136379">
-      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@66ea810]" started-at="2025-07-08T00:54:27 GMT-05:00" name="setUp" finished-at="2025-07-08T00:54:33 GMT-05:00" duration-ms="6467" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@66ea810]" started-at="2025-07-08T00:54:33 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T00:54:38 GMT-05:00" duration-ms="4987" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@66ea810]" started-at="2025-07-08T00:54:38 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T00:56:42 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation.verify_CompanyAndLoginPage" duration-ms="123697" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation@66ea810]" started-at="2025-07-08T00:56:42 GMT-05:00" name="setdown" finished-at="2025-07-08T00:56:43 GMT-05:00" duration-ms="1211" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setdown -->
-      </class> <!-- RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation -->
-    </test> <!-- TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation -->
-    <test started-at="2025-07-08T00:56:43 GMT-05:00" name="TC_Job_PulmbingExcavationCreation" finished-at="2025-07-08T00:58:35 GMT-05:00" duration-ms="111458">
-      <class name="RunnerClass.TC_Job_PulmbingExcavationCreation">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@2f953efd]" started-at="2025-07-08T00:56:43 GMT-05:00" name="setUp" finished-at="2025-07-08T00:56:49 GMT-05:00" duration-ms="5586" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@2f953efd]" started-at="2025-07-08T00:56:49 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T00:56:52 GMT-05:00" duration-ms="3514" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@2f953efd]" started-at="2025-07-08T00:56:52 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T00:58:34 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_PulmbingExcavationCreation.verify_CompanyAndLoginPage" duration-ms="101093" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@2f953efd]" started-at="2025-07-08T00:58:34 GMT-05:00" name="setdown" finished-at="2025-07-08T00:58:35 GMT-05:00" duration-ms="1255" status="PASS">
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_PulmbingExcavationCreation@24c1b2d2]" started-at="2025-07-08T12:01:27 GMT-05:00" name="setdown" finished-at="2025-07-08T12:01:28 GMT-05:00" duration-ms="1226" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setdown -->
       </class> <!-- RunnerClass.TC_Job_PulmbingExcavationCreation -->
     </test> <!-- TC_Job_PulmbingExcavationCreation -->
-    <test started-at="2025-07-08T00:58:35 GMT-05:00" name="TC_Job_WaitingStatusVerify" finished-at="2025-07-08T00:59:54 GMT-05:00" duration-ms="79714">
+    <test started-at="2025-07-08T12:01:28 GMT-05:00" name="TC_Job_WaitingStatusVerify" finished-at="2025-07-08T12:03:01 GMT-05:00" duration-ms="92695">
       <class name="RunnerClass.TC_Job_WaitingStatusVerify">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@5a7fe64f]" started-at="2025-07-08T00:58:35 GMT-05:00" name="setUp" finished-at="2025-07-08T00:58:42 GMT-05:00" duration-ms="7008" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@465232e9]" started-at="2025-07-08T12:01:28 GMT-05:00" name="setUp" finished-at="2025-07-08T12:01:34 GMT-05:00" duration-ms="5835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@5a7fe64f]" started-at="2025-07-08T00:58:42 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T00:58:46 GMT-05:00" duration-ms="4652" status="PASS">
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@465232e9]" started-at="2025-07-08T12:01:34 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T12:01:39 GMT-05:00" duration-ms="4887" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@5a7fe64f]" started-at="2025-07-08T00:58:46 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T00:59:54 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_WaitingStatusVerify.verify_CompanyAndLoginPage" duration-ms="67350" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@465232e9]" started-at="2025-07-08T12:01:39 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T12:02:59 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_WaitingStatusVerify.verify_CompanyAndLoginPage" duration-ms="80752" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath:  //span[contains(text(),' Get started ')]' (tried for 5 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h3[text()='Other Details']//following::div//div//dt[text()='Waiting Reason']//following-sibling::dd/span/span/span"}
+  (Session info: chrome=138.0.7204.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ac5046753f0f9ed23d29d50f54e68e75, findElement {using=xpath, value=//h3[text()='Other Details']//following::div//div//dt[text()='Waiting Reason']//following-sibling::dd/span/span/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52154/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ac5046753f0f9ed23d29d50f54e68e75]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath:  //span[contains(text(),' Get started ')]' (tried for 5 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at TestUtility.Non_WebDriver_Util.waitForVisible(Non_WebDriver_Util.java:25)
-at PageObject.DashboardPage.navigatToJobListionPage(DashboardPage.java:67)
-at RunnerClass.TC_Job_WaitingStatusVerify.new_JobCreation(TC_Job_WaitingStatusVerify.java:46)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3[text()='Other Details']//following::div//div//dt[text()='Waiting Reason']//following-sibling::dd/span/span/span"}
+  (Session info: chrome=138.0.7204.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ac5046753f0f9ed23d29d50f54e68e75, findElement {using=xpath, value=//h3[text()='Other Details']//following::div//div//dt[text()='Waiting Reason']//following-sibling::dd/span/span/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52154/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ac5046753f0f9ed23d29d50f54e68e75
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy16.getText(Unknown Source)
+at PageObject.JobDetailsPage.verify_CustomField(JobDetailsPage.java:253)
+at RunnerClass.TC_Job_WaitingStatusVerify.new_JobCreation(TC_Job_WaitingStatusVerify.java:60)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -273,131 +375,33 @@ at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":" //span[contains(text(),' Get started ')]"}
-  (Session info: chrome=137.0.7151.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [217f8e5dd33ac5284f3dc7d1a4f14556, findElement {using=xpath, value= //span[contains(text(),' Get started ')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52214}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52214/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 217f8e5dd33ac5284f3dc7d1a4f14556
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-... 23 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@5a7fe64f]" started-at="2025-07-08T00:59:54 GMT-05:00" name="setdown" finished-at="2025-07-08T00:59:54 GMT-05:00" duration-ms="689" status="PASS">
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_WaitingStatusVerify@465232e9]" started-at="2025-07-08T12:02:59 GMT-05:00" name="setdown" finished-at="2025-07-08T12:03:01 GMT-05:00" duration-ms="1216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setdown -->
       </class> <!-- RunnerClass.TC_Job_WaitingStatusVerify -->
     </test> <!-- TC_Job_WaitingStatusVerify -->
-    <test started-at="2025-07-08T00:59:55 GMT-05:00" name="TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation" finished-at="2025-07-08T01:01:13 GMT-05:00" duration-ms="78158">
+    <test started-at="2025-07-08T12:03:01 GMT-05:00" name="TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation" finished-at="2025-07-08T12:04:57 GMT-05:00" duration-ms="116552">
       <class name="RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@24c1b2d2]" started-at="2025-07-08T00:59:55 GMT-05:00" name="setUp" finished-at="2025-07-08T00:59:59 GMT-05:00" duration-ms="4860" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@660acfb]" started-at="2025-07-08T12:03:01 GMT-05:00" name="setUp" finished-at="2025-07-08T12:03:07 GMT-05:00" duration-ms="6653" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@24c1b2d2]" started-at="2025-07-08T00:59:59 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T01:00:05 GMT-05:00" duration-ms="5178" status="PASS">
+        <test-method signature="verify_CompanyAndLoginPage()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@660acfb]" started-at="2025-07-08T12:03:07 GMT-05:00" name="verify_CompanyAndLoginPage" finished-at="2025-07-08T12:03:13 GMT-05:00" duration-ms="5279" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_CompanyAndLoginPage -->
-        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@24c1b2d2]" started-at="2025-07-08T01:00:05 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T01:01:12 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation.verify_CompanyAndLoginPage" duration-ms="66961" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath:  //span[contains(text(),' Get started ')]' (tried for 5 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath:  //span[contains(text(),' Get started ')]' (tried for 5 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at TestUtility.Non_WebDriver_Util.waitForVisible(Non_WebDriver_Util.java:25)
-at PageObject.DashboardPage.navigatToJobListionPage(DashboardPage.java:67)
-at RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation.new_JobCreation(TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation.java:47)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":" //span[contains(text(),' Get started ')]"}
-  (Session info: chrome=137.0.7151.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [48ca63b82fe21f9e92f872ebcbf3256f, findElement {using=xpath, value= //span[contains(text(),' Get started ')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52315}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52315/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 48ca63b82fe21f9e92f872ebcbf3256f
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-... 23 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="new_JobCreation()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@660acfb]" started-at="2025-07-08T12:03:13 GMT-05:00" name="new_JobCreation" finished-at="2025-07-08T12:04:56 GMT-05:00" depends-on-methods="RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation.verify_CompanyAndLoginPage" duration-ms="103443" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- new_JobCreation -->
-        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@24c1b2d2]" started-at="2025-07-08T01:01:12 GMT-05:00" name="setdown" finished-at="2025-07-08T01:01:13 GMT-05:00" duration-ms="1148" status="PASS">
+        <test-method is-config="true" signature="setdown()[pri:0, instance:RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation@660acfb]" started-at="2025-07-08T12:04:56 GMT-05:00" name="setdown" finished-at="2025-07-08T12:04:57 GMT-05:00" duration-ms="1173" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setdown -->

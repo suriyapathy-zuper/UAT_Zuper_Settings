@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RunnerClass.TC_Job_WaitingStatusVerify">
+      <class name="RunnerClass.TC_Job_PulmbingInstallCreation_WithScheduled">
         <methods>
           <include name="setUp"/>
-          <include name="new_JobCreation"/>
           <include name="verify_CompanyAndLoginPage"/>
+          <include name="new_JobCreation"/>
         </methods>
-      </class> <!-- RunnerClass.TC_Job_WaitingStatusVerify -->
+      </class> <!-- RunnerClass.TC_Job_PulmbingInstallCreation_WithScheduled -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

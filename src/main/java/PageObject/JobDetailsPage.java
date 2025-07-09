@@ -25,6 +25,10 @@ public class JobDetailsPage extends Baseclass{
 	  private String permit_Needed;
 	  private String copy_JobTBDReason;
 	  private String copy_permit_Needed;
+	  private String selectJobStartDate;
+	  private String arrivalTimeframe;
+		 
+	 
 
 	    // Constructor initializes WebElements
 //	    public JobDetailsPage(WebDriver driver) {
@@ -111,6 +115,9 @@ public class JobDetailsPage extends Baseclass{
 	    @FindBy(xpath = "//label[text()='Staging Location']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
 	    private WebElement multiSelect_StagingLocation;
 	    
+	    @FindBy(xpath = "//label[text()='Arrival Timeframe of Future Appointment']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
+	    private WebElement multiSelect_ArrivalTimeframe;
+	    
 	    @FindBy (xpath = "//div[contains(@id,'cdk-overlay')]//mat-option")
 	    private List<WebElement> element_MultiSelect_SatgingLocation;
 	    
@@ -143,6 +150,9 @@ public class JobDetailsPage extends Baseclass{
 	    
 	    @FindBy(xpath = "//label[text()='Customers Preferred Follow Up Date']//following::div[1]")
 	    private WebElement select_CustomersPreferredFollowUpDate;
+	    
+	    @FindBy(xpath = "//label[text()='Job Start Date']//following::input[1]")
+	    private WebElement select_JobStartDate;
 	    
 	    @FindBy(xpath = "//span[contains(@class,'mat-calendar-body-today')]")
 	    private WebElement select_CurrentDateToFollowUpDate;
@@ -210,6 +220,12 @@ public class JobDetailsPage extends Baseclass{
 	    
 	    @FindBy(xpath = "//custom-fields//dt[text()='Salesman 1 Name']//following::span[1]")
 	    private WebElement text_SalesName;
+	    
+	    @FindBy(xpath = "//dt[normalize-space(text())='Scheduled Start Time']//following::span[1]")
+	    private WebElement text_JobScheduledStartTime;
+	    
+	    @FindBy(xpath = "//dt[normalize-space(text())='Scheduled End Time']//following::span[1]")
+	    private WebElement text_JobScheduledEndTime;
 	    
 	    // Page actions
 	    
@@ -384,6 +400,91 @@ public class JobDetailsPage extends Baseclass{
 	 	this.updated_by= updated_by;
 	 }
 	 
+	  // Assessment Completed flow for PulmbingInstallJob with scheduled date  creation
+	  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingInstallJob_WithScheduled(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String arrivalTimeframe,String JobTBDReason,String permit_Needed) {
+	 	update_JobStatus.click();
+	 	Non_WebDriver_Util.waitThread(3);
+	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
+
+	 	Non_WebDriver_Util.waitForVisible(driver, button_Job_Sold_Future_Appointment, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	button_Job_Sold_Future_Appointment.click();
+
+	 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Customer_Proposal_Accepted, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	button_Was_Customer_Proposal_Accepted.click();
+
+	 	multiSelect_StagingLocation.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, Bridgeview);
+
+	 	Non_WebDriver_Util.waitForVisible(driver, button_PlumbingInstall, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	button_PlumbingInstall.click();
+
+	 	Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	button_MaterialOrdering.click();
+
+	 	multiSelect_FutureJObLength.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, futureJobLength);
+
+	 	multiSelect_HowMany_Crew_Members.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
+
+	 	Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	button_FutureInstallJobWorkType.click();
+	 	
+	 	Non_WebDriver_Util.waitForVisible(driver, input_BasicDescriptionofwork, 5);
+	 	input_BasicDescriptionofwork.sendKeys(basicDescriptionofwork);
+
+	 	multiSelect_HaveYouScheduled.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HaveYouScheduled, "Yes");
+
+	 	
+	 	Non_WebDriver_Util.waitForVisible(driver, select_JobStartDate, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	select_JobStartDate.click();
+	 	
+	 	Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	select_CurrentDateToFollowUpDate.click();
+	 	
+	 	Non_WebDriver_Util.waitThread(1);
+	 	this.selectJobStartDate=select_JobStartDate.getAttribute("value");
+	 
+	 	
+	 	multiSelect_ArrivalTimeframe.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	this.arrivalTimeframe=arrivalTimeframe;
+	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, arrivalTimeframe);
+	 	
+	 	
+	 
+	 	multiSelect_PremitNeeded.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	this.permit_Needed=permit_Needed;
+	 	 By element_PremitNeeded = By.xpath(
+		           String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permit_Needed)
+		        );
+	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(element_PremitNeeded), 5);
+	 	this.copy_permit_Needed=driver.findElement(element_PremitNeeded).getText();
+	 	driver.findElement(element_PremitNeeded).click();
+
+	 	Non_WebDriver_Util.waitForVisible(driver, button_Plumbing_JobSoldChecklist_to_Be_Completed, 5);
+	 	Non_WebDriver_Util.waitThread(1);
+	 	button_Plumbing_JobSoldChecklist_to_Be_Completed.click();
+
+	 	buttonUpdateJobchecklist.click();
+	 	String updated_by=text_WhoUpdateStatus.getText();
+	 	this.updated_by= updated_by;
+	 }
+	 
+	  
 	 
 	  // Assessment Completed flow for PulmbingReturnVisitJob creation
 	  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingReturnVisitJob(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String JobTBDReason,String permit_Needed) {
@@ -959,7 +1060,7 @@ public class JobDetailsPage extends Baseclass{
 		 Assert.assertEquals(text_SalesName.getText(),updated_by ,"Created wrong Job Description");
 	 }
 	 
-	 public void verifyCustomfield_JObTDBReason() {
+	 public void verifyCustomfield_JObTDBReason()  {
 		    Assert.assertEquals(copy_JobTBDReason, JobTBDReason, "❌ Created wrong Job with JobTBDReason");
 		}
 
@@ -967,6 +1068,20 @@ public class JobDetailsPage extends Baseclass{
 		
 		    Assert.assertEquals(copy_permit_Needed, permit_Needed, "❌ Created wrong Job with permitNeeded");
 		}
+	 public void verifyJobScheduledDate() {	 
+		 String[] expectedTimes=  Non_WebDriver_Util.getStartAndEndDateTime(selectJobStartDate, arrivalTimeframe);
+		
+		
+		 String actualStart = text_JobScheduledStartTime.getText();
+		 System.out.println(expectedTimes[0]);
+		 System.out.println( actualStart.replaceAll("\\s+", "").toUpperCase());
+		
+	     String actualEnd = text_JobScheduledEndTime.getText();
+
+	        Assert.assertEquals(actualStart.replaceAll("\\s+", "").toUpperCase(),expectedTimes[0].replaceAll("\\s+", "").toUpperCase(),"Start Time doesn't match");
+	        Assert.assertEquals(actualEnd.replaceAll("\\s+", "").toUpperCase(),expectedTimes[1].replaceAll("\\s+", "").toUpperCase(),"End Time doesn't match"); 
+		 
+	 }
 	
 	
 }
