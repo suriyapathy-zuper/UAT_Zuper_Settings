@@ -1,0 +1,520 @@
+[2025-07-10 08:49:09] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-10 08:49:20] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-10 08:49:22] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-10 08:49:25] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-10 08:49:25] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-10 08:49:25] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-10 08:49:33] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-10 08:49:33] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-10 08:49:34] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-10 08:49:42] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Service Call, Customer=Alan zuper
+[2025-07-10 08:49:55] INFO  TC_JobCreation_JobSoldFutureAppointment:72 - ✅ Job Created Successfully
+[2025-07-10 08:49:58] INFO  TC_JobCreation_JobSoldFutureAppointment:75 - ✅ Verified Status: New - Ready to Assign
+[2025-07-10 08:50:02] INFO  TC_JobCreation_JobSoldFutureAppointment:78 - ✅ Updated Status to: Scheduled
+[2025-07-10 08:50:07] INFO  TC_JobCreation_JobSoldFutureAppointment:81 - ✅ Updated Status to: Accepted
+[2025-07-10 08:50:12] INFO  TC_JobCreation_JobSoldFutureAppointment:84 - ✅ Updated Status to: En Route
+[2025-07-10 08:50:16] INFO  TC_JobCreation_JobSoldFutureAppointment:87 - ✅ Completed 'Arrived' checklist
+[2025-07-10 08:50:25] INFO  TC_JobCreation_JobSoldFutureAppointment:90 - ✅ Completed 'Starting Assessment' checklist
+[2025-07-10 08:50:45] INFO  TC_JobCreation_JobSoldFutureAppointment:103 - ✅ Completed 'Assessment Completed' with job-sold logic
+[2025-07-10 08:50:57] INFO  TC_JobCreation_JobSoldFutureAppointment:106 - ✅ Verified associated child job count
+[2025-07-10 08:50:58] INFO  TC_JobCreation_JobSoldFutureAppointment:109 - ✅ Navigated to child job
+[2025-07-10 08:50:58] INFO  TC_JobCreation_JobSoldFutureAppointment:112 - ✅ Verified child job category: Plumbing Return Visit
+[2025-07-10 08:50:58] INFO  TC_JobCreation_JobSoldFutureAppointment:115 - ✅ Verified child job description
+[2025-07-10 08:50:58] INFO  TC_JobCreation_JobSoldFutureAppointment:118 - ✅ Verified Sales Name custom field
+[2025-07-10 08:50:58] INFO  TC_JobCreation_JobSoldFutureAppointment:121 - ✅ Verified Permit Needed custom field
+[2025-07-10 08:50:59] INFO  TC_JobCreation_JobSoldFutureAppointment:137 - ✅ Verified Job TBD Reason and pending status for unscheduled job
+[2025-07-10 08:50:59] INFO  TC_JobCreation_JobSoldFutureAppointment:140 - 🎉 Job Creation Test Completed Successfully
+[2025-07-10 08:50:59] INFO  TC_JobCreation_JobSoldFutureAppointment:145 - 🔻 Tearing down test execution
+[2025-07-11 00:48:06] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 00:48:16] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 00:48:20] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 00:48:22] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 00:48:22] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 00:48:22] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 00:48:29] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 00:48:30] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 00:48:30] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 00:48:39] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 00:49:41] INFO  TC_JobCreation_JobSoldFutureAppointment:145 - 🔻 Tearing down test execution
+[2025-07-11 01:33:33] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 01:33:41] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 01:33:44] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 01:33:45] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 01:33:45] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 01:33:45] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 01:33:52] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 01:33:52] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 01:33:53] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 01:34:00] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 01:34:13] INFO  TC_JobCreation_JobSoldFutureAppointment:72 - ✅ Job Created Successfully
+[2025-07-11 01:34:16] INFO  TC_JobCreation_JobSoldFutureAppointment:75 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 01:34:21] INFO  TC_JobCreation_JobSoldFutureAppointment:78 - ✅ Updated Status to: Scheduled
+[2025-07-11 01:34:26] INFO  TC_JobCreation_JobSoldFutureAppointment:81 - ✅ Updated Status to: Accepted
+[2025-07-11 01:34:30] INFO  TC_JobCreation_JobSoldFutureAppointment:145 - 🔻 Tearing down test execution
+[2025-07-11 01:36:09] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 01:36:16] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 01:36:18] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 01:36:20] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 01:36:20] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 01:36:20] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 01:36:26] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 01:36:26] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 01:36:27] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 01:36:34] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 01:36:47] INFO  TC_JobCreation_JobSoldFutureAppointment:72 - ✅ Job Created Successfully
+[2025-07-11 01:36:48] INFO  TC_JobCreation_JobSoldFutureAppointment:75 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 01:36:54] INFO  TC_JobCreation_JobSoldFutureAppointment:78 - ✅ Updated Status to: Scheduled
+[2025-07-11 01:37:00] INFO  TC_JobCreation_JobSoldFutureAppointment:81 - ✅ Updated Status to: Accepted
+[2025-07-11 01:37:06] INFO  TC_JobCreation_JobSoldFutureAppointment:145 - 🔻 Tearing down test execution
+[2025-07-11 01:45:41] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 01:45:51] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 01:45:54] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 01:45:56] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 01:45:56] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 01:45:56] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 01:46:02] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 01:46:03] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 01:46:04] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 01:46:11] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 01:46:23] INFO  TC_JobCreation_JobSoldFutureAppointment:72 - ✅ Job Created Successfully
+[2025-07-11 01:46:24] INFO  TC_JobCreation_JobSoldFutureAppointment:75 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 01:46:29] INFO  TC_JobCreation_JobSoldFutureAppointment:145 - 🔻 Tearing down test execution
+[2025-07-11 01:49:10] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 01:49:16] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 01:49:19] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 01:49:21] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 01:49:21] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 01:49:21] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 01:49:32] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 01:49:32] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 01:49:33] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 01:49:41] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 01:49:53] INFO  TC_JobCreation_JobSoldFutureAppointment:72 - ✅ Job Created Successfully
+[2025-07-11 01:49:56] INFO  TC_JobCreation_JobSoldFutureAppointment:75 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 01:50:01] INFO  TC_JobCreation_JobSoldFutureAppointment:145 - 🔻 Tearing down test execution
+[2025-07-11 02:05:27] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 02:05:34] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 02:05:37] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 02:05:38] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 02:05:38] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 02:05:38] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 02:05:45] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 02:05:45] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 02:05:45] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 02:05:53] INFO  TC_JobCreation_JobSoldFutureAppointment:66 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 02:06:06] INFO  TC_JobCreation_JobSoldFutureAppointment:72 - ✅ Job Created Successfully
+[2025-07-11 02:06:09] INFO  TC_JobCreation_JobSoldFutureAppointment:75 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 02:39:09] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 02:39:16] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 02:39:18] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 02:39:20] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 02:39:20] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 02:39:20] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 02:39:26] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 02:39:27] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 02:39:27] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 02:39:34] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 02:39:47] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 02:39:49] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 02:39:55] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 02:40:01] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:36:35] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:36:40] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:36:42] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:36:44] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:36:44] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:36:44] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:36:51] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:36:51] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:36:52] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:36:58] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 03:37:11] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:37:13] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:38:16] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:38:21] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:38:23] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:38:25] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:38:25] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:38:25] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:38:30] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:38:31] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:38:31] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:38:37] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 03:38:49] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:38:51] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:38:57] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 03:39:02] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:39:46] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:39:51] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:39:53] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:39:54] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:39:54] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:39:54] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:40:01] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:40:01] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:40:01] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:40:08] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 03:40:21] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:40:23] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:40:29] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 03:40:34] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:42:06] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:42:11] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:42:13] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:42:14] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:42:14] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:42:14] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:42:21] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:42:21] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:42:21] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:42:27] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 03:42:39] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:42:41] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:42:47] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 03:42:53] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:44:27] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:44:32] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:44:33] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:44:35] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:44:35] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:44:35] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:44:41] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:44:41] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:44:42] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:44:48] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Install, Customer=Alan zuper
+[2025-07-11 03:45:00] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:45:02] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:45:08] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 03:45:14] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:45:21] INFO  TC_JobCreation_JobSoldFutureAppointment:86 - ✅ Updated Status to: En Route
+[2025-07-11 03:45:25] INFO  TC_JobCreation_JobSoldFutureAppointment:89 - ✅ Completed 'Arrived' checklist
+[2025-07-11 03:47:10] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:47:15] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:47:17] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:47:18] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:47:18] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:47:18] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:47:25] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:47:26] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:47:26] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:47:33] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Service Call, Customer=Alan zuper
+[2025-07-11 03:47:45] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:47:46] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:47:52] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 03:47:58] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:48:04] INFO  TC_JobCreation_JobSoldFutureAppointment:86 - ✅ Updated Status to: En Route
+[2025-07-11 03:48:08] INFO  TC_JobCreation_JobSoldFutureAppointment:89 - ✅ Completed 'Arrived' checklist
+[2025-07-11 03:48:17] INFO  TC_JobCreation_JobSoldFutureAppointment:92 - ✅ Completed 'Starting Assessment' checklist
+[2025-07-11 03:48:37] INFO  TC_JobCreation_JobSoldFutureAppointment:105 - ✅ Completed 'Assessment Completed' with job-sold logic
+[2025-07-11 03:48:51] INFO  TC_JobCreation_JobSoldFutureAppointment:108 - ✅ Verified associated child job count
+[2025-07-11 03:48:52] INFO  TC_JobCreation_JobSoldFutureAppointment:111 - ✅ Navigated to child job
+[2025-07-11 03:48:53] INFO  TC_JobCreation_JobSoldFutureAppointment:114 - ✅ Verified child job category: Plumbing Return Visit
+[2025-07-11 03:48:53] INFO  TC_JobCreation_JobSoldFutureAppointment:117 - ✅ Verified child job description
+[2025-07-11 03:48:53] INFO  TC_JobCreation_JobSoldFutureAppointment:120 - ✅ Verified Sales Name custom field
+[2025-07-11 03:48:53] INFO  TC_JobCreation_JobSoldFutureAppointment:123 - ✅ Verified Permit Needed custom field
+[2025-07-11 03:48:53] INFO  TC_JobCreation_JobSoldFutureAppointment:139 - ✅ Verified Job TBD Reason and pending status for unscheduled job
+[2025-07-11 03:48:53] INFO  TC_JobCreation_JobSoldFutureAppointment:142 - 🎉 Job Creation Test Completed Successfully
+[2025-07-11 03:49:11] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 03:49:15] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:49:18] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 03:49:20] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 03:49:20] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 03:49:20] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 03:49:30] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:49:31] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 03:49:33] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:133 - 🧹 Tear down complete
+[2025-07-11 03:50:33] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 03:50:37] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:50:39] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 03:50:41] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 03:50:41] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 03:50:41] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 03:50:47] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:50:48] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 03:50:48] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 03:50:48] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 03:50:50] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Plumbing Service Call
+[2025-07-11 03:50:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 03:50:53] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 03:51:05] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 03:51:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 03:51:14] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:133 - 🧹 Tear down complete
+[2025-07-11 03:52:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 03:52:32] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:52:38] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 03:52:39] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 03:52:39] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 03:52:39] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 03:52:46] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:52:46] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 03:52:46] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 03:52:47] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 03:52:48] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Plumbing Service Call
+[2025-07-11 03:52:50] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 03:52:51] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 03:53:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 03:53:05] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 03:53:11] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 03:53:17] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 03:53:23] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:87 - ➡️ Status updated to: En Route
+[2025-07-11 03:53:26] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:90 - ✅ Arrived checklist completed
+[2025-07-11 03:53:35] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:93 - ✅ Starting assessment checklist completed
+[2025-07-11 03:53:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:103 - ✅ Assessment Completed with Estimate Needed flow executed
+[2025-07-11 03:54:03] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:106 - ✅ Verified child job association
+[2025-07-11 03:54:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:109 - ✅ Navigated to child job
+[2025-07-11 03:54:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:112 - ✅ Verified child job category: Plumbing Service Call
+[2025-07-11 03:54:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:115 - ✅ Verified Dispatch Approval Needed status
+[2025-07-11 03:54:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:118 - ✅ Verified Sales Name custom field
+[2025-07-11 03:54:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:127 - 🎉 Job creation and validation flow completed successfully
+[2025-07-11 03:54:05] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:133 - 🧹 Tear down complete
+[2025-07-11 03:54:52] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:54:57] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:54:58] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:54:59] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:54:59] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:54:59] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:55:05] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:55:06] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:55:06] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 03:55:12] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Backflow Testing, Customer=Alan zuper
+[2025-07-11 03:55:24] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 03:55:26] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 03:55:31] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 03:55:37] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 03:55:43] INFO  TC_JobCreation_JobSoldFutureAppointment:86 - ✅ Updated Status to: En Route
+[2025-07-11 03:55:47] INFO  TC_JobCreation_JobSoldFutureAppointment:89 - ✅ Completed 'Arrived' checklist
+[2025-07-11 03:55:56] INFO  TC_JobCreation_JobSoldFutureAppointment:92 - ✅ Completed 'Starting Assessment' checklist
+[2025-07-11 03:56:15] INFO  TC_JobCreation_JobSoldFutureAppointment:105 - ✅ Completed 'Assessment Completed' with job-sold logic
+[2025-07-11 03:56:26] INFO  TC_JobCreation_JobSoldFutureAppointment:108 - ✅ Verified associated child job count
+[2025-07-11 03:56:27] INFO  TC_JobCreation_JobSoldFutureAppointment:111 - ✅ Navigated to child job
+[2025-07-11 03:56:27] INFO  TC_JobCreation_JobSoldFutureAppointment:114 - ✅ Verified child job category: Plumbing Return Visit
+[2025-07-11 03:56:27] INFO  TC_JobCreation_JobSoldFutureAppointment:117 - ✅ Verified child job description
+[2025-07-11 03:56:27] INFO  TC_JobCreation_JobSoldFutureAppointment:120 - ✅ Verified Sales Name custom field
+[2025-07-11 03:56:27] INFO  TC_JobCreation_JobSoldFutureAppointment:123 - ✅ Verified Permit Needed custom field
+[2025-07-11 03:56:28] INFO  TC_JobCreation_JobSoldFutureAppointment:139 - ✅ Verified Job TBD Reason and pending status for unscheduled job
+[2025-07-11 03:56:28] INFO  TC_JobCreation_JobSoldFutureAppointment:142 - 🎉 Job Creation Test Completed Successfully
+[2025-07-11 03:57:21] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 03:57:25] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:57:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 03:57:30] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 03:57:30] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 03:57:30] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 03:57:37] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:57:37] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 03:57:38] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 03:57:38] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 03:57:40] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Plumbing Backflow Testing
+[2025-07-11 03:57:43] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 03:57:45] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 03:58:00] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 03:58:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 03:58:11] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 03:58:17] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 03:58:23] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:87 - ➡️ Status updated to: En Route
+[2025-07-11 03:58:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:90 - ✅ Arrived checklist completed
+[2025-07-11 03:58:37] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:93 - ✅ Starting assessment checklist completed
+[2025-07-11 03:58:55] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:103 - ✅ Assessment Completed with Estimate Needed flow executed
+[2025-07-11 03:59:06] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:106 - ✅ Verified child job association
+[2025-07-11 03:59:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:109 - ✅ Navigated to child job
+[2025-07-11 03:59:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:112 - ✅ Verified child job category: Plumbing Service Call
+[2025-07-11 03:59:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:115 - ✅ Verified Dispatch Approval Needed status
+[2025-07-11 03:59:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:118 - ✅ Verified Sales Name custom field
+[2025-07-11 03:59:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:127 - 🎉 Job creation and validation flow completed successfully
+[2025-07-11 03:59:08] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:133 - 🧹 Tear down complete
+[2025-07-11 03:59:44] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 03:59:48] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 03:59:50] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 03:59:51] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 03:59:51] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 03:59:51] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 03:59:57] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 03:59:58] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 03:59:58] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 04:00:03] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Inspection-Plumbing, Customer=Alan zuper
+[2025-07-11 04:00:16] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 04:00:17] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 04:00:23] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 04:00:29] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 04:00:35] INFO  TC_JobCreation_JobSoldFutureAppointment:86 - ✅ Updated Status to: En Route
+[2025-07-11 04:00:39] INFO  TC_JobCreation_JobSoldFutureAppointment:89 - ✅ Completed 'Arrived' checklist
+[2025-07-11 04:00:48] INFO  TC_JobCreation_JobSoldFutureAppointment:92 - ✅ Completed 'Starting Assessment' checklist
+[2025-07-11 04:01:07] INFO  TC_JobCreation_JobSoldFutureAppointment:105 - ✅ Completed 'Assessment Completed' with job-sold logic
+[2025-07-11 04:01:17] INFO  TC_JobCreation_JobSoldFutureAppointment:108 - ✅ Verified associated child job count
+[2025-07-11 04:01:18] INFO  TC_JobCreation_JobSoldFutureAppointment:111 - ✅ Navigated to child job
+[2025-07-11 04:01:19] INFO  TC_JobCreation_JobSoldFutureAppointment:114 - ✅ Verified child job category: Plumbing Return Visit
+[2025-07-11 04:01:19] INFO  TC_JobCreation_JobSoldFutureAppointment:117 - ✅ Verified child job description
+[2025-07-11 04:01:19] INFO  TC_JobCreation_JobSoldFutureAppointment:120 - ✅ Verified Sales Name custom field
+[2025-07-11 04:01:19] INFO  TC_JobCreation_JobSoldFutureAppointment:123 - ✅ Verified Permit Needed custom field
+[2025-07-11 04:01:19] INFO  TC_JobCreation_JobSoldFutureAppointment:139 - ✅ Verified Job TBD Reason and pending status for unscheduled job
+[2025-07-11 04:01:19] INFO  TC_JobCreation_JobSoldFutureAppointment:142 - 🎉 Job Creation Test Completed Successfully
+[2025-07-11 04:01:35] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 04:01:39] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:01:41] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 04:01:43] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 04:01:43] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 04:01:43] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 04:01:49] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:01:49] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 04:01:50] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 04:01:50] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 04:01:51] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Inspection-Plumbing
+[2025-07-11 04:01:54] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 04:01:55] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 04:02:08] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 04:02:11] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 04:02:17] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 04:02:23] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 04:02:29] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:87 - ➡️ Status updated to: En Route
+[2025-07-11 04:02:33] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:90 - ✅ Arrived checklist completed
+[2025-07-11 04:02:42] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:93 - ✅ Starting assessment checklist completed
+[2025-07-11 04:03:30] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:133 - 🧹 Tear down complete
+[2025-07-11 04:11:44] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 04:11:48] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:11:50] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 04:11:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 04:11:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 04:11:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 04:11:58] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:11:59] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 04:11:59] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 04:12:00] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 04:12:01] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Inspection-Plumbing
+[2025-07-11 04:12:03] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 04:12:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 04:12:16] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 04:12:19] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 04:12:25] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 04:12:30] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 04:12:36] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:87 - ➡️ Status updated to: En Route
+[2025-07-11 04:12:40] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:90 - ✅ Arrived checklist completed
+[2025-07-11 04:12:49] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:93 - ✅ Starting assessment checklist completed
+[2025-07-11 04:13:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:134 - 🧹 Tear down complete
+[2025-07-11 04:14:15] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 04:14:20] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:14:22] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 04:14:24] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 04:14:24] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 04:14:24] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 04:14:31] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:14:32] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 04:14:32] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 04:14:33] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 04:14:34] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Inspection-Plumbing
+[2025-07-11 04:14:36] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 04:14:37] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 04:14:50] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 04:14:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 04:14:58] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 04:15:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 04:15:10] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:87 - ➡️ Status updated to: En Route
+[2025-07-11 04:15:14] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:90 - ✅ Arrived checklist completed
+[2025-07-11 04:15:23] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:93 - ✅ Starting assessment checklist completed
+[2025-07-11 04:15:45] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:104 - ✅ Assessment Completed with Estimate Needed flow executed
+[2025-07-11 04:15:59] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:107 - ✅ Verified child job association
+[2025-07-11 04:15:59] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:110 - ✅ Navigated to child job
+[2025-07-11 04:16:00] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:113 - ✅ Verified child job category: Plumbing Service Call
+[2025-07-11 04:16:01] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:116 - ✅ Verified Dispatch Approval Needed status
+[2025-07-11 04:16:01] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:119 - ✅ Verified Sales Name custom field
+[2025-07-11 04:16:01] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:123 - ✅ Verified scheduled date for job
+[2025-07-11 04:16:01] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:128 - 🎉 Job creation and validation flow completed successfully
+[2025-07-11 04:16:02] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:134 - 🧹 Tear down complete
+[2025-07-11 04:27:06] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 04:27:10] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:27:12] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 04:27:13] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 04:27:13] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 04:27:13] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 04:27:20] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:27:21] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 04:27:21] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 04:27:26] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Return Visit, Customer=Alan zuper
+[2025-07-11 04:27:40] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 04:27:42] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 04:27:47] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 04:27:53] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 04:33:13] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 04:33:18] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:33:20] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 04:33:22] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 04:33:22] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 04:33:22] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 04:33:28] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:33:28] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 04:33:29] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 04:33:33] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Return Visit, Customer=Alan zuper
+[2025-07-11 04:33:46] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 04:33:47] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 04:33:53] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 04:33:59] INFO  TC_JobCreation_JobSoldFutureAppointment:55 - Test setup started...
+[2025-07-11 04:33:59] INFO  TC_JobCreation_JobSoldFutureAppointment:83 - ✅ Updated Status to: Accepted
+[2025-07-11 04:34:04] INFO  TC_JobCreation_JobSoldFutureAppointment:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:34:07] INFO  TC_JobCreation_JobSoldFutureAppointment:86 - ✅ Updated Status to: En Route
+[2025-07-11 04:34:07] INFO  TC_JobCreation_JobSoldFutureAppointment:40 - ✅ Entered company name: fourseasons
+[2025-07-11 04:34:08] INFO  TC_JobCreation_JobSoldFutureAppointment:43 - ✅ Entered login credentials and submitted
+[2025-07-11 04:34:08] INFO  TC_JobCreation_JobSoldFutureAppointment:45 - 🎉 Login flow verification completed successfully
+[2025-07-11 04:34:08] INFO  TC_JobCreation_JobSoldFutureAppointment:50 - 🔹 Starting Job Creation Test
+[2025-07-11 04:34:11] INFO  TC_JobCreation_JobSoldFutureAppointment:89 - ✅ Completed 'Arrived' checklist
+[2025-07-11 04:34:14] INFO  TC_JobCreation_JobSoldFutureAppointment:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:34:14] INFO  TC_JobCreation_JobSoldFutureAppointment:56 - ✅ Navigated to Job Listing Page
+[2025-07-11 04:34:15] INFO  TC_JobCreation_JobSoldFutureAppointment:59 - ✅ Navigated to Job Creation Page
+[2025-07-11 04:34:19] INFO  TC_JobCreation_JobSoldFutureAppointment:68 - ✅ Set Job details: Title=validation job, Category=Plumbing Return Visit, Customer=Alan zuper
+[2025-07-11 04:34:32] INFO  TC_JobCreation_JobSoldFutureAppointment:74 - ✅ Job Created Successfully
+[2025-07-11 04:34:34] INFO  TC_JobCreation_JobSoldFutureAppointment:77 - ✅ Verified Status: New - Ready to Assign
+[2025-07-11 04:34:40] INFO  TC_JobCreation_JobSoldFutureAppointment:80 - ✅ Updated Status to: Scheduled
+[2025-07-11 04:35:36] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 04:35:42] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:35:46] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 04:35:49] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 04:35:49] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 04:35:49] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 04:35:59] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:36:00] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 04:36:03] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:134 - 🧹 Tear down complete
+[2025-07-11 04:36:19] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 04:36:23] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:36:26] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 04:36:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 04:36:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 04:36:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 04:36:34] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:36:34] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 04:36:35] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 04:36:35] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 04:36:36] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Plumbing Return Visit
+[2025-07-11 04:36:38] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 04:36:39] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 04:36:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 04:36:53] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 04:36:59] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 04:37:05] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 04:37:14] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:87 - ➡️ Status updated to: En Route
+[2025-07-11 04:37:18] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:90 - ✅ Arrived checklist completed
+[2025-07-11 04:37:21] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:134 - 🧹 Tear down complete
+[2025-07-11 04:38:46] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:55 - Test setup started...
+[2025-07-11 04:38:52] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:37 - 🔹 Starting Company and Login Page Verification
+[2025-07-11 04:38:54] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:40 - ✅ Company name entered: fourseasons
+[2025-07-11 04:38:56] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:43 - ✅ Login attempted with username: suriyapathy.b@zuper.co
+[2025-07-11 04:38:56] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:45 - 🎯 Company and login verification completed
+[2025-07-11 04:38:56] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:50 - 
+🔹 Starting Job Creation Test
+[2025-07-11 04:39:02] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:53 - ✅ Cleared pop-up if present
+[2025-07-11 04:39:02] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:56 - ✅ Navigated to job listing page
+[2025-07-11 04:39:03] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:59 - ✅ Navigated to job creation page
+[2025-07-11 04:39:03] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:62 - ✅ Set job title: validation job
+[2025-07-11 04:39:04] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:65 - ✅ Set job category: Plumbing Site Visit
+[2025-07-11 04:39:07] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:68 - ✅ Set customer: Alan zuper
+[2025-07-11 04:39:08] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:72 - ✅ Set job due date and start date
+[2025-07-11 04:39:20] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:75 - ✅ Job created successfully
+[2025-07-11 04:39:22] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:78 - ✅ Verified status: New - Ready to Assign
+[2025-07-11 04:39:28] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:81 - ➡️ Status updated to: Scheduled
+[2025-07-11 04:39:35] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:84 - ➡️ Status updated to: Accepted
+[2025-07-11 04:39:43] INFO  TC_JobCreation_EstimateSent_EstimateNeeded:134 - 🧹 Tear down complete

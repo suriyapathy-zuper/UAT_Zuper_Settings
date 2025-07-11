@@ -100,6 +100,8 @@ public class JobCreationPage extends Baseclass{
 	    @FindBy(xpath = "//zuper-assign-employee/div/div[2]/div/div[1]/div/div[2]/div")
 	    private List<WebElement> User_multiSelect;
 	    
+	    @FindBy(xpath = "//app-custom-field-form//label[normalize-space(text())='Permit Needed?']//following::input[1]")
+	    private WebElement customfield_Permit_Needed;
 	   
 	    
 
@@ -121,8 +123,13 @@ public class JobCreationPage extends Baseclass{
 	     */
 	    public void set_JobCategory(String jobCategory_Name) {
 	        element_JobCategory.click();
-	       // Non_WebDriver_Util.waitThread(1);
+	        Non_WebDriver_Util.waitThread(1);
 	        Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelectcategory, jobCategory_Name);
+	    	if(jobCategory_Name.trim().equalsIgnoreCase("Plumbing Install")) {
+	    		Non_WebDriver_Util.waitThread(1);
+		        Non_WebDriver_Util.waitForBeClickable(driver, customfield_Permit_Needed, 5);
+		        customfield_Permit_Needed.click();
+	    	}
 	    }
 
 	    /**
@@ -182,6 +189,7 @@ public class JobCreationPage extends Baseclass{
 	     * 🚀 Click Create Action buttons to confirm job creation
 	     */
 	    public void create_Action() {
+	    
 	    	Non_WebDriver_Util.waitThread(1);
 	        Non_WebDriver_Util.waitForBeClickable(driver, button_CreatenewJob, 5);
 	        button_CreatenewJob.click(); 

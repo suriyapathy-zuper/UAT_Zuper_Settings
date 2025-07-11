@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RunnerClass.TC_Job_PulmbingInstallCreation_WithScheduled">
+      <class name="RunnerClass.TC_JobCreation_EstimateSent_EstimateNeeded">
         <methods>
-          <include name="setUp"/>
+          <include name="setdown"/>
           <include name="verify_CompanyAndLoginPage"/>
           <include name="new_JobCreation"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- RunnerClass.TC_Job_PulmbingInstallCreation_WithScheduled -->
+      </class> <!-- RunnerClass.TC_JobCreation_EstimateSent_EstimateNeeded -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,6 +28,7 @@ public class Baseclass {
 	
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     public Properties prop;
+    protected final Logger logger = LogManager.getLogger(getClass());
 
     public static WebDriver getDriver() {
         return driver.get();
@@ -34,7 +37,7 @@ public class Baseclass {
     public static void setDriver(WebDriver driverInstance) {
         driver.set(driverInstance);
     }
-
+  
     // Constructor loads config
     public Baseclass() {
         try {
@@ -49,6 +52,7 @@ public class Baseclass {
 
     // Initialize browser based on config
     public void initilizeConfig() {
+    	logger.info("Test setup started...");
         String browser = prop.getProperty("browser");
 
         WebDriver localDriver = null;

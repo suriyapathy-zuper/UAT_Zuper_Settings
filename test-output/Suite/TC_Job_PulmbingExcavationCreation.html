@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 09 00:30:25 CDT 2025</td>
+<td>Started on:</td><td>Wed Jul 09 07:33:19 CDT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>113 seconds (113234 ms)</td>
+<tr><td>Total time:</td><td>47 seconds (47515 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,15 +77,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='RunnerClass.TC_Job_PulmbingExcavationCreation.new_JobCreation()'><b>new_JobCreation</b><br>Test class: RunnerClass.TC_Job_PulmbingExcavationCreation</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-option-label ng-star-inserted&quot;&gt;...&lt;/span&gt; is not clickable at point (175, 492). Other element would receive the click: &lt;div class=&quot;ng-option ng-star-inserted&quot; role=&quot;option&quot; id=&quot;a1b0650f7c72-2&quot;&gt;...&lt;/div&gt;
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;ng-select ngclass=&quot;w-full&quot; appearance=&quot;fill&quot; id=&quot;job_status&quot; name=&quot;job_status&quot; appendto=&quot;#update_job_status&quot; bindlabel=&quot;status_name&quot; bindvalue=&quot;status_uid&quot; class=&quot;form-control w-full ng-select-searchable ng-select-clearable ng-select ng-select-single ng-valid ng-touched ng-dirty ng-select-top&quot;&gt;...&lt;/ng-select&gt; is not clickable at point (250, 517). Other element would receive the click: &lt;p class=&quot;text-gray-700 group flex items-center text-base&quot;&gt;...&lt;/p&gt;
   (Session info: chrome=138.0.7204.97)
 Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [eb52def1d461bf274560860d2690668c, clickElement {id=f.0D5C81634A8A01621B594B125B857C60.d.3C5556E66767DDB178A07DC045B89F6D.e.457}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54137}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54137/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (eb52def1d461bf274560860d2690668c)] -&gt; xpath: //div[@role=&apos;listbox&apos;]/div/div[@role=&apos;option&apos;]/span]
-Session ID: eb52def1d461bf274560860d2690668c
+Command: [3a3a0aecca6ca42ed6b1adc917856744, clickElement {id=f.C35B6C8D44796818493EB9D999ABF873.d.0857338728A70627851B3F6CC46E4CA6.e.462}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63752}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63752/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3a3a0aecca6ca42ed6b1adc917856744)] -&gt; xpath: //ng-select[@id=&apos;job_status&apos;]]
+Session ID: 3a3a0aecca6ca42ed6b1adc917856744
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -95,24 +95,25 @@ Session ID: eb52def1d461bf274560860d2690668c
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:78)
-	at PageObject.JobDetailsPage.updateJobStatus(JobDetailsPage.java:263)
-	at RunnerClass.TC_Job_PulmbingExcavationCreation.new_JobCreation(TC_Job_PulmbingExcavationCreation.java:57)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:311)
+	at RunnerClass.TC_Job_PulmbingExcavationCreation.new_JobCreation(TC_Job_PulmbingExcavationCreation.java:60)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1570)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace726678181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace726678181'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-option-label ng-star-inserted&quot;&gt;...&lt;/span&gt; is not clickable at point (175, 492). Other element would receive the click: &lt;div class=&quot;ng-option ng-star-inserted&quot; role=&quot;option&quot; id=&quot;a1b0650f7c72-2&quot;&gt;...&lt;/div&gt;
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1513753861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1513753861'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;ng-select ngclass=&quot;w-full&quot; appearance=&quot;fill&quot; id=&quot;job_status&quot; name=&quot;job_status&quot; appendto=&quot;#update_job_status&quot; bindlabel=&quot;status_name&quot; bindvalue=&quot;status_uid&quot; class=&quot;form-control w-full ng-select-searchable ng-select-clearable ng-select ng-select-single ng-valid ng-touched ng-dirty ng-select-top&quot;&gt;...&lt;/ng-select&gt; is not clickable at point (250, 517). Other element would receive the click: &lt;p class=&quot;text-gray-700 group flex items-center text-base&quot;&gt;...&lt;/p&gt;
   (Session info: chrome=138.0.7204.97)
 Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [eb52def1d461bf274560860d2690668c, clickElement {id=f.0D5C81634A8A01621B594B125B857C60.d.3C5556E66767DDB178A07DC045B89F6D.e.457}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54137}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54137/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (eb52def1d461bf274560860d2690668c)] -&gt; xpath: //div[@role=&apos;listbox&apos;]/div/div[@role=&apos;option&apos;]/span]
-Session ID: eb52def1d461bf274560860d2690668c
+Command: [3a3a0aecca6ca42ed6b1adc917856744, clickElement {id=f.C35B6C8D44796818493EB9D999ABF873.d.0857338728A70627851B3F6CC46E4CA6.e.462}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63752}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63752/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3a3a0aecca6ca42ed6b1adc917856744)] -&gt; xpath: //ng-select[@id=&apos;job_status&apos;]]
+Session ID: 3a3a0aecca6ca42ed6b1adc917856744
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -125,9 +126,12 @@ Session ID: eb52def1d461bf274560860d2690668c
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:78)
-	at PageObject.JobDetailsPage.updateJobStatus(JobDetailsPage.java:263)
-	at RunnerClass.TC_Job_PulmbingExcavationCreation.new_JobCreation(TC_Job_PulmbingExcavationCreation.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:311)
+	at RunnerClass.TC_Job_PulmbingExcavationCreation.new_JobCreation(TC_Job_PulmbingExcavationCreation.java:60)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -149,7 +153,7 @@ Session ID: eb52def1d461bf274560860d2690668c
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1570)
 </pre></div></td>
-<td>100</td>
+<td>39</td>
 <td>RunnerClass.TC_Job_PulmbingExcavationCreation@3aa078fd</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -163,7 +167,7 @@ Session ID: eb52def1d461bf274560860d2690668c
 <tr>
 <td title='RunnerClass.TC_Job_PulmbingExcavationCreation.verify_CompanyAndLoginPage()'><b>verify_CompanyAndLoginPage</b><br>Test class: RunnerClass.TC_Job_PulmbingExcavationCreation</td>
 <td></td>
-<td>5</td>
+<td>3</td>
 <td>RunnerClass.TC_Job_PulmbingExcavationCreation@3aa078fd</td></tr>
 </table><p>
 </body>

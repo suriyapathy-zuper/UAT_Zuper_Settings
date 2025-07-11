@@ -27,17 +27,12 @@ public class JobDetailsPage extends Baseclass{
 	  private String copy_permit_Needed;
 	  private String selectJobStartDate;
 	  private String arrivalTimeframe;
-		 
+	  private String StagingLocation;
 	 
-
-	    // Constructor initializes WebElements
-//	    public JobDetailsPage(WebDriver driver) {
-//	        this.driver = driver;
-//	        PageFactory.initElements(driver, this);
-//	    }
+	 
+	 
 	    
 	    public JobDetailsPage() {
-		    //	System.out.println("Driver received: " + driver);
 		    	this.driver = Baseclass.getDriver();
 		        PageFactory.initElements(driver, this);
 		    }
@@ -48,12 +43,15 @@ public class JobDetailsPage extends Baseclass{
 	    @FindBy(xpath = "//a[normalize-space()='Status History']")
 	    private WebElement button_StatusHistory; 
 	    
-	    @FindBy(xpath = "//ng-select[@id='job_status']//div[@class='ng-select-container']")
+	    @FindBy(xpath = "//ng-select[@id='job_status']")
 	    private WebElement update_JobStatus; 
 	    
 	    @FindBy(xpath = "//div[@role='listbox']/div/div[@role='option']/span")
 	    private List<WebElement> option_JobStatus; 
 
+	    @FindBy(xpath = "//div[@role='listbox']/div/div[@role='option']")
+	    private WebElement option_JobStatusVisiable; 
+	    
 	    @FindBy(xpath = "//div[@class='ng-star-inserted']//div[contains(@class,'relative container ')]//div[@id='update_job_status']//preceding::p[contains(@class,'text-xl font-medium break-words whitespace-pre-wrap')][1]")
 	    private WebElement current_JobStatus; 
 	  
@@ -112,11 +110,17 @@ public class JobDetailsPage extends Baseclass{
 	    @FindBy(xpath = "//label[text()='Has Appointment been set with Dispatch?']//following::input[2]")
 	    private WebElement button_HasAppointmentbeensetwithDispatch; 
 	    
+	    @FindBy(xpath = "//label[text()='Has Appointment been set with Dispatch?']//following::input[1]")
+	    private WebElement button_HasAppointmentbeensetwithDispatch_Yes; 
+	    
 	    @FindBy(xpath = "//label[text()='Staging Location']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
 	    private WebElement multiSelect_StagingLocation;
 	    
 	    @FindBy(xpath = "//label[text()='Arrival Timeframe of Future Appointment']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
 	    private WebElement multiSelect_ArrivalTimeframe;
+	    
+	    @FindBy(xpath = "//label[text()='Appointment Time Frame']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
+	    private WebElement multiSelect_ArrivalTimeframe_estimate;
 	    
 	    @FindBy (xpath = "//div[contains(@id,'cdk-overlay')]//mat-option")
 	    private List<WebElement> element_MultiSelect_SatgingLocation;
@@ -145,6 +149,10 @@ public class JobDetailsPage extends Baseclass{
 	    @FindBy(xpath = "//label[text()='If No Appointment has been set, why?']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
 	    private WebElement multiSelect_appointmentType;
 	    
+	    
+	    @FindBy(xpath = "//label[text()='Appointment Time Frame']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
+	    private WebElement multiSelect_appointmentType_estimate;
+	    
 	    @FindBy (xpath = "//div[contains(@id,'cdk-overlay')]//mat-option")
 	    private List<WebElement> element_appointmentType;
 	    
@@ -153,6 +161,9 @@ public class JobDetailsPage extends Baseclass{
 	    
 	    @FindBy(xpath = "//label[text()='Job Start Date']//following::input[1]")
 	    private WebElement select_JobStartDate;
+	    
+	    @FindBy(xpath = "//label[text()='Appointment Date']//following::input[1]")
+	    private WebElement select_AppointmentDate_JobStartDate;
 	    
 	    @FindBy(xpath = "//span[contains(@class,'mat-calendar-body-today')]")
 	    private WebElement select_CurrentDateToFollowUpDate;
@@ -197,6 +208,9 @@ public class JobDetailsPage extends Baseclass{
 	    @FindBy(xpath = "//label[text()='Plumbing Job Sold Checklist to Be Completed.']//following::label[(text() = 'Yes')]//preceding::input[1]")
 	    private WebElement button_Plumbing_JobSoldChecklist_to_Be_Completed;
 	    
+	    @FindBy(xpath = "//label[text()='Are All Materials Accounted For?']//following::label[(text() = 'Yes')]//preceding::input[1]")
+	    private WebElement button_AreAllMaterialsAccountedFor;
+	    
 	    @FindBy(xpath = "//span[text()=' Child Jobs Associated']//following-sibling::span")
 	    private WebElement text_ChildJobs_Associated;
 	    
@@ -221,6 +235,12 @@ public class JobDetailsPage extends Baseclass{
 	    @FindBy(xpath = "//custom-fields//dt[text()='Salesman 1 Name']//following::span[1]")
 	    private WebElement text_SalesName;
 	    
+	    @FindBy(xpath = "//custom-fields//dt[text()='Staging Location']//following::span[1]")
+	    private WebElement text_StagingLocation;
+	    
+	    @FindBy(xpath = "//custom-fields//dt[text()='Arrival Timeframe']//following::span[1]")
+	    private WebElement text_ArrivalTimeframe;
+	    
 	    @FindBy(xpath = "//dt[normalize-space(text())='Scheduled Start Time']//following::span[1]")
 	    private WebElement text_JobScheduledStartTime;
 	    
@@ -237,8 +257,7 @@ public class JobDetailsPage extends Baseclass{
 		Non_WebDriver_Util.waitForBeClickable(driver, button_StatusHistory, 3);
 	 	button_StatusHistory.click(); 
 	 	Non_WebDriver_Util.waitForVisible(driver, current_JobStatus, 3);
-	 	System.out.println(current_JobStatus.getText());
-	 	Assert.assertEquals(currentStatusName, current_JobStatus.getText());
+	 	Assert.assertEquals(currentStatusName.toLowerCase(), current_JobStatus.getText().toLowerCase());
 	 }
 
 	 public void verify_ChildJobAssoicated(String job_Count) {	
@@ -258,11 +277,53 @@ public class JobDetailsPage extends Baseclass{
 	 // =============================
 
 	 public void updateJobStatus(String statusNameToUpdate) {
-		Non_WebDriver_Util.clickWithRetry(driver, update_JobStatus, 3, 1000);
-	 	Non_WebDriver_Util.waitThread(1);
+		 if((text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install") && statusNameToUpdate.trim().equalsIgnoreCase("En Route")) || (text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Return Visit") && statusNameToUpdate.trim().equalsIgnoreCase("En Route"))) {
+			    Non_WebDriver_Util.waitThread(2);
+				Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+				Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+				update_JobStatus.click();
+				Non_WebDriver_Util.waitThread(1);
+			 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
+			 	Non_WebDriver_Util.waitThread(1);
+			 	Non_WebDriver_Util.waitForBeClickable(driver, button_AreAllMaterialsAccountedFor, 5);
+				Non_WebDriver_Util.waitForVisible(driver, button_AreAllMaterialsAccountedFor, 5);
+				button_AreAllMaterialsAccountedFor.click();
+				Non_WebDriver_Util.waitThread(1);
+				buttonUpdateJobchecklist.click();
+				Non_WebDriver_Util.waitThread(2);
+				Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
+			 	
+		 }
+		 else if((text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Site Visit") && statusNameToUpdate.trim().equalsIgnoreCase("En Route"))) {
+			    Non_WebDriver_Util.waitThread(2);
+				Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+				Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+				update_JobStatus.click();
+				Non_WebDriver_Util.waitThread(1);
+			 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
+			 	Non_WebDriver_Util.waitThread(1);
+			 	Non_WebDriver_Util.waitForBeClickable(driver, button_AreAllMaterialsAccountedFor, 5);
+				Non_WebDriver_Util.waitForVisible(driver, button_AreAllMaterialsAccountedFor, 5);
+				button_AreAllMaterialsAccountedFor.click();
+				Non_WebDriver_Util.waitThread(1);
+				buttonUpdateJobchecklist.click();
+				Non_WebDriver_Util.waitThread(2);
+				Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
+			 	
+		 }else {
+		Non_WebDriver_Util.waitThread(2);
+		Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+		Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+		update_JobStatus.click();
+		Non_WebDriver_Util.waitThread(1);
 	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
 	 	Non_WebDriver_Util.waitThread(1);
+	 	Non_WebDriver_Util.waitForBeClickable(driver, button_JobStatusUpdate, 5);
+		Non_WebDriver_Util.waitForVisible(driver, button_JobStatusUpdate, 5);
 	 	button_JobStatusUpdate.click();
+	 	Non_WebDriver_Util.waitThread(2);
+	 	Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
+	 }
 	 }
 
 	 // =============================
@@ -270,8 +331,11 @@ public class JobDetailsPage extends Baseclass{
 	 // =============================
 
 	 public void updateJobStatus_WithChecklist(String statusNameToUpdate) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(2);
+		Non_WebDriver_Util.waitThread(1);
+		Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+		Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+		update_JobStatus.click();
+	 	Non_WebDriver_Util.waitThread(1);
 	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
 	 	Non_WebDriver_Util.waitForVisible(driver, button_No_ICannot, 5);
 	 	Non_WebDriver_Util.waitThread(1);
@@ -284,12 +348,17 @@ public class JobDetailsPage extends Baseclass{
 	 	buttonUpdateJobchecklist.click();
 	 	Non_WebDriver_Util.waitThread(5);
 	 	Non_WebDriver_Util.refreshPage(driver);
+	 	Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
 	 }
+	 
 
 	 // Arrived → No Answer flow
 	 public void updateJobStatus_WithChecklist_Arrived(String statusNameToUpdate) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(2);
+		Non_WebDriver_Util.waitThread(1);
+		Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+		Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+		update_JobStatus.click();
+	 	Non_WebDriver_Util.waitThread(1);
 	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
 	 	Non_WebDriver_Util.waitForVisible(driver, button_yes, 5);
 	 	Non_WebDriver_Util.waitThread(1);
@@ -299,8 +368,11 @@ public class JobDetailsPage extends Baseclass{
 
 	 // Starting Assessment flow
 	 public void updateJobStatus_WithChecklist_StatringAssessment(String statusNameToUpdate) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(3);
+		Non_WebDriver_Util.waitThread(1);
+		Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+		Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+		update_JobStatus.click();
+		Non_WebDriver_Util.waitThread(1);
 	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
 
 	 	Non_WebDriver_Util.waitForVisible(driver, button_AreYouWearingbooties, 5);
@@ -322,458 +394,238 @@ public class JobDetailsPage extends Baseclass{
 	 	button_TBBAccount.click();
 
 	 	buttonUpdateJobchecklist.click();
+	 	Non_WebDriver_Util.waitThread(1);
+	 	Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
 	 }
 
-	 // Assessment Completed flow for PulmbingInstallJob creation
-	  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingInstallJob(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String JobTBDReason,String permit_Needed) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(3);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
+	
+	 
+	 
+	 public void updateJobStatus_WithChecklist_AssessmentCompleted_GenericJobSoldFuture(
+		        String jobType,                      // "Plumbing Install", "Plumbing Return Visit", "Plumbing Excavation"
+		        String statusNameToUpdate,
+		        String StagingLocation,
+		        String futureJobLength,
+		        String basicDescriptionofWork,
+		        boolean isScheduled,                 // true = schedule date & timeframe required
+		        String arrivalTimeframe,            // optional if !isScheduled
+		        String jobTBDReason,                // optional if isScheduled
+		        String permitNeeded
+		) {
+		 
+		
+		    // 1. Update Job Status
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+		    Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+		    update_JobStatus.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
 
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Job_Sold_Future_Appointment, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Job_Sold_Future_Appointment.click();
+		    // 2. Job Sold → Future Appointment
+		    Non_WebDriver_Util.waitForVisible(driver, button_Job_Sold_Future_Appointment, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_Job_Sold_Future_Appointment.click();
 
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Customer_Proposal_Accepted, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Was_Customer_Proposal_Accepted.click();
+		    Non_WebDriver_Util.waitForVisible(driver, button_Was_Customer_Proposal_Accepted, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_Was_Customer_Proposal_Accepted.click();
 
-	 	multiSelect_StagingLocation.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, Bridgeview);
+		    // 3. Staging Location
+		    multiSelect_StagingLocation.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    this.StagingLocation = StagingLocation;
+		    Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, StagingLocation);
 
-	 	Non_WebDriver_Util.waitForVisible(driver, button_PlumbingInstall, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_PlumbingInstall.click();
+		    // 4. Job Type Button
+		    if (jobType.trim().equalsIgnoreCase("Plumbing Install")) {
+		        Non_WebDriver_Util.waitForVisible(driver, button_PlumbingInstall, 5);
+		        button_PlumbingInstall.click();
+		        Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
+		        button_MaterialOrdering.click();
+		    } else if (jobType.trim().equalsIgnoreCase("Plumbing Return Visit")) {
+		        Non_WebDriver_Util.waitForVisible(driver, button_PlumbingInstall, 5); // shared button
+		        button_PlumbingInstall.click();
+		        Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
+		        button_MaterialisTrackStock.click();
+		    } else if (jobType.trim().equalsIgnoreCase("Plumbing Excavation")) {
+		        Non_WebDriver_Util.waitForVisible(driver, button_PlumbingExcavation, 5);
+		        button_PlumbingExcavation.click();
+		    }
 
-	 	Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_MaterialOrdering.click();
+		    // 5. Job Length & Crew Members
+		    multiSelect_FutureJObLength.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, futureJobLength);
 
-	 	multiSelect_FutureJObLength.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, futureJobLength);
+		    multiSelect_HowMany_Crew_Members.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
 
-	 	multiSelect_HowMany_Crew_Members.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
+		    // 6. Work Type Button
+		    Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_FutureInstallJobWorkType.click();
 
-	 	Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_FutureInstallJobWorkType.click();
+		    // 7. Description
+		    Non_WebDriver_Util.waitForVisible(driver, input_BasicDescriptionofwork, 5);
+		    input_BasicDescriptionofwork.sendKeys(basicDescriptionofWork);
 
-	 	input_BasicDescriptionofwork.sendKeys(basicDescriptionofwork);
+		    // 8. Scheduling
+		    multiSelect_HaveYouScheduled.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.selectMatOptionByText(driver, element_HaveYouScheduled, isScheduled ? "Yes" : "No");
 
-	 	multiSelect_HaveYouScheduled.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HaveYouScheduled, "No");
+		    if (isScheduled) {
+		        // Scheduled Date
+		    	Non_WebDriver_Util.waitThread(1);
+		        Non_WebDriver_Util.waitForVisible(driver, select_JobStartDate, 5);
+		        select_JobStartDate.click();
+		        Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
+		        Non_WebDriver_Util.waitThread(1);
+		        select_CurrentDateToFollowUpDate.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        this.selectJobStartDate = select_JobStartDate.getAttribute("value");
 
-	 	
-	 	this.JobTBDReason=JobTBDReason;
-	 	
-	 	
-	 	  By button_JobTBDReason = By.xpath(
-		            String.format("//label[text()='Job TBD Reason']//following::label[contains(text(),'%s')]", JobTBDReason)
-		        );
+		        // Arrival Timeframe
+		        multiSelect_ArrivalTimeframe.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        this.arrivalTimeframe = arrivalTimeframe;
+		        Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, arrivalTimeframe);
+		    } else {
+		        // Job TBD Reason
+		        this.JobTBDReason = jobTBDReason;
+		        By button_JobTBDReason = By.xpath(String.format("//label[text()='Job TBD Reason']//following::label[contains(text(),'%s')]", jobTBDReason));
+		        Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(button_JobTBDReason), 5);
+		        Non_WebDriver_Util.waitThread(1);
+		        this.copy_JobTBDReason = driver.findElement(button_JobTBDReason).getText();
+		        driver.findElement(button_JobTBDReason).click();
+		    }
+
+		    // 9. Permit Needed
+		    multiSelect_PremitNeeded.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    this.permit_Needed = permitNeeded;
+		    By element_PermitNeeded = By.xpath(String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permitNeeded));
+		    Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(element_PermitNeeded), 5);
+		    this.copy_permit_Needed = driver.findElement(element_PermitNeeded).getText();
+		    driver.findElement(element_PermitNeeded).click();
+
+		    // 10. Submit Checklist
+		    Non_WebDriver_Util.waitForVisible(driver, button_Plumbing_JobSoldChecklist_to_Be_Completed, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_Plumbing_JobSoldChecklist_to_Be_Completed.click();
+
+		    buttonUpdateJobchecklist.click();
+		    this.updated_by = text_WhoUpdateStatus.getText();
+		    Non_WebDriver_Util.waitThread(1);
+		 	Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
+		}
+
+	 
+	 public void updateJobStatus_WithChecklist_AssessmentCompleted_EstimateNeeded_Generic(
+		        String statusNameToUpdate,
+		        boolean isScheduled,
+		        String ifNoAppointmentHasBeenSet,          // Used if isScheduled == false
+		        String arrivalTimeframe,                   // Used if isScheduled == true
+		        String appointmentType,
+		        String notesToAccountManagerDescriptionOfWork,
+		        String basicDescriptionofWork
+		) {
+		    // 1. Update Job Status
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
+		    Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+		    update_JobStatus.click();
+		    Non_WebDriver_Util.waitThread(1);
+		    Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
+
+		    // 2. Estimate Needed
+		    Non_WebDriver_Util.waitForVisible(driver, button_EstimateSent_EstimateNeeded, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_EstimateSent_EstimateNeeded.click();
+
+		    // 3. Estimate Sent
+		    Non_WebDriver_Util.waitForVisible(driver, button_Was_Estimate_Sent_To_Customer, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_Was_Estimate_Sent_To_Customer.click();
+
+		    // 4. Unable to Access
+		    Non_WebDriver_Util.waitForVisible(driver, button_UnableToProperlyAccess, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    button_UnableToProperlyAccess.click();
+
+		    // 5. Has Appointment Been Set with Dispatch
+		    if (isScheduled) {
+		        Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch_Yes, 5);
+		        Non_WebDriver_Util.waitThread(1);
+		        button_HasAppointmentbeensetwithDispatch_Yes.click();
+		        // Scheduled Date (Today)
+		        Non_WebDriver_Util.waitForVisible(driver, select_AppointmentDate_JobStartDate, 5);
+		        select_AppointmentDate_JobStartDate.click();
+
+		        Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
+		        Non_WebDriver_Util.waitThread(1);
+		        select_CurrentDateToFollowUpDate.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        this.selectJobStartDate = select_AppointmentDate_JobStartDate.getAttribute("value");
+
+		        //  Arrival Timeframe
+		        multiSelect_ArrivalTimeframe_estimate.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        this.arrivalTimeframe = arrivalTimeframe;
+		        Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, arrivalTimeframe);
+
+		        // Appointment Type
+		        multiSelect_appointmentType_estimate.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType);
+		    } else {
+		        Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch, 5);
+		        Non_WebDriver_Util.waitThread(1);
+		        button_HasAppointmentbeensetwithDispatch.click();
+		        //  If No Appointment Has Been Set
+		        multiSelect_IfNoAppointmenthasbeenset.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        Non_WebDriver_Util.selectMatOptionByText(driver, element_IfNoAppointmenthasbeenset, ifNoAppointmentHasBeenSet);
+		     // Appointment Type
+		        multiSelect_appointmentType.click();
+		        Non_WebDriver_Util.waitThread(1);
+		        Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType);
+		      
+		    }
+
+
+		    // 6. Customer’s Preferred Follow-Up Date (Today)
+		    Non_WebDriver_Util.waitForVisible(driver, select_CustomersPreferredFollowUpDate, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    select_CustomersPreferredFollowUpDate.click();
+
+		    Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
+		    Non_WebDriver_Util.waitThread(1);
+		    select_CurrentDateToFollowUpDate.click();
+
+		    // 7. Notes to Account Manager
+		    Non_WebDriver_Util.waitThread(1);
+		    input_NotestoAccountManager.sendKeys(notesToAccountManagerDescriptionOfWork);
 		    
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(button_JobTBDReason), 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.copy_JobTBDReason=driver.findElement(button_JobTBDReason).getText();
-	 	driver.findElement(button_JobTBDReason).click();
+		    // 7. Description
+		    if(prop.getProperty("jobCategory").trim().equalsIgnoreCase("Inspection-Plumbing")) {
+		    Non_WebDriver_Util.waitForVisible(driver, input_BasicDescriptionofwork, 5);
+		    input_BasicDescriptionofwork.sendKeys(basicDescriptionofWork);
+		    }
+		    // 8. Submit
+		    buttonUpdateJobchecklist.click();
 
-	 	multiSelect_PremitNeeded.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.permit_Needed=permit_Needed;
-	 	 By element_PremitNeeded = By.xpath(
-		           String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permit_Needed)
-		        );
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(element_PremitNeeded), 5);
-	 	this.copy_permit_Needed=driver.findElement(element_PremitNeeded).getText();
-	 	driver.findElement(element_PremitNeeded).click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Plumbing_JobSoldChecklist_to_Be_Completed, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Plumbing_JobSoldChecklist_to_Be_Completed.click();
-
-	 	buttonUpdateJobchecklist.click();
-	 	String updated_by=text_WhoUpdateStatus.getText();
-	 	this.updated_by= updated_by;
-	 }
-	 
-	  // Assessment Completed flow for PulmbingInstallJob with scheduled date  creation
-	  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingInstallJob_WithScheduled(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String arrivalTimeframe,String JobTBDReason,String permit_Needed) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(3);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Job_Sold_Future_Appointment, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Job_Sold_Future_Appointment.click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Customer_Proposal_Accepted, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Was_Customer_Proposal_Accepted.click();
-
-	 	multiSelect_StagingLocation.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, Bridgeview);
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_PlumbingInstall, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_PlumbingInstall.click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_MaterialOrdering.click();
-
-	 	multiSelect_FutureJObLength.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, futureJobLength);
-
-	 	multiSelect_HowMany_Crew_Members.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_FutureInstallJobWorkType.click();
-	 	
-	 	Non_WebDriver_Util.waitForVisible(driver, input_BasicDescriptionofwork, 5);
-	 	input_BasicDescriptionofwork.sendKeys(basicDescriptionofwork);
-
-	 	multiSelect_HaveYouScheduled.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HaveYouScheduled, "Yes");
-
-	 	
-	 	Non_WebDriver_Util.waitForVisible(driver, select_JobStartDate, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	select_JobStartDate.click();
-	 	
-	 	Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	select_CurrentDateToFollowUpDate.click();
-	 	
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.selectJobStartDate=select_JobStartDate.getAttribute("value");
-	 
-	 	
-	 	multiSelect_ArrivalTimeframe.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.arrivalTimeframe=arrivalTimeframe;
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, arrivalTimeframe);
-	 	
-	 	
-	 
-	 	multiSelect_PremitNeeded.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.permit_Needed=permit_Needed;
-	 	 By element_PremitNeeded = By.xpath(
-		           String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permit_Needed)
-		        );
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(element_PremitNeeded), 5);
-	 	this.copy_permit_Needed=driver.findElement(element_PremitNeeded).getText();
-	 	driver.findElement(element_PremitNeeded).click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Plumbing_JobSoldChecklist_to_Be_Completed, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Plumbing_JobSoldChecklist_to_Be_Completed.click();
-
-	 	buttonUpdateJobchecklist.click();
-	 	String updated_by=text_WhoUpdateStatus.getText();
-	 	this.updated_by= updated_by;
-	 }
-	 
-	  
-	 
-	  // Assessment Completed flow for PulmbingReturnVisitJob creation
-	  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingReturnVisitJob(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String JobTBDReason,String permit_Needed) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(2);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Job_Sold_Future_Appointment, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Job_Sold_Future_Appointment.click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Customer_Proposal_Accepted, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Was_Customer_Proposal_Accepted.click();
-
-	 	multiSelect_StagingLocation.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, Bridgeview);
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_PlumbingInstall, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_PlumbingInstall.click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_MaterialisTrackStock.click();
-
-	 	multiSelect_FutureJObLength.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, futureJobLength);
-
-	 	multiSelect_HowMany_Crew_Members.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_FutureInstallJobWorkType.click();
-
-	 	input_BasicDescriptionofwork.sendKeys(basicDescriptionofwork);
-
-	 	multiSelect_HaveYouScheduled.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HaveYouScheduled, "No");
-
-	 	
-	 	this.JobTBDReason=JobTBDReason;
-	 	  By button_JobTBDReason = By.xpath(
-		            String.format("//label[text()='Job TBD Reason']//following::label[contains(text(),'%s')]", JobTBDReason)
-		        );
+		    // 9. Capture update info
+		    this.updated_by = text_WhoUpdateStatus.getText();
 		    
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(button_JobTBDReason), 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.copy_JobTBDReason=driver.findElement(button_JobTBDReason).getText();
-	 	driver.findElement(button_JobTBDReason).click();
+		    Non_WebDriver_Util.waitThread(1);
+		 	Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(), "Status not updated as expected.");
+		}
 
-	 	multiSelect_PremitNeeded.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.permit_Needed=permit_Needed;
-	 	 By element_PremitNeeded = By.xpath(
-		           String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permit_Needed)
-		        );
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(element_PremitNeeded), 5);
-	 	this.copy_permit_Needed=driver.findElement(element_PremitNeeded).getText();
-	 	driver.findElement(element_PremitNeeded).click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Plumbing_JobSoldChecklist_to_Be_Completed, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Plumbing_JobSoldChecklist_to_Be_Completed.click();
-
-	 	buttonUpdateJobchecklist.click();
-	 	String updated_by=text_WhoUpdateStatus.getText();
-	 	this.updated_by= updated_by;
-	 }
 	 
-		 
-	  // Assessment Completed flow for PulmbingExcavationJob creation
-	  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingExcavationJob(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String JobTBDReason,String permit_Needed) {
-	 	update_JobStatus.click();
-	 	Non_WebDriver_Util.waitThread(2);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Job_Sold_Future_Appointment, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Job_Sold_Future_Appointment.click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Customer_Proposal_Accepted, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Was_Customer_Proposal_Accepted.click();
-
-	 	multiSelect_StagingLocation.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, Bridgeview);
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_PlumbingExcavation, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_PlumbingExcavation.click();
-
-	 	multiSelect_FutureJObLength.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, futureJobLength);
-
-	 	multiSelect_HowMany_Crew_Members.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_FutureInstallJobWorkType.click();
-
-	 	input_BasicDescriptionofwork.sendKeys(basicDescriptionofwork);
-
-	 	multiSelect_HaveYouScheduled.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	Non_WebDriver_Util.selectMatOptionByText(driver, element_HaveYouScheduled, "No");
-
-	 	
-	 	this.JobTBDReason=JobTBDReason;
-	 	  By button_JobTBDReason = By.xpath(
-		            String.format("//label[text()='Job TBD Reason']//following::label[contains(text(),'%s')]", JobTBDReason)
-		        );
-		    
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(button_JobTBDReason), 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.copy_JobTBDReason=driver.findElement(button_JobTBDReason).getText();
-	 	driver.findElement(button_JobTBDReason).click();
-
-	 	multiSelect_PremitNeeded.click();
-	 	Non_WebDriver_Util.waitThread(1);
-	 	this.permit_Needed=permit_Needed;
-	 	 By element_PremitNeeded = By.xpath(
-		           String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permit_Needed)
-		        );
-	 	Non_WebDriver_Util.waitForBeClickable(driver, driver.findElement(element_PremitNeeded), 5);
-	 	this.copy_permit_Needed=driver.findElement(element_PremitNeeded).getText();
-	 	driver.findElement(element_PremitNeeded).click();
-
-	 	Non_WebDriver_Util.waitForVisible(driver, button_Plumbing_JobSoldChecklist_to_Be_Completed, 5);
-	 	Non_WebDriver_Util.waitThread(1);
-	 	button_Plumbing_JobSoldChecklist_to_Be_Completed.click();
-
-	 	buttonUpdateJobchecklist.click();
-	 	String updated_by=text_WhoUpdateStatus.getText();
-	 	this.updated_by= updated_by;
-	 }
-	 
-	// Assessment Completed flow for PulmbingSiteVisitJob creation
-		  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingSiteVisitJob(String statusNameToUpdate,String ifNoAppointmenthasbeenset,String appointmentType_PlumbingSiteVisit,String NotetoAccountManagerescriptionofwork) {
-		 	update_JobStatus.click();
-		 	Non_WebDriver_Util.waitThread(2);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_EstimateSent_EstimateNeeded, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_EstimateSent_EstimateNeeded.click();
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Estimate_Sent_To_Customer, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_Was_Estimate_Sent_To_Customer.click();
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_UnableToProperlyAccess, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_UnableToProperlyAccess.click();
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_HasAppointmentbeensetwithDispatch.click();
-		 	
-		 	multiSelect_IfNoAppointmenthasbeenset.click();
-		 	Non_WebDriver_Util.waitThread(1);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, element_IfNoAppointmenthasbeenset, ifNoAppointmenthasbeenset);
-
-		 	multiSelect_appointmentType.click();
-		 	Non_WebDriver_Util.waitThread(1);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType_PlumbingSiteVisit);
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, select_CustomersPreferredFollowUpDate, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	select_CustomersPreferredFollowUpDate.click();
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	select_CurrentDateToFollowUpDate.click();
-
-		 	Non_WebDriver_Util.waitThread(1);
-		 	input_NotestoAccountManager.sendKeys(NotetoAccountManagerescriptionofwork);
-
-
-		 	buttonUpdateJobchecklist.click();
-		 	String updated_by=text_WhoUpdateStatus.getText();
-		 	this.updated_by= updated_by;
-		 }
-		 
-		 
-		// Assessment Completed flow for PulmbingRodding creation
-		  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingRoddingJob(String statusNameToUpdate,String ifNoAppointmenthasbeenset,String appointmentType_PlumbingRodding,String NotetoAccountManagerescriptionofwork) {
-		 	update_JobStatus.click();
-		 	Non_WebDriver_Util.waitThread(2);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_EstimateSent_EstimateNeeded, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_EstimateSent_EstimateNeeded.click();
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Estimate_Sent_To_Customer, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_Was_Estimate_Sent_To_Customer.click();
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_UnableToProperlyAccess, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_UnableToProperlyAccess.click();
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_HasAppointmentbeensetwithDispatch.click();
-		 	
-		 	multiSelect_IfNoAppointmenthasbeenset.click();
-		 	Non_WebDriver_Util.waitThread(1);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, element_IfNoAppointmenthasbeenset, ifNoAppointmenthasbeenset);
-
-		 	multiSelect_appointmentType.click();
-		 	Non_WebDriver_Util.waitThread(1);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType_PlumbingRodding);
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, select_CustomersPreferredFollowUpDate, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	select_CustomersPreferredFollowUpDate.click();
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	select_CurrentDateToFollowUpDate.click();
-
-		 	Non_WebDriver_Util.waitThread(1);
-		 	input_NotestoAccountManager.sendKeys(NotetoAccountManagerescriptionofwork);
-
-
-		 	buttonUpdateJobchecklist.click();
-		 	String updated_by=text_WhoUpdateStatus.getText();
-		 	this.updated_by= updated_by;
-		 }
-		 
-	  
-		// Assessment Completed flow for PulmbingServiceCall creation
-		  public void updateJobStatus_WithChecklist_AssessmentCompleted_PulmbingServicaCallJob(String statusNameToUpdate,String ifNoAppointmenthasbeenset,String appointmentType_PlumbingRodding,String NotetoAccountManagerescriptionofwork) {
-		 	update_JobStatus.click();
-		 	Non_WebDriver_Util.waitThread(2);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_EstimateSent_EstimateNeeded, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_EstimateSent_EstimateNeeded.click();
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_Was_Estimate_Sent_To_Customer, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_Was_Estimate_Sent_To_Customer.click();
-
-		 	Non_WebDriver_Util.waitForVisible(driver, button_UnableToProperlyAccess, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_UnableToProperlyAccess.click();
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	button_HasAppointmentbeensetwithDispatch.click();
-		 	
-		 	multiSelect_IfNoAppointmenthasbeenset.click();
-		 	Non_WebDriver_Util.waitThread(1);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, element_IfNoAppointmenthasbeenset, ifNoAppointmenthasbeenset);
-
-		 	multiSelect_appointmentType.click();
-		 	Non_WebDriver_Util.waitThread(1);
-		 	Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType_PlumbingRodding);
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, select_CustomersPreferredFollowUpDate, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	select_CustomersPreferredFollowUpDate.click();
-		 	
-		 	Non_WebDriver_Util.waitForVisible(driver, select_CurrentDateToFollowUpDate, 5);
-		 	Non_WebDriver_Util.waitThread(1);
-		 	select_CurrentDateToFollowUpDate.click();
-
-		 	Non_WebDriver_Util.waitThread(1);
-		 	input_NotestoAccountManager.sendKeys(NotetoAccountManagerescriptionofwork);
-
-
-		 	buttonUpdateJobchecklist.click();
-		 	String updated_by=text_WhoUpdateStatus.getText();
-		 	this.updated_by= updated_by;
-		 }
-		  
+	
 	// Assessment Completed flow for Project With Pulmbing Install,Plumbing Roll Over Job creation
 		  public void updateJobStatus_WithChecklist_AssessmentCompleted_ProjectWith_PlumbingInstall_RollOverJob(String statusNameToUpdate,String Bridgeview,String futureJobLength,String basicDescriptionofwork,String JobTBDReason,String permit_Needed) {
 		 	update_JobStatus.click();
@@ -1057,7 +909,7 @@ public class JobDetailsPage extends Baseclass{
 		 Assert.assertEquals(text_JobDescription.getText(),basicDescriptionofwork ,"Created wrong Job Description");
 	 }
 	 public void verifyCustomfield_SalesName() {	 
-		 Assert.assertEquals(text_SalesName.getText(),updated_by ,"Created wrong Job Description");
+		 Assert.assertEquals(text_SalesName.getText(),updated_by ,"Created wrong Job FE");
 	 }
 	 
 	 public void verifyCustomfield_JObTDBReason()  {
@@ -1068,14 +920,21 @@ public class JobDetailsPage extends Baseclass{
 		
 		    Assert.assertEquals(copy_permit_Needed, permit_Needed, "❌ Created wrong Job with permitNeeded");
 		}
+	
+	public void verifyCustomfield_Staging_Location() {
+		
+	    Assert.assertEquals(StagingLocation, text_StagingLocation.getText(), "❌ Created wrong Job with StagingLocation");
+	}
+	public void verifyCustomfield_arrivalTimeframe() {
+		
+	    Assert.assertEquals(arrivalTimeframe, text_ArrivalTimeframe.getText(), "❌ Created wrong Job with Arrival Time frame");
+	}
+	
 	 public void verifyJobScheduledDate() {	 
 		 String[] expectedTimes=  Non_WebDriver_Util.getStartAndEndDateTime(selectJobStartDate, arrivalTimeframe);
 		
 		
 		 String actualStart = text_JobScheduledStartTime.getText();
-		 System.out.println(expectedTimes[0]);
-		 System.out.println( actualStart.replaceAll("\\s+", "").toUpperCase());
-		
 	     String actualEnd = text_JobScheduledEndTime.getText();
 
 	        Assert.assertEquals(actualStart.replaceAll("\\s+", "").toUpperCase(),expectedTimes[0].replaceAll("\\s+", "").toUpperCase(),"Start Time doesn't match");

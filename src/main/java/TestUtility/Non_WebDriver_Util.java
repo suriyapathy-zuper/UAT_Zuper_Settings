@@ -72,8 +72,7 @@ public class Non_WebDriver_Util {
 	    boolean found = false;
 	    for (WebElement option : elements) {
 	        String text = option.getText().trim();
-	        System.out.println(text);
-	        if (text.equalsIgnoreCase(optionText)) {
+	        if (text.trim().equalsIgnoreCase(optionText)) {
 	            Non_WebDriver_Util.waitForBeClickable(driver, option, 5);
 	            option.click();
 	            found = true;
@@ -97,7 +96,6 @@ public class Non_WebDriver_Util {
 	    boolean found = false;
 	    for (WebElement element : parentElements) {
 	        String elementName = element.findElement(By.tagName("h3")).getText();
-	        System.out.println(elementName);
 	        if (elementName.equalsIgnoreCase(headerText)) {
 	            WebElement icon = element.findElement(By.xpath(".//em[contains(@class,'ti-user-plus')]"));
 	            Non_WebDriver_Util.waitForBeClickable(driver, icon, 5);
