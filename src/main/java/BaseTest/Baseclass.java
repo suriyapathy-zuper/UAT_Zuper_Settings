@@ -58,14 +58,15 @@ public class Baseclass {
         WebDriver localDriver = null;
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions opts = new ChromeOptions();
-            opts.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            opts.addArguments("–disable-background-timer-throttling");
+           // opts.addArguments("--headless"); // 👉 Headless mode
+            opts.addArguments("--disable-background-timer-throttling");
             opts.addArguments("--disable-notifications");
-            opts.addArguments("--start-maximized");
+            opts.addArguments("--window-size=1920,1080"); // 👉 Add this for headless rendering size
             opts.addArguments("--disable-dev-shm-usage");
             opts.addArguments("--no-sandbox");
             opts.addArguments("--disable-gpu");
             opts.addArguments("--disable-extensions");
+            
              localDriver = new ChromeDriver(opts);
             
             

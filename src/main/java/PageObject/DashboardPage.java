@@ -50,7 +50,7 @@ public class DashboardPage extends Baseclass{
 	    public void popup_clear() {
 	        
 	        try {
-	            Non_WebDriver_Util.waitForBeClickable(driver, zuper_AllowPopup, 10);
+	            Non_WebDriver_Util.waitForBeClickable(driver, zuper_AllowPopup, 15);
 	            zuper_AllowPopup.click();
 	            
 	        } catch (org.openqa.selenium.TimeoutException | org.openqa.selenium.NoSuchElementException ignored) {
@@ -62,16 +62,14 @@ public class DashboardPage extends Baseclass{
 	    }
 	    
 	    public void navigatToJobListionPage() {
-	    	elemnetGroup_JobAndChat.click();
-	    	element_JobcreationPage.click();
-//	        try {
-//	            Non_WebDriver_Util.waitForBeClickable(driver, alert_Popup, 3);
-//	            alert_Popup.click();
-//	            
-//	        } catch (org.openqa.selenium.TimeoutException | org.openqa.selenium.NoSuchElementException ignored) {
-//	            // popup did not appear — no problem, continue
-//	        }
-
+	    	  try {
+	    	        elemnetGroup_JobAndChat.click();
+	    	        element_JobcreationPage.click();
+	    	        logger.info("✅ Successfully navigated to Job Listing Page");
+	    	    } catch (Exception e) {
+	    	        logger.error("❌ Failed to navigate to Job Listing Page", e);
+	    	        throw e; // Optional: rethrow if you want test to fail
+	    	    }
 	        
 	    }
 	   	    

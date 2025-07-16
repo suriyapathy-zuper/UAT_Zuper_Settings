@@ -122,22 +122,43 @@ public class JobCreationPage extends Baseclass{
 	     * @param jobCategory_Name - Category name to select
 	     */
 	    public void set_JobCategory(String jobCategory_Name) {
-	        element_JobCategory.click();
-	        Non_WebDriver_Util.waitThread(1);
-	        Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelectcategory, jobCategory_Name);
-	    	if(jobCategory_Name.trim().equalsIgnoreCase("Plumbing Install")) {
-	    		Non_WebDriver_Util.waitThread(1);
-		        Non_WebDriver_Util.waitForBeClickable(driver, customfield_Permit_Needed, 5);
-		        customfield_Permit_Needed.click();
-	    	}
-	    }
+	    	
+	        try {
+	        	
+	        	
+	        	
+	            WebElement dropdown = driver.findElement(By.xpath("//div[(text() = 'Choose a Job Category' or . = 'Choose a Job Category')]"));
+	            Non_WebDriver_Util.waitForBeClickable(driver, dropdown, 5);
+	            dropdown.click();
+	            Non_WebDriver_Util.waitThread(1);
+
+	            // Re-fetch list each time to avoid stale elements
+	            List<WebElement> options = driver.findElements(By.xpath("//div[contains(@id,'mat-select')]//mat-option"));
+	            Non_WebDriver_Util.visibilityOfAllElements(driver, options, 5);
+	            Non_WebDriver_Util.selectMatOptionByText(driver, options, jobCategory_Name);
+	            if(jobCategory_Name.trim().equalsIgnoreCase("Plumbing Install")) {
+		    		Non_WebDriver_Util.waitThread(1);
+			        Non_WebDriver_Util.waitForBeClickable(driver, customfield_Permit_Needed, 5);
+			        customfield_Permit_Needed.click();
+
+	        } 
+	        }
+	            catch (Exception e) {
+	            logger.error("❌ Failed to select Job Category", e);
+	            throw e;
+	        }
+	    
+}
+	    
 
 	    /**
 	     * 👤 Set Customer
 	     * @param customer_Name - Name of the customer to associate with the job
 	     */
 	    public void set_Customer(String customer_Name) {
-	        button_AddCustomer.click();
+	    	//Non_WebDriver_Util.waitForOverlayToDisappear(driver);
+	    	Non_WebDriver_Util.waitForBeClickable(driver, button_AddCustomer, 5);
+	    	Non_WebDriver_Util.jsScrollAndActionClick(driver, button_AddCustomer);
 	        text_SearchCustomerName.clear();
 	        text_SearchCustomerName.sendKeys(customer_Name);
 	        Non_WebDriver_Util.pressEnter(driver);

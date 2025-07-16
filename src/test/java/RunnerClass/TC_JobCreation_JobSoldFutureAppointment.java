@@ -129,7 +129,7 @@ public class TC_JobCreation_JobSoldFutureAppointment extends Baseclass{
         }
 
         if (Boolean.parseBoolean(prop.getProperty("isScheduled"))) {
-            jobDetailsPage.verifyJobScheduledDate();
+            jobDetailsPage.verifyJobScheduledDate(0);
             jobDetailsPage.verify_CurrentStatus(prop.getProperty("currentStatusName_DispatchApprovalNeeded"));
             jobDetailsPage.verifyCustomfield_arrivalTimeframe();
             logger.info("✅ Verified Scheduled details and status for scheduled job");

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RunnerClass.TC_JobCreation_EstimateSent_EstimateNeeded">
+      <class name="RunnerClass.eighteenFlow">
         <methods>
           <include name="setdown"/>
           <include name="verify_CompanyAndLoginPage"/>
-          <include name="new_JobCreation"/>
+          <include name="testJobFlow" invocation-numbers="0 1"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- RunnerClass.TC_JobCreation_EstimateSent_EstimateNeeded -->
+      </class> <!-- RunnerClass.eighteenFlow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

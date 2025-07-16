@@ -13,7 +13,7 @@ import PageObject.JobListingPage;
 
 
 
-public class TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation extends Baseclass{
+public class TC_JobCreation_ProjectWithJob extends Baseclass{
 	
   
 	private CompanyPage companyPage;
@@ -58,11 +58,21 @@ public class TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation ext
     	jobDetailsPage.updateJobStatus(prop.getProperty("enRouteToUpdate"));
     	jobDetailsPage.updateJobStatus_WithChecklist_Arrived(prop.getProperty("ArrivedToUpdate"));
     	jobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(prop.getProperty("StartingAssessmentToUpdate"));
-    	jobDetailsPage.updateJobStatus_WithChecklist_AssessmentCompleted_ProjectWith_PlumbingReturnVisit_RollOverJob(prop.getProperty("AssessmentCompletedToUpdate"),prop.getProperty("StagingLocation"),prop.getProperty("futureJobLength_WithProject"),prop.getProperty("basicDescriptionofwork"),prop.getProperty("JobTBDReason"),prop.getProperty("permit_Needed"));
+    	jobDetailsPage.updateJobStatus_WithChecklist_AssessmentCompleted_ProjectWith_Plumbing_RollOverJob(
+    			    prop.getProperty("childjobtype"),
+    			    prop.getProperty("AssessmentCompletedToUpdate"),
+    	            prop.getProperty("StagingLocation"),
+    	            prop.getProperty("futureJobLength"),
+    	            prop.getProperty("basicDescriptionofwork"),
+    	            Boolean.parseBoolean(prop.getProperty("isScheduled")),
+    	            prop.getProperty("arrivalTimeframe"),
+    	            prop.getProperty("JobTBDReason"),
+    	            prop.getProperty("permit_Needed")
+    			);
     	
     	// Verify and navigate to associated child job
     	jobDetailsPage.verify_ChildJobAssoicated(prop.getProperty("job_CountForTwoJOb"));
-    	jobDetailsPage.navigateToMultipleJobs(prop.getProperty("twochildJobCategoryPlumbingReturnVisit"), prop.getProperty("basicDescriptionofwork"));
+    	jobDetailsPage.navigateToMultipleJobs(prop.getProperty("twochildJobCategoryPlumbingInstall"), prop.getProperty("basicDescriptionofwork"),Boolean.parseBoolean(prop.getProperty("isScheduled")),prop.getProperty("StagingLocation"));
 
     }
     @AfterClass

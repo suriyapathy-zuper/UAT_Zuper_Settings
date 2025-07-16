@@ -1,5 +1,6 @@
 package PageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,15 +21,18 @@ public class JobListingPage extends Baseclass{
 	    }
 
 	    // Page elements
-	    @FindBy(xpath = "//span[(text()='New Job')]//parent::a")
+	    @FindBy(xpath = "//span[normalize-space(text())='New Job']/parent::a")
 	    private WebElement element_Jobcreationbutton;
+	    
+	    private By new_Page = By.xpath("//span[normalize-space(text())='New Job']//parent::a//em");
 	    
 	 
 	    // Page actions
 	    public void naviagtetoJobCreationPage() {
-	    	Non_WebDriver_Util.waitForVisible(driver, element_Jobcreationbutton, 5);
-	    	Non_WebDriver_Util.waitForBeClickable(driver, element_Jobcreationbutton, 5);
-	    	element_Jobcreationbutton.click();
-	    }
+	    	Non_WebDriver_Util.waitThread(2);
+	    	//Non_WebDriver_Util.waitpresenceOfElementLocated(driver, new_Page, 10);
+	    	driver.findElement(By.xpath("//span[normalize-space(text())='New Job']/parent::a/em")).click();
+	    	}
+	    
 
 }

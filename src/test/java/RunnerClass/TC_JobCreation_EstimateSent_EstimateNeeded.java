@@ -119,7 +119,7 @@ public class TC_JobCreation_EstimateSent_EstimateNeeded extends Baseclass{
         logger.info("✅ Verified Sales Name custom field");
 
         if (Boolean.parseBoolean(prop.getProperty("isScheduled"))) {
-            jobDetailsPage.verifyJobScheduledDate();
+            jobDetailsPage.verifyJobScheduledDate(0);
             logger.info("✅ Verified scheduled date for job");
             // jobDetailsPage.verifyCustomfield_arrivalTimeframe(); // Uncomment if needed
             // logger.info("✅ Verified arrival timeframe");
