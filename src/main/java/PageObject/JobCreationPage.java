@@ -136,7 +136,7 @@ public class JobCreationPage extends Baseclass{
 	            List<WebElement> options = driver.findElements(By.xpath("//div[contains(@id,'mat-select')]//mat-option"));
 	            Non_WebDriver_Util.visibilityOfAllElements(driver, options, 5);
 	            Non_WebDriver_Util.selectMatOptionByText(driver, options, jobCategory_Name);
-	            if(jobCategory_Name.trim().equalsIgnoreCase("Plumbing Install")) {
+	            if((jobCategory_Name.trim().equalsIgnoreCase("Plumbing Install")) || (jobCategory_Name.trim().equalsIgnoreCase("Plumbing Excavation")) || (jobCategory_Name.trim().equalsIgnoreCase("Electrical Install"))) {
 		    		Non_WebDriver_Util.waitThread(1);
 			        Non_WebDriver_Util.waitForBeClickable(driver, customfield_Permit_Needed, 5);
 			        customfield_Permit_Needed.click();

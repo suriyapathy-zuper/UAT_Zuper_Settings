@@ -7,7 +7,7 @@
         <methods>
           <include name="setdown"/>
           <include name="verify_CompanyAndLoginPage"/>
-          <include name="testJobFlow" invocation-numbers="0 1"/>
+          <include name="testJobFlow" invocation-numbers="16 17 8 9 10 11 12 13 14 15"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- RunnerClass.eighteenFlow -->

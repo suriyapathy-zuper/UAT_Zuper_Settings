@@ -30,6 +30,12 @@ public class JobDetailsPage extends Baseclass {
 	private String arrivalTimeframe;
 	private String StagingLocation;
 	private String childJobTags;
+	private String scopeOfWork;
+	private String additionalMaterial;
+	private String timeOfComplete;
+	private String teamMember;
+	
+
 
 	public JobDetailsPage() {
 		this.driver = Baseclass.getDriver();
@@ -63,8 +69,12 @@ public class JobDetailsPage extends Baseclass {
 	@FindBy(xpath = "//label[text()='Yes, Ready to Work']/preceding-sibling::input")
 	private WebElement button_yes;
 
-	@FindBy(xpath = "//label[text()='Consumer Rights Form has been Acknowledged? (This applies to Illinois Customers Only)']//following::div//label[text()='Yes']//preceding-sibling::input")
+	@FindBy(xpath = "//label[contains(text(),'Consumer Rights Form has been Acknowledged')]//following::div[3]//label[text()='Yes']//preceding-sibling::input")
 	private WebElement button_yes_ConsumerRights;
+	
+
+	@FindBy(xpath = "//label[starts-with(text(),'Terms and Conditions (Disclaimers)')]//following::div[3]//label[text()='Yes']//preceding-sibling::input")
+	private WebElement button_Terms_Condition;
 
 	@FindBy(xpath = "//label[text()='No, I Cannot Start Working']/preceding-sibling::input")
 	private WebElement button_No_ICannot;
@@ -114,10 +124,14 @@ public class JobDetailsPage extends Baseclass {
 	@FindBy(xpath = "//label[text()='Pending Estimate Reasons']//following::label[text()='Unable to Properly Assess Scope Requires a Return Visit']//preceding::input[@value='Unable to Properly Assess Scope Requires a Return Visit']")
 	private WebElement button_UnableToProperlyAccess;
 
-	@FindBy(xpath = "//label[text()='Has Appointment been set with Dispatch?']//following::input[2]")
-	private WebElement button_HasAppointmentbeensetwithDispatch;
+	
+	@FindBy(xpath = "//label[text()='Reason/s for hesitation']//following::label[text()='Price']//preceding::input[@value='Price']")
+	private WebElement button_reason_hesitation;
+	
+	@FindBy(xpath = "//label[contains(text(),'Has Appointment been set')]//following::input[2]")
+	private WebElement button_HasAppointmentbeensetwithDispatch_No;
 
-	@FindBy(xpath = "//label[text()='Has Appointment been set with Dispatch?']//following::input[1]")
+	@FindBy(xpath = "//label[contains(text(),'Has Appointment been set')]//following::input[1]")
 	private WebElement button_HasAppointmentbeensetwithDispatch_Yes;
 
 	@FindBy(xpath = "//label[text()='Staging Location']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
@@ -140,6 +154,9 @@ public class JobDetailsPage extends Baseclass {
 
 	@FindBy(xpath = "//label[text()='Future Appointment Type']//following::div[(text() = 'Plumbing Excavation' or . = 'Plumbing Excavation')]//input")
 	private WebElement button_PlumbingExcavation;
+	
+	@FindBy(xpath = "//label[text()='Future Appointment Type']//following::div[(text() = 'Electrical Install' or . = 'Electrical Install')]//input")
+	private WebElement button_ElectricalInstall;
 
 	@FindBy(xpath = "//label[text()='Future Appointment Material Needs']//following::div[(text() = 'Material Ordering and Staging through Parts Department is Required' or . ='Material Ordering and Staging through Parts Department is Required')]//input")
 	private WebElement button_MaterialOrdering;
@@ -153,8 +170,14 @@ public class JobDetailsPage extends Baseclass {
 	@FindBy(xpath = "//label[text()='Time Needed to Complete Job?']//following::div[1]")
 	private WebElement multiSelect_TimeNeededtoCompleteJob;
 	
+	@FindBy(xpath = "//label[text()='Time Needed to Complete Job?']//following::div[1]//following-sibling::span[1]//span")
+	private WebElement value_TimeNeededtoCompleteJob;
+	
 	@FindBy(xpath = "//label[text()='How Many Guys Needed']//following::div[1]")
 	private WebElement multiSelect_GuysNeeded;
+	
+	@FindBy(xpath = "//label[text()='How Many Guys Needed']//following::div[1]//following-sibling::span[1]//span")
+	private WebElement value_GuysNeeded;
 
 	@FindBy(xpath = "//label[text()='If No Appointment has been set, why?']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
 	private WebElement multiSelect_IfNoAppointmenthasbeenset;
@@ -189,7 +212,7 @@ public class JobDetailsPage extends Baseclass {
 	@FindBy(xpath = "//div[contains(@id,'cdk-overlay')]//mat-option")
 	private List<WebElement> element_MultiSelect_FutureJObLength;
 
-	@FindBy(xpath = "//label[text()='How Many Crew Members?']//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
+	@FindBy(xpath = "//label[contains(text(),'How Many Crew')]//following::div[(text() = 'Choose an option' or . = 'Choose an option')][1]")
 	private WebElement multiSelect_HowMany_Crew_Members;
 
 	@FindBy(xpath = "//div[contains(@id,'cdk-overlay')]//mat-option")
@@ -200,6 +223,9 @@ public class JobDetailsPage extends Baseclass {
 
 	@FindBy(xpath = "//label[text()='Future Job Basic Description']//following::label[(text() = 'Stack Work')]//preceding::input[1]")
 	private WebElement button_FutureJobBasicDescription;
+	
+	@FindBy(xpath = "//label[text()='Future Job Basic Description']//following::label[(text() = 'Panel Upgrade')]//preceding::input[1]")
+	private WebElement button_FutureJobBasicDescription_PanelUpgrade;
 
 	@FindBy(xpath = "//label[text()='Do you want to send the On the Way Text to the Customer?']//following::div[1]")
 	private WebElement button_OntheWayTexttotheCustomer;
@@ -213,10 +239,10 @@ public class JobDetailsPage extends Baseclass {
 	@FindBy(xpath = "//textarea[contains(@id,'Notes to Account Manager')]")
 	private WebElement input_NotestoAccountManager;
 
-	@FindBy(xpath = "//label[text()='Have you Scheduled with Dispatch?']//following::div[1]")
+	@FindBy(xpath = "//label[contains(text(),'with Dispatch?')]//following::div[1]")
 	private WebElement multiSelect_HaveYouScheduled;
 	
-	@FindBy(xpath = "//label[text()='Do you have a date for rollover job?']//following::div[1]")
+	@FindBy(xpath = "//label[contains(text(),'date for rollover job')]//following::div[1]")
 	private WebElement multiSelect_HaveYouScheduledForRolloverJobs;
 
 	@FindBy(xpath = "//div[contains(@id,'cdk-overlay')]//mat-option")
@@ -225,13 +251,15 @@ public class JobDetailsPage extends Baseclass {
 //	    String dynamicXPath = String.format("//label[text()='Job TBD Reason']//following::label[contains(text(),'%s')]//preceding::input[1]", JobTDBReason);
 //	    WebElement button_JobTBDReason = driver.findElement(By.xpath(dynamicXPath));
 
-	@FindBy(xpath = "//label[text()='Permit Needed?']//following::div[1]")
+	@FindBy(xpath = "//label[contains(text(),'Permit Needed')]//following::div[1]")
 	private WebElement multiSelect_PremitNeeded;
 
 //	    String xpath = String.format("//div[contains(@id,'cdk-overlay')]//mat-option//span[normalize-space(text())='%s']", permit_Needed);
 //	    WebElement element_PremitNeeded = driver.findElement(By.xpath(dynamicXPath));
 
-	@FindBy(xpath = "//label[text()='Plumbing Job Sold Checklist to Be Completed.']//following::label[(text() = 'Yes')]//preceding::input[1]")
+	@FindBy(xpath = "//label[contains(text(),'Job Sold Checklist to Be Completed')]\r\n"
+			+ "    /following::label[normalize-space(text())='Yes' or normalize-space(text())='YES']\r\n"
+			+ "    /preceding::input[1]")
 	private WebElement button_Plumbing_JobSoldChecklist_to_Be_Completed;
 
 	@FindBy(xpath = "//label[text()='Are All Materials Accounted For?']//following::label[(text() = 'Yes')]//preceding::input[1]")
@@ -291,12 +319,16 @@ public class JobDetailsPage extends Baseclass {
 
 	@FindBy(xpath = "//label[text()='Reason for Assessment']//following::div[1]")
 	private WebElement dropdown_ReasonforAssessment;
+	
 
 	@FindBy(xpath = "//label[text()='Future Install Job Work Type']//following::label[(text() = 'Stack Work')]")
 	private WebElement childJob_Tags;
 
 	@FindBy(xpath = "//label[text()='Future Job Basic Description']//following::label[(text() = 'Stack Work')]")
 	private WebElement childJob_Tags1;
+	
+	@FindBy(xpath = "//label[text()='Future Job Basic Description']//following::label[(text() = 'Panel Upgrade')]")
+	private WebElement childJob_Tags2;
 
 	@FindBy(xpath = "//a[text()='Jobs']")
 	private WebElement button_navigateListingPage_FromJobDetailsPage;
@@ -330,6 +362,9 @@ public class JobDetailsPage extends Baseclass {
 	
 	@FindBy(xpath = "//label[text()='Additional Materials Needed?']//following::div[1]//label[text()='No']//preceding-sibling::input")
 	private WebElement button_AdditionalMaterial;
+	
+	@FindBy(xpath = "//label[text()='Additional Materials Needed?']//following::div[1]//label[text()='No']")
+	private WebElement value_AdditionalMaterial;
 
 
 	// Page actions
@@ -342,17 +377,42 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitForBeClickable(driver, button_StatusHistory, 3);
 		button_StatusHistory.click();
 		Non_WebDriver_Util.waitForVisible(driver, current_JobStatus, 3);
+		if(!(current_JobStatus.getText().toLowerCase().equalsIgnoreCase(currentStatusName))) {
+			logger.error("❌ Job status mismatch!");
 		Assert.assertEquals(currentStatusName.toLowerCase(), current_JobStatus.getText().toLowerCase(),
 				"❌ Job status mismatch!");
+		}
 	}
 
-	public void verify_ChildJobAssoicated(String job_Count) {
-		Non_WebDriver_Util.waitThread(10);
-		Non_WebDriver_Util.refreshPage(driver);
-		String text = text_ChildJobs_Associated.getText();
-		Integer count = Non_WebDriver_Util.extractNumberFromBrackets(text);
-		Assert.assertEquals(count, Integer.parseInt(job_Count), "❌ Count mismatch! Expected 1.");
+	public void verify_ChildJobAssoicated(String expectedJobCount) {
+	    final int maxRetries = 4;
+	    final int waitBetweenRetriesSec = 5;
+
+	    int attempts = 0;
+	    boolean isMatched = false;
+
+	    while (attempts < maxRetries) {
+	        Non_WebDriver_Util.waitThread(waitBetweenRetriesSec);
+	        Non_WebDriver_Util.refreshPage(driver);
+
+	        String text = text_ChildJobs_Associated.getText();
+	        Integer actualCount = Non_WebDriver_Util.extractNumberFromBrackets(text);
+
+	        if (actualCount.equals(Integer.parseInt(expectedJobCount))) {
+	            isMatched = true;
+	            break;
+	        }
+
+	        attempts++;
+	    }
+
+	    if (!isMatched) {
+	    	logger.error("❌ ChildJob Count mismatch!");
+	        Assert.fail("❌ ChildJob Count mismatch after " + maxRetries + " attempts. Expected = " + expectedJobCount);
+
+	    }
 	}
+
 
 	public void verify_CustomField() {
 		Assert.assertEquals(waitForReason, field_Waiting_Reason.getText(), " \"❌ FAIL: Reason mismatch!\"");
@@ -378,7 +438,7 @@ public class JobDetailsPage extends Baseclass {
 			Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "Yes");
 			Non_WebDriver_Util.waitThread(1);
 			buttonUpdateJobchecklist.click();
-			Non_WebDriver_Util.waitThread(2);
+			Non_WebDriver_Util.waitThread(1);
 			Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(),
 					"Status not updated as expected.");
 
@@ -399,11 +459,30 @@ public class JobDetailsPage extends Baseclass {
 			dropdown_FirstOption.click();
 			Non_WebDriver_Util.waitThread(1);
 			buttonUpdateJobchecklist.click();
-			Non_WebDriver_Util.waitThread(2);
+			Non_WebDriver_Util.waitThread(1);
 			Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(),
 					"Status not updated as expected.");
 
-		} else {
+		} 		else if ((text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Excavation")
+				&& statusNameToUpdate.trim().equalsIgnoreCase("En Route")) || (text_JobCategory.getText().trim().equalsIgnoreCase("Electrical Install")
+						&& statusNameToUpdate.trim().equalsIgnoreCase("En Route")))
+				{
+			Non_WebDriver_Util.waitThread(2);
+			Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
+			Non_WebDriver_Util.scrollIntoViewAndClick(driver, update_JobStatus);
+			Non_WebDriver_Util.waitThread(1);
+			Non_WebDriver_Util.selectMatOptionByText(driver, option_JobStatus, statusNameToUpdate);
+			Non_WebDriver_Util.waitThread(1);
+			button_AreAllMaterialsAccountedFor.click();
+			Non_WebDriver_Util.waitThread(1);
+			buttonUpdateJobchecklist.click();
+			Non_WebDriver_Util.waitThread(1);
+			Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.toLowerCase(),
+					"Status not updated as expected.");
+
+		}
+		
+		else {
 			Non_WebDriver_Util.waitThread(2);
 			Non_WebDriver_Util.waitForVisible(driver, update_JobStatus, 5);
 			Non_WebDriver_Util.scrollIntoViewAndClick(driver, update_JobStatus);
@@ -455,8 +534,15 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitForVisible(driver, button_yes, 5);
 		Non_WebDriver_Util.waitThread(1);
 		button_yes.click();
-		if ((text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install")
+		
+		if ((text_JobCategory.getText().trim().equalsIgnoreCase("Electrical Install")
 				&& statusNameToUpdate.trim().equalsIgnoreCase("Arrived"))) {
+			Non_WebDriver_Util.waitForVisible(driver, button_Terms_Condition, 5);
+			button_Terms_Condition.click();
+		}
+		if ((text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install")
+				&& statusNameToUpdate.trim().equalsIgnoreCase("Arrived")) ||(text_JobCategory.getText().trim().equalsIgnoreCase("Electrical Install")
+						&& statusNameToUpdate.trim().equalsIgnoreCase("Arrived"))) {
 			Non_WebDriver_Util.waitForVisible(driver, button_yes_ConsumerRights, 5);
 			button_yes_ConsumerRights.click();
 		}
@@ -477,12 +563,8 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitThread(1);
 		button_BeforeInstallpicture.click();
 		Non_WebDriver_Util.waitThread(1);
-		button_fileupload
-				.sendKeys("C:\\Users\\suriyapathy.b\\OneDrive - Zuper,Inc\\Pictures\\Screenshot 2024-04-03 070447.jpg");
-		// Non_WebDriver_Util.uploadUsingRobot(driver, button_fileupload,
-		// "C:\\Users\\suriyapathy.b\\OneDrive - Zuper,Inc\\Pictures\\Screenshot
-		// 2024-04-03 070447.jpg", 3);
-		Non_WebDriver_Util.waitThread(3);
+		button_fileupload.sendKeys(imagePath);
+		Non_WebDriver_Util.waitThread(1);
 		button_Closefileupload.click();
 		Non_WebDriver_Util.waitThread(1);
 		Non_WebDriver_Util.waitForVisible(driver, button_ProtectiveFootwaer, 5);
@@ -732,9 +814,8 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitThread(1);
 		button_BeforeInstallpicture.click();
 		Non_WebDriver_Util.waitThread(1);
-		button_fileupload
-				.sendKeys("C:\\Users\\suriyapathy.b\\OneDrive - Zuper,Inc\\Pictures\\Screenshot 2024-04-03 070447.jpg");
-		Non_WebDriver_Util.waitThread(2);
+		button_fileupload.sendKeys(imagePath);
+		Non_WebDriver_Util.waitThread(1);
 		button_Closefileupload.click();
 		
 
@@ -779,6 +860,17 @@ public class JobDetailsPage extends Baseclass {
 			button_PlumbingExcavation.click();
 			Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
 			button_MaterialisTrackStock.click();
+		}else if (jobType.trim().equalsIgnoreCase("Electrical Install")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_ElectricalInstall, 5);
+			button_ElectricalInstall.click();
+			Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
+			button_MaterialOrdering.click();
+		}
+		else if (jobType.trim().equalsIgnoreCase("Electrical Return Visit")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_ElectricalInstall, 5);
+			button_ElectricalInstall.click();
+			Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
+			button_MaterialisTrackStock.click();
 		}
 
 // 5. Job Length & Crew Members
@@ -791,12 +883,20 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
 
 // 6. Work Type Button
-		if (text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Site Visit") || text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install") ) {
+		if (text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Site Visit") || text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install") || text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Excavation")) {
 			Non_WebDriver_Util.waitForVisible(driver, button_FutureJobBasicDescription, 5);
 			Non_WebDriver_Util.waitThread(1);
 			button_FutureJobBasicDescription.click();
 			this.childJobTags = childJob_Tags1.getText();
-		} else {
+		} 	
+		else if (text_JobCategory.getText().trim().equalsIgnoreCase("Electrical Install")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_FutureJobBasicDescription_PanelUpgrade, 5);
+			Non_WebDriver_Util.waitThread(1);
+			button_FutureJobBasicDescription_PanelUpgrade.click();
+			this.childJobTags = childJob_Tags2.getText();
+		}
+		
+		else {
 			Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
 			Non_WebDriver_Util.waitThread(1);
 			button_FutureInstallJobWorkType.click();
@@ -914,9 +1014,9 @@ public class JobDetailsPage extends Baseclass {
 			Non_WebDriver_Util.waitThread(1);
 			Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType);
 		} else {
-			Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch, 5);
+			Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch_No, 5);
 			Non_WebDriver_Util.waitThread(1);
-			button_HasAppointmentbeensetwithDispatch.click();
+			button_HasAppointmentbeensetwithDispatch_No.click();
 			// If No Appointment Has Been Set
 			multiSelect_IfNoAppointmenthasbeenset.click();
 			Non_WebDriver_Util.waitThread(1);
@@ -960,10 +1060,10 @@ public class JobDetailsPage extends Baseclass {
 	
 	//work Completed
 	
-	public void updateJobStatus_WithChecklist_WorkCompleted_EstimateNeeded_Generic(String statusNameToUpdate,
+	public void updateJobStatus_WithChecklist_WorkCompleted_EstimateNeeded_Generic(String jobType,String statusNameToUpdate,
 			boolean isScheduled, String ifNoAppointmentHasBeenSet, // Used if isScheduled == false
 			String arrivalTimeframe, // Used if isScheduled == true
-			String appointmentType, String notesToAccountManagerDescriptionOfWork, String basicDescriptionofWork) {
+			String appointmentType,  String basicDescriptionofWork,String notesToAccountManagerDescriptionOfWork) {
 		// 1. Update Job Status
 		Non_WebDriver_Util.waitThread(1);
 		Non_WebDriver_Util.waitForBeClickable(driver, update_JobStatus, 5);
@@ -976,9 +1076,8 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitThread(1);
 		button_BeforeInstallpicture.click();
 		Non_WebDriver_Util.waitThread(1);
-		button_fileupload
-				.sendKeys("C:\\Users\\suriyapathy.b\\OneDrive - Zuper,Inc\\Pictures\\Screenshot 2024-04-03 070447.jpg");
-		Non_WebDriver_Util.waitThread(2);
+		button_fileupload.sendKeys(imagePath);
+		Non_WebDriver_Util.waitThread(1);
 		button_Closefileupload.click();
 		
 		
@@ -1030,9 +1129,9 @@ public class JobDetailsPage extends Baseclass {
 			Non_WebDriver_Util.waitThread(1);
 			Non_WebDriver_Util.selectMatOptionByText(driver, element_appointmentType, appointmentType);
 		} else {
-			Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch, 5);
+			Non_WebDriver_Util.waitForVisible(driver, button_HasAppointmentbeensetwithDispatch_No, 5);
 			Non_WebDriver_Util.waitThread(1);
-			button_HasAppointmentbeensetwithDispatch.click();
+			button_HasAppointmentbeensetwithDispatch_No.click();
 			// If No Appointment Has Been Set
 //			multiSelect_IfNoAppointmenthasbeenset.click();
 //			Non_WebDriver_Util.waitThread(1);
@@ -1054,16 +1153,21 @@ public class JobDetailsPage extends Baseclass {
 //		Non_WebDriver_Util.waitThread(1);
 //		select_CurrentDateToFollowUpDate.click();
 //
-//		// 7. Notes to Account Manager
-//		Non_WebDriver_Util.waitThread(1);
-//		input_NotestoAccountManager.sendKeys(notesToAccountManagerDescriptionOfWork);
-//
-//		// 7. Description
-//		if (prop.getProperty("jobCategory").trim().equalsIgnoreCase("Inspection-Plumbing")) {
-//			Non_WebDriver_Util.waitForVisible(driver, input_BasicDescriptionofwork, 5);
-//			input_BasicDescriptionofwork.sendKeys(basicDescriptionofWork);
-//		}
+
 		
+		if((jobType.equalsIgnoreCase("Electrical Service Call"))
+				|| (jobType.equalsIgnoreCase("Site Visit Electrical"))
+				){		
+	    Non_WebDriver_Util.waitThread(1);
+	    button_reason_hesitation.click();
+	    // 7. Notes to Account Manager
+		Non_WebDriver_Util.waitThread(1);
+		input_NotestoAccountManager.sendKeys(notesToAccountManagerDescriptionOfWork);
+		
+		// 7. Description
+		Non_WebDriver_Util.waitForVisible(driver, input_BasicDescriptionofwork, 5);
+     	input_BasicDescriptionofwork.sendKeys(basicDescriptionofWork);
+		}
 		
 		// 8. Submit
 		Non_WebDriver_Util.waitThread(1);
@@ -1127,6 +1231,17 @@ public class JobDetailsPage extends Baseclass {
 			Non_WebDriver_Util.waitForVisible(driver, button_PlumbingExcavation, 5);
 			Non_WebDriver_Util.waitThread(1);
 			button_PlumbingExcavation.click();
+		}else if (jobType.trim().equalsIgnoreCase("Electrical Install")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_ElectricalInstall, 5);
+			button_ElectricalInstall.click();
+			Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
+			button_MaterialOrdering.click();
+		}
+		else if (jobType.trim().equalsIgnoreCase("Electrical Return Visit")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_ElectricalInstall, 5);
+			button_ElectricalInstall.click();
+			Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
+			button_MaterialisTrackStock.click();
 		}
 
 		// 6. Future Job Length & Crew
@@ -1202,7 +1317,7 @@ public class JobDetailsPage extends Baseclass {
 	}
 	
 	// workCompleted
-	public void updateJobStatus_WithChecklist_WorkCompleted_ProjectWith_Plumbing_RollOverJob(String jobType,
+	public void updateJobStatus_WithChecklist_WorkCompleted_ProjectWith_RollOverJob(String jobType,
 			String statusNameToUpdate, String stagingLocation, String futureJobLength, String basicDescription,
 			boolean isScheduled, String arrivalTimeframe, String jobTBDReason, String permitNeeded) {
 		// 1. Update Job Status
@@ -1213,9 +1328,8 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitThread(1);
 		button_BeforeInstallpicture.click();
 		Non_WebDriver_Util.waitThread(1);
-		button_fileupload
-				.sendKeys("C:\\Users\\suriyapathy.b\\OneDrive - Zuper,Inc\\Pictures\\Screenshot 2024-04-03 070447.jpg");
-		Non_WebDriver_Util.waitThread(2);
+		button_fileupload.sendKeys(imagePath);
+		Non_WebDriver_Util.waitThread(1);
 		button_Closefileupload.click();
 
 		// 2. Job Sold – Future Appointment
@@ -1265,6 +1379,17 @@ public class JobDetailsPage extends Baseclass {
 			Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
 			Non_WebDriver_Util.waitThread(1);
 			button_MaterialisTrackStock.click();
+		}else if (jobType.contains("Electrical Install")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_ElectricalInstall, 5);
+			button_ElectricalInstall.click();
+			Non_WebDriver_Util.waitForVisible(driver, button_MaterialOrdering, 5);
+			button_MaterialOrdering.click();
+		}
+		else if (jobType.contains("Electrical Return Visit")) {
+			Non_WebDriver_Util.waitForVisible(driver, button_ElectricalInstall, 5);
+			button_ElectricalInstall.click();
+			Non_WebDriver_Util.waitForVisible(driver, button_MaterialisTrackStock, 5);
+			button_MaterialisTrackStock.click();
 		}
 
 		// 6. Future Job Length & Crew
@@ -1278,11 +1403,11 @@ public class JobDetailsPage extends Baseclass {
 
 		// 7. Work Type
 
-		if (text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Site Visit") || text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install") ) {
-			Non_WebDriver_Util.waitForVisible(driver, button_FutureJobBasicDescription, 5);
+		if (text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Site Visit") || text_JobCategory.getText().trim().equalsIgnoreCase("Plumbing Install")|| text_JobCategory.getText().trim().equalsIgnoreCase("Electrical Install") ) {
+			Non_WebDriver_Util.waitForVisible(driver, button_FutureJobBasicDescription_PanelUpgrade, 5);
 			Non_WebDriver_Util.waitThread(1);
-			button_FutureJobBasicDescription.click();
-			this.childJobTags = childJob_Tags1.getText();
+			button_FutureJobBasicDescription_PanelUpgrade.click();
+			this.childJobTags = childJob_Tags2.getText();
 		} else {
 			Non_WebDriver_Util.waitForVisible(driver, button_FutureInstallJobWorkType, 5);
 			Non_WebDriver_Util.waitThread(1);
@@ -1346,12 +1471,14 @@ public class JobDetailsPage extends Baseclass {
 		Assert.assertEquals(current_JobStatus.getText().trim().toLowerCase(), statusNameToUpdate.split("/")[1].toLowerCase(),
 				"Status not updated as expected.");
 	}
+	
+	
 
 	// Rollover Needed
 	
 
 	public void updateJobStatus_WithChecklist_WorkCompleted_GenericRolloverNeeded(                 
-			String statusNameToUpdate, String basicDescriptionofWork,
+			String jobType, String statusNameToUpdate, String basicDescriptionofWork,
 			boolean isScheduled, // true = schedule date & timeframe required
 			String arrivalTimeframe // optional if !isScheduled
 			) {
@@ -1367,9 +1494,8 @@ public class JobDetailsPage extends Baseclass {
 		Non_WebDriver_Util.waitThread(1);
 		button_BeforeInstallpicture.click();
 		Non_WebDriver_Util.waitThread(1);
-		button_fileupload
-				.sendKeys("C:\\Users\\suriyapathy.b\\OneDrive - Zuper,Inc\\Pictures\\Screenshot 2024-04-03 070447.jpg");
-		Non_WebDriver_Util.waitThread(2);
+		button_fileupload.sendKeys(imagePath);
+		Non_WebDriver_Util.waitThread(1);
 		button_Closefileupload.click();
 
 		// 2. Rollover Needed
@@ -1399,10 +1525,13 @@ public class JobDetailsPage extends Baseclass {
 			Non_WebDriver_Util.waitThread(1);
 			this.arrivalTimeframe = arrivalTimeframe;
 			Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_SatgingLocation, arrivalTimeframe);
-		} 
+		} else {
+			this.arrivalTimeframe ="";
+		}
 
 		// 8. Description
 		input_RolloverDescriptionofwork.sendKeys(basicDescriptionofWork);
+		this.scopeOfWork=input_RolloverDescriptionofwork.getAttribute("value");
 		
 		// 3. Balance Still Pending
 		
@@ -1418,17 +1547,27 @@ public class JobDetailsPage extends Baseclass {
 				Non_WebDriver_Util.waitForBeClickable(driver, button_AdditionalMaterial, 5);
 				button_AdditionalMaterial.click();
 				Non_WebDriver_Util.waitThread(1);
+				this.additionalMaterial=value_AdditionalMaterial.getText();
+				
 
 		// 5. Time Needed to Complete Job?
 				multiSelect_TimeNeededtoCompleteJob.click();
 				Non_WebDriver_Util.waitThread(1);
 				Non_WebDriver_Util.selectMatOptionByText(driver, element_MultiSelect_FutureJObLength, "1");
+				Non_WebDriver_Util.waitThread(1);
+				this.timeOfComplete=value_TimeNeededtoCompleteJob.getText();
 
 		// 5. How Many Guys Needed
 				multiSelect_GuysNeeded.click();
 				Non_WebDriver_Util.waitThread(1);
 				Non_WebDriver_Util.selectMatOptionByText(driver, element_HowMany_Crew_Members, "3");
-
+				Non_WebDriver_Util.waitThread(1);
+				this.teamMember=value_GuysNeeded.getText();
+         
+				if(jobType.equalsIgnoreCase("Electrical Rollover")) {
+					Non_WebDriver_Util.waitThread(1);
+					input_BasicDescriptionofwork.sendKeys(basicDescriptionofWork);
+				}
 
 		buttonUpdateJobchecklist.click();
 		this.updated_by = text_WhoUpdateStatus.getText();
@@ -1588,6 +1727,34 @@ public class JobDetailsPage extends Baseclass {
 					text_JobDescription.getText(), e);
 			throw e;
 		}
+	}
+	
+	private  String getTotalDescription() {
+	    return "Scope of work: " + scopeOfWork + "\n" +
+	           "Rollover Time Frame: " + arrivalTimeframe + "\n" +
+	           "If additional materials are needed: " + additionalMaterial + "\n" +
+	           "Time to complete: " + timeOfComplete + "\n" +
+	           "Number of team members: " + teamMember;
+	}
+	
+	public void verifyChildJobDescriptionForRolloverNeeded() {
+	    String actualDescription = text_JobDescription.getText();
+	    String expectedDescription = getTotalDescription();
+
+	    // Keep only alphanumeric characters
+	    String sanitizedActual = actualDescription.replaceAll("[^a-zA-Z0-9]", "");
+	    String sanitizedExpected = expectedDescription.replaceAll("[^a-zA-Z0-9]", "");
+
+	    // Log both before assertion for clarity
+//	   System.out.println("Sanitized Actual:\n" + sanitizedActual);
+//	    System.out.println("Sanitized Expected:\n" + sanitizedExpected);
+
+	    try {
+	        Assert.assertEquals(sanitizedActual, sanitizedExpected, "❌ Created wrong Job Description");
+	    } catch (AssertionError e) {
+	        logger.error("❌ Job Description mismatch (alphanumeric only).\nExpected: {}\nActual: {}", sanitizedExpected, sanitizedActual, e);
+	        throw e;
+	    }
 	}
 
 	public void verifyCustomfield_SalesName() {

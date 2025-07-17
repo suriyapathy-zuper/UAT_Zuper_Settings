@@ -29,6 +29,7 @@ public class Baseclass {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     public Properties prop;
     protected final Logger logger = LogManager.getLogger(getClass());
+    public String imagePath;
 
     public static WebDriver getDriver() {
         return driver.get();
@@ -41,6 +42,7 @@ public class Baseclass {
     // Constructor loads config
     public Baseclass() {
         try {
+            imagePath= System.getProperty("user.dir") + "/Resources/Screenshot_20250531_172511.jpg";
             String configPath = System.getProperty("user.dir") + "/config/configure.properties";
             FileInputStream file = new FileInputStream(configPath);
             prop = new Properties();

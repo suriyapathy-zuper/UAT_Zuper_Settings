@@ -1,61 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel="tests" thread-count="1">
-
-  
-     <test name="TC_Job_PulmbingInstallCreation">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false" thread-count="5">
+  <test name="FourSeason Regression Test">
     <classes>
-      <class name="RunnerClass.TC_Job_PulmbingInstallCreation"/>
-    </classes>
-  </test> 
-
-  <test name="TC_Job_PulmbingReturnVisitCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_PulmbingReturnVisitCreation"/>
-    </classes>
-  </test> 
-
-
-  <test name="TC_Job_PulmbingExcavationCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_PulmbingExcavationCreation"/>
+      <class name="RunnerClass.FourSeason_RegressionTest"/>
     </classes>
   </test>
-  
-    <test name="TC_Job_PulmbingRoddingCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_PulmbingRoddingCreation"/>
-    </classes>
-  </test>
-  
-   <test name="TC_Job_PulmbingSiteVisitCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_PulmbingSiteVisitCreation"/>
-    </classes>
-  </test>
-  
-     <test name="TC_Job_PulmbingServiceCallCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_PulmbingServiceCallCreation"/>
-    </classes>
-  </test>
-  
-  <test name="TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingInstall_PlumbingRollOverCreation"/>
-    </classes>
-  </test>
-  
-
- <test name="TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingReturnVisit_PlumbingRollOverCreation"/>
-    </classes>
-  </test>
-
-  <test name="TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation">
-    <classes>
-      <class name="RunnerClass.TC_Job_ProjectWith_PulmbingExcavation_PlumbingRollOverCreation"/>
-    </classes>
-  </test>
-
 </suite>
