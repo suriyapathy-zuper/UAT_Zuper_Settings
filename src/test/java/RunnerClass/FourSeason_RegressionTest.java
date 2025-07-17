@@ -21,6 +21,7 @@ public class FourSeason_RegressionTest extends Baseclass {
 	private JobListingPage jobListingPage;
 	private JobCreationPage jobCreationPage;
 	private JobDetailsPage jobDetailsPage;
+	protected String currentTestCategory;
 
 	@BeforeClass
 	public void setUp() {
@@ -50,7 +51,6 @@ public class FourSeason_RegressionTest extends Baseclass {
 		dashboardPage.popup_clear();
 		logger.info("✅ Cleared pop-up if present");
 
-		
 	}
 
 	@DataProvider(name = "jobFlows")
@@ -219,7 +219,7 @@ public class FourSeason_RegressionTest extends Baseclass {
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" }, };
 
-		String currentTestCategory = prop.getProperty("jobCategory");
+		 currentTestCategory = prop.getProperty("jobCategory");
 
 		if (isElectricalCategory(currentTestCategory)) {
 			// last 14 rows
@@ -229,7 +229,7 @@ public class FourSeason_RegressionTest extends Baseclass {
 			return slice(allData, allData.length - 34, allData.length - 14);
 		} else if (isPlumbingServiceCategory(currentTestCategory)) {
 			// rows [total-32 .. total-14)
-			return slice(allData, allData.length - 34, allData.length - 16);
+			return slice(allData, allData.length - 34, allData.length - 33); //16
 		}
 
 		// default: all rows
@@ -270,7 +270,7 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 		// For example, create job first
 		logger.info("=== Starting Test for Job Type: " + jobType + "===");
-		
+
 		dashboardPage.navigatToJobListionPage();
 		logger.info("✅ Navigated to job listing page");
 
@@ -309,10 +309,10 @@ public class FourSeason_RegressionTest extends Baseclass {
 		logger.info("✅ Arrived checklist completed");
 
 		// work completed for pulmbing related category
-		if (prop.getProperty("jobCategory").equalsIgnoreCase("Plumbing Install")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Plumbing Return Visit")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Plumbing Excavation")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Plumbing Rollover Job")) {
+		if (currentTestCategory.equalsIgnoreCase("Plumbing Install")
+				|| currentTestCategory.equalsIgnoreCase("Plumbing Return Visit")
+				|| currentTestCategory.equalsIgnoreCase("Plumbing Excavation")
+				|| currentTestCategory.equalsIgnoreCase("Plumbing Rollover Job")) {
 
 			jobDetailsPage.updateJobStatus_WithChecklist_WorkInProgress("Work in Progress");
 			logger.info("✅ Work in Progress checklist completed");
@@ -477,18 +477,16 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 		// work completed for electrical install related category
 
-		else if (prop.getProperty("jobCategory").equalsIgnoreCase("Electrical Install")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Electrical Return Visit")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Electrical Rollover")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Electrical Install")
-				|| prop.getProperty("jobCategory").equalsIgnoreCase("Install")) {
+		else if (currentTestCategory.equalsIgnoreCase("Electrical Install")
+				|| currentTestCategory.equalsIgnoreCase("Electrical Return Visit")
+				|| currentTestCategory.equalsIgnoreCase("Electrical Rollover")
+				|| currentTestCategory.equalsIgnoreCase("Electrical Install")
+				|| currentTestCategory.equalsIgnoreCase("Install")) {
 
 			jobDetailsPage.updateJobStatus_WithChecklist_WorkInProgress("Work in Progress");
 			logger.info("✅ Work in Progress checklist completed");
 
-			if (jobType.equalsIgnoreCase("Electrical Install") || jobType.equalsIgnoreCase("Electrical Return Visit")
-			// || jobType.equalsIgnoreCase("Plumbing Excavation")
-			) {
+			if (jobType.equalsIgnoreCase("Electrical Install") || jobType.equalsIgnoreCase("Electrical Return Visit")) {
 
 				jobDetailsPage.updateJobStatus_WithChecklist_WorkCompleted_GenericJobSoldFuture(jobType,
 						statusNameToUpdate, stagingLocation, futureJobLength, basicDescriptionofWork, isScheduled,
@@ -660,7 +658,7 @@ public class FourSeason_RegressionTest extends Baseclass {
 						arrivalTimeframe, jobTBDReason, permitNeeded);
 
 				logger.info("✅ Completed 'Assessment Completed' with job-sold logic");
-                
+
 				jobDetailsPage.verify_ChildJobAssoicated(prop.getProperty("job_CountForSignleJOb"));
 				logger.info("✅ Verified associated child job count");
 
@@ -769,16 +767,14 @@ public class FourSeason_RegressionTest extends Baseclass {
 			}
 
 		}
+		logger.info("🎉 Job creation and validation flow completed successfully for follwoing child job: {}" + jobType);
 
-//		logger.info("🎉 Job creation and validation flow completed successfully for follwoing child job: {}" + jobType);
-//		jobDetailsPage.navigateListingPage_FromJobDetailsPage();
-//		logger.info("✅ Navigated to job Listing page");
 	}
 
-	@AfterClass
-	public void setdown() {
-		logger.info("🔻 Tearing down test execution");
-		tearDown();
-	}
+//	@AfterClass
+//	public void setdown() {
+//		logger.info("🔻 Tearing down test execution");
+//		tearDown();
+//	}
 
 }
