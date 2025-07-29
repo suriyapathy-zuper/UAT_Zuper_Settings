@@ -60,7 +60,7 @@ public class Baseclass {
         WebDriver localDriver = null;
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions opts = new ChromeOptions();
-           // opts.addArguments("--headless"); // 👉 Headless mode
+            //opts.addArguments("--headless=new"); // 👉 Headless mode
             opts.addArguments("--disable-background-timer-throttling");
             opts.addArguments("--disable-notifications");
             opts.addArguments("--window-size=1920,1080"); // 👉 Add this for headless rendering size

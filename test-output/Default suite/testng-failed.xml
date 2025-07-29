@@ -6,7 +6,7 @@
       <class name="RunnerClass.FourSeason_RegressionTest">
         <methods>
           <include name="setUp"/>
-          <include name="testJobFlow" invocation-numbers="0"/>
+          <include name="testJobFlow" invocation-numbers="2 6"/>
           <include name="verify_CompanyAndLoginPage"/>
         </methods>
       </class> <!-- RunnerClass.FourSeason_RegressionTest -->

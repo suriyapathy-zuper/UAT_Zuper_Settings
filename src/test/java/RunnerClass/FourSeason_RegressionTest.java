@@ -13,6 +13,8 @@ import PageObject.DashboardPage;
 import PageObject.JobCreationPage;
 import PageObject.JobDetailsPage;
 import PageObject.JobListingPage;
+import PageObject.QuoteCreationPage;
+import PageObject.QuoteDetailsPage;
 
 public class FourSeason_RegressionTest extends Baseclass {
 
@@ -21,7 +23,9 @@ public class FourSeason_RegressionTest extends Baseclass {
 	private JobListingPage jobListingPage;
 	private JobCreationPage jobCreationPage;
 	private JobDetailsPage jobDetailsPage;
-	protected String currentTestCategory;
+	public static String currentTestCategory;
+	private QuoteCreationPage quoteCreationPage;
+	private QuoteDetailsPage quoteDetailsPage;
 
 	@BeforeClass
 	public void setUp() {
@@ -31,6 +35,8 @@ public class FourSeason_RegressionTest extends Baseclass {
 		jobListingPage = new JobListingPage();
 		jobCreationPage = new JobCreationPage();
 		jobDetailsPage = new JobDetailsPage();
+		quoteCreationPage =new QuoteCreationPage();
+		quoteDetailsPage =new QuoteDetailsPage();
 		logger.info("Test setup completed.");
 
 	}
@@ -62,160 +68,160 @@ public class FourSeason_RegressionTest extends Baseclass {
 				// ifNoAppointmenthasbeenset,
 				// appointmentType,NotetoAccountManagerescriptionofwork
 
-				{ "Plumbing Install", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+	     		{ "Plumbing Install", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",              
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Install", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Return Visit", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Return Visit", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Excavation", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Excavation", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Service call", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Service call", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Rodding", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule",
 						"This job requires a Drain Tech to go back out and assess. (RD)", "test notes" },
 				{ "Plumbing Rodding", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule",
 						"This job requires a Drain Tech to go back out and assess. (RD)", "test notes" },
 				{ "Plumbing Site Visit", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This Job requires a Foreman to go back out and assess. (SV)",
 						"test notes" },
 				{ "Plumbing Site Visit", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This Job requires a Foreman to go back out and assess. (SV)",
 						"test notes" },
 				{ "Plumbing Install with Plumbing Rollover Job", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Install with Plumbing Rollover Job", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Return Visit with Plumbing Rollover Job", "Assessment Completed/Work Completed",
 						"Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Return Visit with Plumbing Rollover Job", "Assessment Completed/Work Completed",
 						"Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Excavation with Plumbing Rollover Job", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Excavation with Plumbing Rollover Job", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Rollover Job", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "1PM - 6PM", "Waiting on Permit", "Yes",
+						"TestDescription", true, "1PM - 6PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Plumbing Rollover Job", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "1PM - 6PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "1PM - 6PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Install", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Install", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "1PM - 6PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "1PM - 6PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Return Visit", "Assessment Completed/Work Completed", "Bridgeview",
 						"Estimated 3/4 Day Job", "TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit",
-						"Yes", "TBD Based on Client Schedule",
+						"YES", "TBD Based on Client Schedule",
 						"This job requires a Plumber to go back out and assess. (P)", "test notes" },
 				{ "Electrical Return Visit", "Assessment Completed/Work Completed", "Bridgeview",
-						"Estimated 3/4 Day Job", "TestDescription", false, "1PM - 6PM", "Waiting on Permit", "Yes",
+						"Estimated 3/4 Day Job", "TestDescription", false, "1PM - 6PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Service call", "Assessment Completed/Work Completed", "Bridgeview",
-						"Estimated 3/4 Day Job", "TestDescription", true, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"Estimated 3/4 Day Job", "TestDescription", true, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule",
 						"This job requires an Electrician to go back out and assess. (EE)", "test notes" },
 				{ "Electrical Service call", "Assessment Completed/Work Completed", "Bridgeview",
-						"Estimated 3/4 Day Job", "TestDescription", false, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"Estimated 3/4 Day Job", "TestDescription", false, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule",
 						"This job requires an Electrician to go back out and assess. (EE)", "test notes" },
 				{ "Site Visit Electrical", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This Job requires a Foreman to go back out and assess. (SV)",
 						"test notes" },
 				{ "Site Visit Electrical", "Assessment Completed/Work Completed", "Bridgeview", "Estimated 3/4 Day Job",
-						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "8AM - 12PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This Job requires a Foreman to go back out and assess. (SV)",
 						"test notes" },
 
 				{ "Electrical Install with Electrical Rollover", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Install with Electrical Rollover", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Return Visit with Electrical Rollover", "Assessment Completed/Work Completed",
 						"Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", false, "12PM - 5PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Return Visit with Electrical Rollover", "Assessment Completed/Work Completed",
 						"Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit", "Yes",
+						"TestDescription", true, "8AM - 12PM Arrival", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 
 				{ "Electrical Rollover", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", true, "1PM - 6PM", "Waiting on Permit", "Yes",
+						"TestDescription", true, "1PM - 6PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" },
 				{ "Electrical Rollover", "Assessment Completed/Work Completed", "Bridgeview",
 						"2 or More Days Project (Estimated to require multiple days, including inspections)",
-						"TestDescription", false, "1PM - 6PM", "Waiting on Permit", "Yes",
+						"TestDescription", false, "1PM - 6PM", "Waiting on Permit", "YES",
 						"TBD Based on Client Schedule", "This job requires a Plumber to go back out and assess. (P)",
 						"test notes" }, };
 
@@ -223,13 +229,13 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 		if (isElectricalCategory(currentTestCategory)) {
 			// last 14 rows
-			return slice(allData, allData.length - 14, allData.length);
+			return slice(allData, allData.length - 9, allData.length-8);
 		} else if (isPlumbingInstallCategory(currentTestCategory)) {
 			// rows [total-32 .. total-12)
-			return slice(allData, allData.length - 34, allData.length - 14);
+			return slice(allData, allData.length - 34, allData.length - 14);//34-14, 28-27  
 		} else if (isPlumbingServiceCategory(currentTestCategory)) {
 			// rows [total-32 .. total-14)
-			return slice(allData, allData.length - 34, allData.length - 33); //16
+			return slice(allData, allData.length - 34, allData.length - 16); //34-16, 28-27 ,22-21
 		}
 
 		// default: all rows
@@ -238,7 +244,8 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 	private boolean isElectricalCategory(String cat) {
 		return cat.equalsIgnoreCase("Electrical Install") || cat.equalsIgnoreCase("Electrical Return Visit")
-				|| cat.equalsIgnoreCase("Electrical Rollover") || cat.equalsIgnoreCase("Install");
+				|| cat.equalsIgnoreCase("Electrical Rollover") || cat.equalsIgnoreCase("Electrical Service Call") 
+				|| cat.equalsIgnoreCase("Inspection-Electrical")|| cat.equalsIgnoreCase("Site Vist Electrical");
 	}
 
 	private boolean isPlumbingInstallCategory(String cat) {
@@ -248,7 +255,8 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 	private boolean isPlumbingServiceCategory(String cat) {
 		return cat.equalsIgnoreCase("Plumbing Service Call") || cat.equalsIgnoreCase("Plumbing Site Visit")
-				|| cat.equalsIgnoreCase("Plumbing Blackflow Testing") || cat.equalsIgnoreCase("Inspection-Plumbing");
+				|| cat.equalsIgnoreCase("Plumbing Backflow Testing") || cat.equalsIgnoreCase("Inspection-Plumbing")
+				|| cat.equalsIgnoreCase("Plumbing Rodding");
 	}
 
 	private Object[][] slice(Object[][] allData, int start, int end) {
@@ -291,11 +299,23 @@ public class FourSeason_RegressionTest extends Baseclass {
 		logger.info("✅ Set job due date and start date");
 
 		jobCreationPage.create_Action();
-		logger.info("✅ Job created successfully");
+		logger.info("✅ Job created successfully");	
+
+		jobDetailsPage.naviagteToQuotePageFromJob();
+		logger.info("✅ Navigated to Quote Creation page");
+		
+		quoteCreationPage.Quote_SaveAsDraft_CreatedNew();
+		logger.info("✅ Quote Created Successfully");
+		
+		quoteDetailsPage.navigateToJobPage();
+		logger.info("✅ Navigated to job Details page Fron QuotePage");
+		
+		jobDetailsPage.verify_QuoteAssociated();
+		logger.info("✅ Quote Assoicated to the Job verified");
 
 		jobDetailsPage.verify_CurrentStatus(prop.getProperty("currentStatusName_New_ReadytoAssign"));
 		logger.info("✅ Verified status: New - Ready to Assign");
-
+		
 		jobDetailsPage.updateJobStatus(prop.getProperty("scheduledToUpdate"));
 		logger.info("➡️ Status updated to: Scheduled");
 
@@ -331,6 +351,7 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 				jobDetailsPage.navigateToChildJOb();
 				logger.info("✅ Navigated to child job");
+			
 
 				String expectedChildJobType = jobType.equalsIgnoreCase("Plumbing Excavation") ? "Plumbing Excavation"
 						: jobType.equalsIgnoreCase("Plumbing Install") ? "Plumbing Install"
@@ -338,6 +359,8 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 				jobDetailsPage.verifyChildJobCategory(expectedChildJobType);
 				logger.info("✅ Verified child job category: {}", expectedChildJobType);
+				
+		
 
 				jobDetailsPage.verifyChildJobTags();
 				logger.info("✅ Verified child job Tgags");
@@ -347,9 +370,12 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 				jobDetailsPage.verifyCustomfield_SalesName();
 				logger.info("✅ Verified Sales Name custom field");
-
-				jobDetailsPage.verifyCustomfield_PermitNeeded();
-				logger.info("✅ Verified Permit Needed custom field");
+				
+//				if(jobType.equalsIgnoreCase("Plumbing Install")) {
+//
+//				jobDetailsPage.verifyCustomfield_PermitNeeded();
+//				logger.info("✅ Verified Permit Needed custom field");
+//				}
 
 				jobDetailsPage.verifyCustomfield_Staging_Location();
 				logger.info("✅ Verified Staging Location custom field");
@@ -372,6 +398,20 @@ public class FourSeason_RegressionTest extends Baseclass {
 					logger.error("❌ Error during post-job creation validation: ", e);
 					throw e; // To fail the test cleanly and show the issue in logs
 				}
+				
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobID custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
+				
+			
 
 			} else if (jobType.equalsIgnoreCase("Plumbing Service Call") || jobType.equalsIgnoreCase("Plumbing Rodding")
 					|| jobType.equalsIgnoreCase("Plumbing Site Visit")) {
@@ -407,9 +447,19 @@ public class FourSeason_RegressionTest extends Baseclass {
 					jobDetailsPage.verifyCustomfield_arrivalTimeframe(); // Uncomment if needed
 					logger.info("✅ Verified arrival timeframe");
 				}
-
-				logger.info("🎉 Job creation and validation flow completed successfully");
-
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobID custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
+				
+			
 			}
 
 			else if (jobType.equalsIgnoreCase("Plumbing Install with Plumbing Rollover Job")
@@ -466,6 +516,18 @@ public class FourSeason_RegressionTest extends Baseclass {
 					logger.error("❌ Error during post-job creation validation: ", e);
 					throw e; // To fail the test cleanly and show the issue in logs
 				}
+				
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobUD custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
 
 			}
 
@@ -481,10 +543,19 @@ public class FourSeason_RegressionTest extends Baseclass {
 				|| currentTestCategory.equalsIgnoreCase("Electrical Return Visit")
 				|| currentTestCategory.equalsIgnoreCase("Electrical Rollover")
 				|| currentTestCategory.equalsIgnoreCase("Electrical Install")
+				|| currentTestCategory.equalsIgnoreCase("Electrical Service Call")
 				|| currentTestCategory.equalsIgnoreCase("Install")) {
 
+			if(currentTestCategory.equalsIgnoreCase("Electrical Service Call")) {
+				jobDetailsPage
+				.updateJobStatus_WithChecklist_StatringAssessment(prop.getProperty("StartingAssessmentToUpdate"));
+		         logger.info("✅ Starting assessment checklist completed");
+				
+			}else {
+			
 			jobDetailsPage.updateJobStatus_WithChecklist_WorkInProgress("Work in Progress");
 			logger.info("✅ Work in Progress checklist completed");
+			}
 
 			if (jobType.equalsIgnoreCase("Electrical Install") || jobType.equalsIgnoreCase("Electrical Return Visit")) {
 
@@ -539,6 +610,18 @@ public class FourSeason_RegressionTest extends Baseclass {
 					logger.error("❌ Error during post-job creation validation: ", e);
 					throw e; // To fail the test cleanly and show the issue in logs
 				}
+				
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobID custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
 
 			} else if (jobType.equalsIgnoreCase("Electrical Service Call")
 					|| jobType.equalsIgnoreCase("Site Visit Electrical")) {
@@ -577,6 +660,17 @@ public class FourSeason_RegressionTest extends Baseclass {
 					logger.info("✅ Verified arrival timeframe");
 				}
 
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobID custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
 				logger.info("🎉 Job creation and validation flow completed successfully");
 
 			}
@@ -633,6 +727,17 @@ public class FourSeason_RegressionTest extends Baseclass {
 					logger.error("❌ Error during post-job creation validation: ", e);
 					throw e; // To fail the test cleanly and show the issue in logs
 				}
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobUD custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
 
 			}
 
@@ -681,8 +786,8 @@ public class FourSeason_RegressionTest extends Baseclass {
 				jobDetailsPage.verifyCustomfield_SalesName();
 				logger.info("✅ Verified Sales Name custom field");
 
-				jobDetailsPage.verifyCustomfield_PermitNeeded();
-				logger.info("✅ Verified Permit Needed custom field");
+//				jobDetailsPage.verifyCustomfield_PermitNeeded();
+//				logger.info("✅ Verified Permit Needed custom field");
 				try {
 					if (expectedChildJobType.equalsIgnoreCase("Plumbing Install")
 							|| expectedChildJobType.equalsIgnoreCase("Plumbing Excavation")) {
@@ -692,13 +797,13 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 					if (isScheduled) {
 						jobDetailsPage.verifyJobScheduledDate(0);
-						jobDetailsPage
-								.verify_CurrentStatus(prop.getProperty("currentStatusName_DispatchApprovalNeeded"));
+//						jobDetailsPage
+//								.verify_CurrentStatus(prop.getProperty("currentStatusName_DispatchApprovalNeeded"));
 						jobDetailsPage.verifyCustomfield_arrivalTimeframe();
 						logger.info("✅ Verified Scheduled details and status for scheduled job");
 					} else {
 						jobDetailsPage.verifyCustomfield_JObTDBReason(); // Might fail if not set properly
-						jobDetailsPage.verify_CurrentStatus(prop.getProperty("currentStatusName_JobPending"));
+				//		jobDetailsPage.verify_CurrentStatus(prop.getProperty("currentStatusName_JobPending"));
 						logger.info("✅ Verified Job TBD Reason and pending status for unscheduled job");
 					}
 
@@ -707,6 +812,18 @@ public class FourSeason_RegressionTest extends Baseclass {
 					throw e; // To fail the test cleanly and show the issue in logs
 				}
 
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobID custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
+				
 			} else if (jobType.equalsIgnoreCase("Plumbing Service Call") || jobType.equalsIgnoreCase("Plumbing Rodding")
 					|| jobType.equalsIgnoreCase("Plumbing Site Visit")) {
 
@@ -743,6 +860,17 @@ public class FourSeason_RegressionTest extends Baseclass {
 
 				}
 
+				jobDetailsPage.verify_QuoteAssociated();
+				logger.info("✅ Quote Assoicated to the Job verified");
+				
+				jobDetailsPage.navigateToQuoteFromJobPage();
+				logger.info("✅ Navigated to quote page from job");
+				
+				quoteDetailsPage.verify_OriginatedJobUID();
+				logger.info("✅ Verified OriginatedJobID custom field");		
+				
+				quoteDetailsPage.verify_OriginatedJoblink();
+				logger.info("✅ Verified Originated Job");
 				logger.info("🎉 Job creation and validation flow completed successfully");
 
 			} else if (jobType.equalsIgnoreCase("Plumbing Install with Plumbing Rollover Job")

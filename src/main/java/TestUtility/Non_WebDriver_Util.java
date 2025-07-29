@@ -11,6 +11,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -26,6 +28,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.netty.handler.timeout.TimeoutException;
 
 public class Non_WebDriver_Util {
+	
+	  private static Actions actions;
 
 	// ==========================================
 	// ✅ WAIT UTILITIES
@@ -34,6 +38,42 @@ public class Non_WebDriver_Util {
 	// 1. Wait for element to become visible
 	public static void waitForVisible(WebDriver driver, WebElement element, int timeout) {
 		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	  public static void waitForPageToLoad(WebDriver driver, int timeoutInSeconds) {
+	        new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+	            .until(webDriver -> ((JavascriptExecutor) webDriver)
+	                .executeScript("return document.readyState").equals("complete"));
+	    }
+	  
+	  public static void waitForNonEmptyText(WebDriver driver, WebElement element, int timeoutInSeconds) {
+	        new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+	            .pollingEvery(Duration.ofMillis(1000))
+	            .withMessage("❌ Element text did not become non-empty within " + timeoutInSeconds + " seconds")
+	            .until(d -> {
+	                try {
+	                    String text = element.getText();
+	                    System.out.println("🔍 Waiting for non-empty text. Current: '" + text + "'");
+	                    return text != null && !text.trim().isEmpty();
+	                } catch (Exception e) {
+	                    System.out.println("⚠️ Exception while checking element text: " + e.getMessage());
+	                    return false;
+	                }
+	            });
+	  }
+	  
+	  public static String getInnerText(WebDriver driver, WebElement element) {
+	        try {
+	            return (String) ((JavascriptExecutor) driver)
+	                    .executeScript("return arguments[0].innerText;", element);
+	        } catch (Exception e) {
+	            System.out.println("⚠️ Error fetching innerText: " + e.getMessage());
+	            return "";
+	        }
+	    }
+	  
+	public static void waitForpresenceOfNestedElementLocatedBy(WebDriver driver, WebElement element, int timeout) {
+		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.presenceOfNestedElementLocatedBy(element, null));
 	}
 
 	public static void waitpresenceOfElementLocated(WebDriver driver, By element, int timeout) {
@@ -77,21 +117,42 @@ public class Non_WebDriver_Util {
 
 	// 6. Select option from Angular Material dropdown by visible text
 	public static void selectMatOptionByText(WebDriver driver, List<WebElement> elements, String optionText) {
-		boolean found = false;
-		for (WebElement option : elements) {
-			String text = option.getText().trim();
-			if ((text.contains(optionText)) || (text.trim().equalsIgnoreCase(optionText))) {
-				Non_WebDriver_Util.waitForVisible(driver, option, 5);
-				Non_WebDriver_Util.jsScrollAndActionClick(driver, option);
-				found = true;
-				break;
-			}
-		}
+	    int retryCount = 3;
 
-		if (!found) {
-			throw new IllegalArgumentException("Kindly provide a correct option: '" + optionText + "'");
-		}
+	    for (int attempt = 1; attempt <= retryCount; attempt++) {
+	        boolean found = false;
+
+	        for (WebElement option : elements) {
+	            try {
+	                String text = option.getText().trim();
+	                if (text.contains(optionText) || text.equalsIgnoreCase(optionText)) {
+	                    Non_WebDriver_Util.waitForVisible(driver, option, 5);
+	                    Non_WebDriver_Util.jsScrollAndActionClick(driver, option);
+	                    found = true;
+	                    break;
+	                }
+	            } catch (Exception e) {
+	                // Log and continue to retry
+	                System.out.println("Attempt " + attempt + ": Element interaction failed. Retrying...");
+	            }
+	        }
+
+	        if (found) {
+	            return; // successfully found and clicked
+	        } else if (attempt < retryCount) {
+	            try {
+	                Thread.sleep(1000); // wait 1 second before retry
+	            } catch (InterruptedException e) {
+	                Thread.currentThread().interrupt(); // restore interrupted status
+	                throw new RuntimeException("Thread interrupted during retry wait", e);
+	            }
+	        }
+	    }
+
+	    // After all retries fail
+	    throw new IllegalArgumentException("❌ Failed after retries. Kindly provide a correct option: '" + optionText + "'");
 	}
+
 
 	// 7. Press Enter key
 	public static void pressEnter(WebDriver driver) {
@@ -215,10 +276,26 @@ public class Non_WebDriver_Util {
 
 	public static void jsScrollAndActionClick(WebDriver driver, WebElement element) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
-		Actions actions = new Actions(driver);
+		actions = new Actions(driver);
 		actions.moveToElement(element).pause(Duration.ofMillis(300)).click().build().perform();
 	}
 
+	public static void jsScrollAndSendKeys(WebDriver driver, WebElement element, String textToSend) {
+	    try {
+	        // Scroll into view using JavaScript
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+
+	        // Focus on the element using Actions
+	        actions = new Actions(driver);
+	        actions.moveToElement(element).pause(Duration.ofMillis(300)).click().sendKeys(textToSend).build().perform();
+
+	      
+	    } catch (Exception e) {
+	        throw e;
+	    }
+	}
+
+	
 	/** Utility: wait until any Angular/CDK overlay backdrop disappears */
 	public static void waitForOverlayToDisappear(WebDriver driver) {
 		By overlay = By.cssSelector(".cdk-overlay-backdrop");
@@ -261,4 +338,52 @@ public class Non_WebDriver_Util {
 		}
 	}
 
+	
+	    // To press page down key
+     	public static void pageDownKeyClick(WebDriver driver) {
+		actions = new Actions(driver);
+		actions.keyDown(Keys.PAGE_DOWN).build().perform();
+		actions.keyUp(Keys.PAGE_DOWN).build().perform();
+     	}
+		
+		// To press Up key
+		public static void upKeyClick(WebDriver driver) {
+			actions = new Actions(driver);
+			actions.keyDown(Keys.UP).build().perform();
+			actions.keyUp(Keys.UP).build().perform();
+		}
+
+		// To press Up key
+			public static void downKeyClick(WebDriver driver) {
+				actions = new Actions(driver);
+				actions.keyDown(Keys.DOWN).build().perform();
+				actions.keyUp(Keys.DOWN).build().perform();
+			}
+			
+     	
+     	
+		// To press ENTER key
+		public static void pageEnterKeyClick(WebDriver driver) {
+			actions = new Actions(driver);
+			actions.keyDown(Keys.ENTER).build().perform();
+			actions.keyUp(Keys.ENTER).build().perform();
+		
+	}
+		
+		public static void navigate_Back(WebDriver driver) {
+			driver.navigate().back();
+		}
+		
+		public static String extractNumber(String input) {
+		    Pattern pattern = Pattern.compile("#(\\d+)");
+		    Matcher matcher = pattern.matcher(input);
+
+		    if (matcher.find()) {
+		        return matcher.group(1); // Returns "6063"
+		    }
+		    return null;
+		}
+
+		
+		
 }

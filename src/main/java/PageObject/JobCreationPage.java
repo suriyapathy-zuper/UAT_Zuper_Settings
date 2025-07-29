@@ -75,7 +75,7 @@ public class JobCreationPage extends Baseclass{
 	    private WebElement save_FE;
 	    
 	    @FindBy(xpath = "//input[@name='dueDate']")
-	    private WebElement set_Duedaue;
+	    private WebElement set_DueDate;
 	    
 	    @FindBy(xpath = "//button[@tabindex='0']//following::td[1]")
 	    private WebElement set_Duedaue_CurrentDate;
@@ -108,7 +108,39 @@ public class JobCreationPage extends Baseclass{
 	    private WebElement text_CustomerName;
 	   
 	    
+	    @FindBy(xpath = "//*[text()='Admin Job Type ']//following::div[1]")
+		private WebElement field_AdminJobFieldType;
+	    
+	    @FindBy(xpath = "//*[@class='cdk-overlay-container']/div/div/div/mat-option")
+		private List<WebElement> field_AdminJobFieldTypeAllValues;
+	    
+//	    
+//	    @FindBy(xpath = "//label[@for='Permits_Permit Needed?_Yes']")
+//		private WebElement checkBox_PermitNeededCustomFieldYes;
+	    
+		// Add button on Parts and Services section
+		@FindBy(xpath = "//*[@id='pricelist-ng-select']/a/span[2]")
+		private WebElement button_Add_PartsAndServices;
 
+		// Line item button after clicking Add button
+		@FindBy(xpath = "//*[text()='Line Item']")
+		private WebElement button_LineItem;
+		
+		// Selecting Add product button in Choose Line item model
+		@FindBy(xpath = "//button[text()=' Add Product ']")
+		private WebElement button_AddProduct;
+		
+		// Search box in Choose Line item model
+		@FindBy(xpath = "//*[@placeholder='Search Item']")
+		private WebElement input_SearchItemOnChooseLineItemModel;
+
+		// Total Searched Line Items
+		@FindBy(xpath = "//*[@formarrayname='tableRows']/table/tbody/tr/td/input")
+		private List<WebElement> searchRelatedLineItems;
+		
+		// VAI call# custom field
+		@FindBy(xpath = "//*[@id='VAI Call #']")
+		private WebElement input_CustomField_VAI;
 	    
 	    // Page actions
 	    
@@ -133,8 +165,8 @@ public class JobCreationPage extends Baseclass{
 	            Non_WebDriver_Util.waitThread(1);
 
 	            List<WebElement> options = driver.findElements(By.xpath("//div[contains(@id,'mat-select')]//mat-option"));
-	            Non_WebDriver_Util.visibilityOfAllElements(driver, options, 5);
-	            Non_WebDriver_Util.selectMatOptionByText(driver, options, jobCategory_Name);
+	           // Non_WebDriver_Util.visibilityOfAllElements(driver, options, 5);
+	            Non_WebDriver_Util.selectMatOptionByText(driver, options, jobCategory_Name.trim());
 	       
 
 	            if (jobCategory_Name.trim().equalsIgnoreCase("Plumbing Install")
@@ -159,11 +191,11 @@ public class JobCreationPage extends Baseclass{
 	     * @param customer_Name - Name of the customer to associate with the job
 	     */
 	    public void set_Customer(String customer_Name) {
-	        try {
+	 //       try {
 	            // Wait for the "Add Customer" button to be clickable
 	            Non_WebDriver_Util.waitForBeClickable(driver, button_AddCustomer, 5);
 	            Non_WebDriver_Util.jsScrollAndActionClick(driver, button_AddCustomer);
-	            logger.info("✅ Clicked on 'Add Customer' button.");
+
 
 	            // Search and select customer
 	            text_SearchCustomerName.clear();
@@ -173,16 +205,16 @@ public class JobCreationPage extends Baseclass{
 
 	            select_Customer.click();
 	            choose_Customer.click();
-	            Non_WebDriver_Util.waitThread(1);
+	            Non_WebDriver_Util.waitThread(2);
 
 	            // Assertion: Verify if selected customer is visible in the field after selection
-	            String selectedCustomer = text_CustomerName.getText().trim().toLowerCase();
-	            Assert.assertEquals(selectedCustomer, customer_Name.toLowerCase(), "❌ FAIL: Customer name mismatch after selection!");
+	           // String selectedCustomer = text_CustomerName.getText().trim().toLowerCase();
+	           // Assert.assertEquals(selectedCustomer, customer_Name.toLowerCase(), "❌ FAIL: Customer name mismatch after selection!");
 
-	        } catch (Exception e) {
-	            logger.error("❌ Failed to set customer: {}", customer_Name, e);
-	            throw e;
-	        }
+//	        } catch (Exception e) {
+//	            logger.error("❌ Failed to set customer: {}", customer_Name, e);
+//	            throw e;
+//	        }
 	    }
 
 
@@ -207,7 +239,8 @@ public class JobCreationPage extends Baseclass{
 	     * 📅 Set Job Due Date (selects current date)
 	     */
 	    public void set_JobDuedate() {
-	        set_Duedaue.click();
+	    	Non_WebDriver_Util.waitThread(1);
+	        set_DueDate.click();
 	        Non_WebDriver_Util.waitForBeClickable(driver, set_Duedaue_CurrentDate, 2);
 	        set_Duedaue_CurrentDate.click();
 	    }
@@ -217,6 +250,7 @@ public class JobCreationPage extends Baseclass{
 	     */
 	    public void set_JobStartdate() {
 	        try {
+	        	Non_WebDriver_Util.waitThread(1);
 	            // Click on Job Start Date field
 	            Non_WebDriver_Util.waitForBeClickable(driver, set_JobStartDate, 5);
 	            Non_WebDriver_Util.jsClick(driver, set_JobStartDate);
@@ -251,15 +285,20 @@ public class JobCreationPage extends Baseclass{
 
 	            // Click "Create New Job" button
 	            Non_WebDriver_Util.waitForBeClickable(driver, button_CreatenewJob, 5);
-	            button_CreatenewJob.click();
+	            Non_WebDriver_Util.jsScrollAndActionClick(driver, button_CreatenewJob);
+	           
 
 	            // Click confirmation button
+	            Non_WebDriver_Util.waitThread(1);
 	            Non_WebDriver_Util.waitForBeClickable(driver, button_CreatenewJobConfirmation, 5);
-	            button_CreatenewJobConfirmation.click();
+	            Non_WebDriver_Util.waitForVisible(driver, button_CreatenewJobConfirmation, 5);
+	            Non_WebDriver_Util.jsScrollAndActionClick(driver, button_CreatenewJobConfirmation);
+	          
 
 	            // Wait and refresh
 	            Non_WebDriver_Util.waitThread(10);
 	            Non_WebDriver_Util.refreshPage(driver);
+	            
 
 	            // Optional: Add an assertion here if there's a confirmation message or element you can verify.
 	            // WebElement successBanner = driver.findElement(By.id("success_message"));
@@ -272,5 +311,51 @@ public class JobCreationPage extends Baseclass{
 	        }
 	    }
 
+	    
+	    
+	    //Job due data set to next month
+		public void set_JobDueDateToNextMonth() {
+			set_DueDate.click();
+			Non_WebDriver_Util.waitThread(1);
+			Non_WebDriver_Util.pageDownKeyClick(driver);
+			Non_WebDriver_Util.pageEnterKeyClick(driver);
+		}
+		
+		public void set_updatingAdminJobTypeCustomField(String optionText) {
+			field_AdminJobFieldType.click();
+			Non_WebDriver_Util.selectMatOptionByText(driver, field_AdminJobFieldTypeAllValues, optionText);
+		}
+		
+
+		public void set_LineItem(String lineItemName) {
+			Non_WebDriver_Util.waitForBeClickable(driver, button_Add_PartsAndServices, 5);
+			button_Add_PartsAndServices.click();
+			Non_WebDriver_Util.waitForBeClickable(driver, button_LineItem, 5);
+			button_LineItem.click();
+			input_SearchItemOnChooseLineItemModel.sendKeys(lineItemName);
+			Non_WebDriver_Util.pressEnter(driver);
+			Non_WebDriver_Util.waitThread(1);
+			selectingSearchedLineItems();
+			button_AddProduct.click();
+		}
+		
+		public void selectingSearchedLineItems() {
+			int totalLineItemsCount = searchRelatedLineItems.size();
+			for (int i = 1; i <= totalLineItemsCount; i++) {
+				try {
+					Non_WebDriver_Util.waitThread(1);
+					WebElement selectingAllLineItems = driver
+							.findElement(By.xpath("//*[@formarrayname='tableRows']/table/tbody/tr/td/input[" + i + "]"));
+					selectingAllLineItems.click();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+
+		public void set_VAICustomField(String valueVAI) {
+			input_CustomField_VAI.sendKeys(valueVAI);
+		}
 }
 

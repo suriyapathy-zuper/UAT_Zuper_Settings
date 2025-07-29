@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>17/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 17 13:16:06 CDT 2025</td>
+<td>Started on:</td><td>Thu Jul 24 16:50:35 CDT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>76 seconds (76950 ms)</td>
+<tr><td>Total time:</td><td>3236 seconds (3236617 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,10 +76,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Install, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, Yes, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
-<td><div><pre>java.lang.RuntimeException: Job status update failed
-	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:678)
-	at RunnerClass.FourSeason_RegressionTest.testJobFlow(FourSeason_RegressionTest.java:650)
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Return Visit, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td><div><pre>java.lang.IllegalArgumentException: ❌ Failed after retries. Kindly provide a correct option: &apos;Arrived&apos;
+	at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:153)
+	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_Arrived(JobDetailsPage.java:859)
+	at RunnerClass.FourSeason_RegressionTest.testJobFlow(FourSeason_RegressionTest.java:328)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -106,37 +107,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input _ngcontent-ng-c2656939988=&quot;&quot; autocomplete=&quot;off&quot; type=&quot;radio&quot; class=&quot;h-4 w-4 border-gray-300 text-indigo-600 ng-untouched ng-pristine ng-invalid&quot; id=&quot;Are you wearing booties?_0&quot;&gt; is not clickable at point (904, 100). Other element would receive the click: &lt;div _ngcontent-ng-c2656939988=&quot;&quot; class=&quot;flex items-center&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=138.0.7204.101)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [91ad7e487ca1db712a6ff9a296e8bcb4, clickElement {id=f.D6F20DB7C138371CF6350F0653B84F9A.d.960847C3C1FE84E5489BB66ADC46F497.e.618}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60872}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60872/devtoo..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (91ad7e487ca1db712a6ff9a296e8bcb4)] -&gt; xpath: //label[text()=&apos;Are you wearing booties?&apos;]/following::input[1]]
-Session ID: 91ad7e487ca1db712a6ff9a296e8bcb4
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy30.click(Unknown Source)
-	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:654)
-	... 27 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace39642165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace39642165'><pre>java.lang.RuntimeException: Job status update failed
-	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:678)
-	at RunnerClass.FourSeason_RegressionTest.testJobFlow(FourSeason_RegressionTest.java:650)
+</pre></div><a href='#' onClick='toggleBox("stack-trace859984241", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace859984241'><pre>java.lang.IllegalArgumentException: ❌ Failed after retries. Kindly provide a correct option: &apos;Arrived&apos;
+	at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:153)
+	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_Arrived(JobDetailsPage.java:859)
+	at RunnerClass.FourSeason_RegressionTest.testJobFlow(FourSeason_RegressionTest.java:328)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -163,35 +138,74 @@ Session ID: 91ad7e487ca1db712a6ff9a296e8bcb4
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input _ngcontent-ng-c2656939988=&quot;&quot; autocomplete=&quot;off&quot; type=&quot;radio&quot; class=&quot;h-4 w-4 border-gray-300 text-indigo-600 ng-untouched ng-pristine ng-invalid&quot; id=&quot;Are you wearing booties?_0&quot;&gt; is not clickable at point (904, 100). Other element would receive the click: &lt;div _ngcontent-ng-c2656939988=&quot;&quot; class=&quot;flex items-center&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=138.0.7204.101)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [91ad7e487ca1db712a6ff9a296e8bcb4, clickElement {id=f.D6F20DB7C138371CF6350F0653B84F9A.d.960847C3C1FE84E5489BB66ADC46F497.e.618}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\SURIYA~1.B\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60872}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60872/devtoo..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (91ad7e487ca1db712a6ff9a296e8bcb4)] -&gt; xpath: //label[text()=&apos;Are you wearing booties?&apos;]/following::input[1]]
-Session ID: 91ad7e487ca1db712a6ff9a296e8bcb4
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy30.click(Unknown Source)
-	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_StatringAssessment(JobDetailsPage.java:654)
-	... 27 more
 </pre></div></td>
-<td>59</td>
+<td>105</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Service call, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, true, 8AM - 12PM, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td><div><pre>java.lang.IllegalArgumentException: ❌ Failed after retries. Kindly provide a correct option: &apos;Assessment Completed&apos;
+	at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:153)
+	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_AssessmentCompleted_EstimateNeeded_Generic(JobDetailsPage.java:1458)
+	at RunnerClass.FourSeason_RegressionTest.testJobFlow(FourSeason_RegressionTest.java:830)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace782587714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace782587714'><pre>java.lang.IllegalArgumentException: ❌ Failed after retries. Kindly provide a correct option: &apos;Assessment Completed&apos;
+	at TestUtility.Non_WebDriver_Util.selectMatOptionByText(Non_WebDriver_Util.java:153)
+	at PageObject.JobDetailsPage.updateJobStatus_WithChecklist_AssessmentCompleted_EstimateNeeded_Generic(JobDetailsPage.java:1458)
+	at RunnerClass.FourSeason_RegressionTest.testJobFlow(FourSeason_RegressionTest.java:830)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>117</td>
 <td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -203,9 +217,89 @@ Session ID: 91ad7e487ca1db712a6ff9a296e8bcb4
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Install, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, true, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>192</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Excavation with Plumbing Rollover Job, Assessment Completed/Work Completed, Bridgeview, 2 or More Days Project (Estimated to require multiple days, including inspections), TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>191</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Return Visit, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, true, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>190</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Excavation with Plumbing Rollover Job, Assessment Completed/Work Completed, Bridgeview, 2 or More Days Project (Estimated to require multiple days, including inspections), TestDescription, true, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>193</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Excavation, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, true, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>190</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Return Visit with Plumbing Rollover Job, Assessment Completed/Work Completed, Bridgeview, 2 or More Days Project (Estimated to require multiple days, including inspections), TestDescription, true, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>209</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
 <td title='RunnerClass.FourSeason_RegressionTest.verify_CompanyAndLoginPage()'><b>verify_CompanyAndLoginPage</b><br>Test class: RunnerClass.FourSeason_RegressionTest</td>
 <td></td>
-<td>10</td>
+<td>15</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Site Visit, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 8AM - 12PM, Waiting on Permit, YES, TBD Based on Client Schedule, This Job requires a Foreman to go back out and assess. (SV), test notes</td>
+<td></td>
+<td>167</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Service call, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 8AM - 12PM, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>180</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Rodding, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 8AM - 12PM, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Drain Tech to go back out and assess. (RD), test notes</td>
+<td></td>
+<td>165</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Site Visit, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, true, 8AM - 12PM, Waiting on Permit, YES, TBD Based on Client Schedule, This Job requires a Foreman to go back out and assess. (SV), test notes</td>
+<td></td>
+<td>167</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Return Visit with Plumbing Rollover Job, Assessment Completed/Work Completed, Bridgeview, 2 or More Days Project (Estimated to require multiple days, including inspections), TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>195</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Install with Plumbing Rollover Job, Assessment Completed/Work Completed, Bridgeview, 2 or More Days Project (Estimated to require multiple days, including inspections), TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>190</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Install with Plumbing Rollover Job, Assessment Completed/Work Completed, Bridgeview, 2 or More Days Project (Estimated to require multiple days, including inspections), TestDescription, true, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>207</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Excavation, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>187</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Install, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, false, 12PM - 5PM Arrival, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Plumber to go back out and assess. (P), test notes</td>
+<td></td>
+<td>188</td>
+<td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
+<tr>
+<td title='RunnerClass.FourSeason_RegressionTest.testJobFlow()'><b>testJobFlow</b><br>Test class: RunnerClass.FourSeason_RegressionTest<br>Parameters: Plumbing Rodding, Assessment Completed/Work Completed, Bridgeview, Estimated 3/4 Day Job, TestDescription, true, 8AM - 12PM, Waiting on Permit, YES, TBD Based on Client Schedule, This job requires a Drain Tech to go back out and assess. (RD), test notes</td>
+<td></td>
+<td>168</td>
 <td>RunnerClass.FourSeason_RegressionTest@7caa550</td></tr>
 </table><p>
 </body>
