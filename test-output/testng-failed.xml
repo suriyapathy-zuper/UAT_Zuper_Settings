@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [UAT-ZuperSettings Regression Suite]" guice-stage="DEVELOPMENT" verbose="2">
+  <listeners>
+    <listener class-name="TestUtility.TestExecutionListener"/>
+  </listeners>
+  <test thread-count="5" name="Settings Regression Tests(failed)" verbose="2">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
     <classes>
-      <class name="RunnerClass.FourSeason_RegressionTest">
+      <class name="RunnerClass.TC_Gallery">
         <methods>
           <include name="setUp"/>
-          <include name="testJobFlow" invocation-numbers="2 6"/>
-          <include name="verify_CompanyAndLoginPage"/>
+          <include name="verify_CreateGalleryAlbum"/>
+          <include name="verify_DuplicateAlbumIsPrevented"/>
+          <include name="verify_DeleteGalleryAlbum"/>
+          <include name="verify_CancelDeleteKeepsAlbum"/>
+          <include name="logTestStart"/>
+          <include name="verify_EditGalleryAlbum"/>
+          <include name="logTestEnd"/>
+          <include name="setdown"/>
+          <include name="verify_NavigateToGallery"/>
         </methods>
-      </class> <!-- RunnerClass.FourSeason_RegressionTest -->
+      </class> <!-- RunnerClass.TC_Gallery -->
+      <class name="RunnerClass.TC_Custom_Fields">
+        <methods>
+          <include name="logTestEnd"/>
+          <include name="verify_NavigateToSettings"/>
+          <include name="projectCustomFieldLifecycle"/>
+          <include name="invoiceCustomFieldLifecycle"/>
+          <include name="setdown"/>
+          <include name="quoteCustomFieldLifecycle"/>
+          <include name="setUp"/>
+          <include name="jobCustomFieldLifecycle"/>
+          <include name="logTestStart"/>
+        </methods>
+      </class> <!-- RunnerClass.TC_Custom_Fields -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Settings Regression Tests(failed) -->
+</suite> <!-- Failed suite [UAT-ZuperSettings Regression Suite] -->

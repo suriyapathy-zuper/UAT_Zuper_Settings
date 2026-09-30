@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <!--
-  UAT-ZuperSettings Regression Suite
-  All existing TestNG automation classes, executed sequentially in the order listed.
-  One browser session for the whole suite (TestExecutionListener -> SuiteSession):
-  launch + company login once before the first class, logout + close once after the last class.
-  Every class starts from the Dashboard and returns to the Dashboard when it finishes.
-  Run: mvn test                      (this file)
-       mvn test -Dsuite.file=testng_sanity.xml
+  UAT-ZuperSettings Sanity Suite
+  Same classes as testng.xml, only the @Test methods in the "sanity" group
+  (login, module navigation, create and delete). Same single browser session / Dashboard flow.
+  Run: mvn test -Dsuite.file=testng_sanity.xml
 -->
-<suite name="UAT-ZuperSettings Regression Suite" parallel="none" preserve-order="true" verbose="2">
+<suite name="UAT-ZuperSettings Sanity Suite" parallel="none" preserve-order="true" verbose="2">
   <listeners>
     <listener class-name="TestUtility.TestExecutionListener"/>
   </listeners>
-  <test name="Settings Regression Tests" preserve-order="true">
+  <test name="Settings Sanity Tests" preserve-order="true">
     <groups>
       <run>
-        <include name="regression"/>
+        <include name="sanity"/>
       </run>
     </groups>
     <classes>

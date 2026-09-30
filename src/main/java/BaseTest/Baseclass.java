@@ -87,6 +87,19 @@ public class Baseclass {
         setDriver(localDriver); // Store in ThreadLocal
     }
 
+    // Last UI action performed on this thread - reported by test failure logs
+    private static ThreadLocal<String> lastAction = new ThreadLocal<>();
+
+    // Logs a UI action as "[ACTION] ..." and remembers it for failure reporting
+    protected void logAction(String action) {
+        lastAction.set(action);
+        logger.info("[ACTION] " + action);
+    }
+
+    public static String getLastAction() {
+        return lastAction.get() == null ? "n/a" : lastAction.get();
+    }
+
     // Close the browser
     public void tearDown() {
         WebDriver localDriver = Baseclass.getDriver();

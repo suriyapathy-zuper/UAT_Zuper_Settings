@@ -34,7 +34,7 @@ public class CompanyPage extends Baseclass{
 	    private WebElement enter_Password;
 	    
 	    
-	    @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Forgot password?'])[1]/following::button[1]")
+	    @FindBy(xpath = "//span[text()=' Login ']")
 	    private WebElement click_LoginButton;
 	    
 	    // Page actions

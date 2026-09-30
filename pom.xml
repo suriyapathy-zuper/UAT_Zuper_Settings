@@ -36,7 +36,6 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.11.0</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
   <groupId>org.apache.logging.log4j</groupId>
@@ -48,9 +47,23 @@
   <artifactId>log4j-api</artifactId>
   <version>2.20.0</version>
 </dependency>
-		
+		<!-- Allure reporting for TestNG (listener registered automatically via ServiceLoader) -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
 
 	</dependencies>
+
+	<properties>
+		<allure.version>2.29.0</allure.version>
+		<!-- TestNG suite run by 'mvn test': testng.xml (regression) or testng_sanity.xml -->
+		<suite.file>testng.xml</suite.file>
+		<!-- Allure raw results folder (under target/) and generated HTML report folder -->
+		<allure.results.folder>allure-results</allure.results.folder>
+		<allure.report.dir>${project.build.directory}/site/allure-maven-plugin</allure.report.dir>
+	</properties>
 	
 	
 	<build>
@@ -67,11 +80,29 @@
         <version>3.1.2</version>
         <configuration>
           <suiteXmlFiles>
-            <!-- point to your TestNG XML suite -->
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+            <!-- point to your TestNG XML suite (override with -Dsuite.file=testng_sanity.xml) -->
+            <suiteXmlFile>${suite.file}</suiteXmlFile>
           </suiteXmlFiles>
+          <systemPropertyVariables>
+            <allure.results.directory>${project.build.directory}/${allure.results.folder}</allure.results.directory>
+            <log4j2.configurationFile>Resources/log4j2.xml</log4j2.configurationFile>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
+      <!-- Allure: the latest-run report is generated automatically into <project>/allure after every TestNG run
+           (TestUtility.AllureReportListener). Optional: mvn allure:serve -->
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.12.0</version>
+        <configuration>
+          <reportVersion>${allure.version}</reportVersion>
+          <resultsDirectory>${allure.results.folder}</resultsDirectory>
+          <reportDirectory>${allure.report.dir}</reportDirectory>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
 </project>

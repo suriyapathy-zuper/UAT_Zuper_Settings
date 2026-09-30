@@ -3,13 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RunnerClass.FourSeason_RegressionTest">
+      <class name="RunnerClass.TC_Gallery">
         <methods>
           <include name="setUp"/>
-          <include name="testJobFlow" invocation-numbers="2 6"/>
-          <include name="verify_CompanyAndLoginPage"/>
+          <include name="verify_CreateGalleryAlbum"/>
+          <include name="verify_DeleteGalleryAlbum"/>
+          <include name="verify_LoginAndNavigateToGallery"/>
+          <include name="logTestStart"/>
+          <include name="verify_EditGalleryAlbum"/>
+          <include name="setdown"/>
+          <include name="logTestEnd"/>
         </methods>
-      </class> <!-- RunnerClass.FourSeason_RegressionTest -->
+      </class> <!-- RunnerClass.TC_Gallery -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

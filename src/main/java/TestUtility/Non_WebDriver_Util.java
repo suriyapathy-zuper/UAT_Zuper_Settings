@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -382,6 +383,43 @@ public class Non_WebDriver_Util {
 		        return matcher.group(1); // Returns "6063"
 		    }
 		    return null;
+		}
+
+		// Explicit wait with the implicit wait suspended, so absence checks don't block for the full implicit timeout.
+		// Returns the condition's value, or null if it was not met within the timeout.
+		public static <T> T waitWithoutImplicitWait(WebDriver driver, int timeoutInSeconds, Function<WebDriver, T> condition) {
+			Duration implicitWait = driver.manage().timeouts().getImplicitWaitTimeout();
+			driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+			try {
+				return new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
+						.pollingEvery(Duration.ofMillis(300))
+						.until(condition);
+			} catch (org.openqa.selenium.TimeoutException e) {
+				return null;
+			} finally {
+				driver.manage().timeouts().implicitlyWait(implicitWait);
+			}
+		}
+
+		// Wait until element located by 'locator' is gone/hidden.
+		public static boolean waitForInvisibility(WebDriver driver, By locator, int timeoutInSeconds) {
+			return waitWithoutImplicitWait(driver, timeoutInSeconds,
+					ExpectedConditions.invisibilityOfElementLocated(locator)) != null;
+		}
+
+		// Captures the current browser window as PNG, saves it as <directory>/<fileBaseName>.png and returns the image bytes
+		public static byte[] captureScreenshot(WebDriver driver, String directory, String fileBaseName) throws java.io.IOException {
+			byte[] image = ((org.openqa.selenium.TakesScreenshot) driver).getScreenshotAs(org.openqa.selenium.OutputType.BYTES);
+			java.nio.file.Path folder = java.nio.file.Paths.get(directory);
+			java.nio.file.Files.createDirectories(folder);
+			java.nio.file.Files.write(folder.resolve(fileBaseName.replaceAll("[^A-Za-z0-9_.-]", "_") + ".png"), image);
+			return image;
+		}
+
+		// Returns the element once visible, or null if it does not show up within the timeout (optional popups etc.).
+		public static WebElement findIfVisible(WebDriver driver, By locator, int timeoutInSeconds) {
+			return waitWithoutImplicitWait(driver, timeoutInSeconds,
+					ExpectedConditions.visibilityOfElementLocated(locator));
 		}
 
 		

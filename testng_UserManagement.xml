@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Settings Suite" parallel="false">
+  <test name="Settings - User Management">
+    <classes>
+      <class name="RunnerClass.TC_Settings_UserManagement"/>
+    </classes>
+  </test>
+</suite>
