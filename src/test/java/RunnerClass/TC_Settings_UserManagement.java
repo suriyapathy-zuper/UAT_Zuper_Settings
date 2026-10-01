@@ -282,7 +282,7 @@ public class TC_Settings_UserManagement extends BaseSettingsTest {
 		userManagementPage.searchUser(email);
 		verify(userManagementPage.isUserDisplayed(email), "User still exists after cancelling the delete",
 				"User must not be deleted when delete is cancelled");
-		//Assert.assertTrue(closedOnCancel, "'Cancel' did not close the 'Delete User' confirmation dialog");
+	    //Assert.assertTrue(closedOnCancel, "'Cancel' did not close the 'Delete User' confirmation dialog");
 	}
 
 	@Test(groups = { "sanity", "regression" }, priority = 10, dependsOnMethods = "verify_ActivateUser", description = "Delete User Test")

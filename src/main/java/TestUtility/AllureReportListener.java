@@ -1,6 +1,7 @@
 package TestUtility;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,12 +10,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -22,54 +25,92 @@ import java.util.zip.ZipFile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.IExecutionListener;
+import org.testng.IReporter;
+import org.testng.ISuite;
+import org.testng.ISuiteResult;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.xml.XmlSuite;
+
+import BaseTest.Baseclass;
 
 /**
- * Latest-run Allure report, generated automatically after every TestNG execution
- * (Eclipse: right-click testng.xml > Run As > TestNG Suite, or mvn test).
+ * Final reporting after every TestNG execution (Eclipse: right-click testng.xml > Run As > TestNG Suite, or mvn test):
+ * latest-run Allure report -> ONE final Slack report (TestUtility.ReportToSlack).
  *
  * Registered through META-INF/services/org.testng.ITestNGListener (like Allure itself), so TestNG calls it
  * once before the first suite starts and once after the last suite - and every other listener - has finished.
  *
  *   onExecutionStart  -> delete the previous run's raw results (target/allure-results)
  *   ... TestNG runs every test; Allure writes the CURRENT run's results + failure screenshots ...
- *   onExecutionFinish -> generate the report into a temporary folder, then replace <project>/allure with it
+ *   generateReport    -> (IReporter, after all suites) collect the actual TestNG results
+ *   onExecutionFinish -> generate the report into a temporary folder, replace <project>/allure with it,
+ *                        then send the final Slack report (once) with the current allure/index.html attached
  *
  * <project>/allure therefore always holds only the latest completed execution. allure/index.html is the
  * self-contained (single-file) report, so it opens with a double-click; data/, widgets/, history/, plugins/
  * are the standard Allure report folders.
  * The report is built with the Allure command line from the local Maven repository (downloaded by allure-maven).
+ * No PDF summary is configured in this project, so none is generated or attached.
  */
-public class AllureReportListener implements IExecutionListener {
+public class AllureReportListener implements IExecutionListener, IReporter {
 
 	private static final Logger log = LogManager.getLogger(AllureReportListener.class);
 	private static final String REPORT_DIRECTORY = "allure";
 	private static final String DEFAULT_ALLURE_VERSION = "2.29.0";
 	private static final long GENERATE_TIMEOUT_MINUTES = 5;
+	// TestNG's name for the synthetic suite of an ad-hoc class/method run (Eclipse: Run As > TestNG Test)
+	private static final String AD_HOC_SUITE_NAME = "Default suite";
+
+	// one final report per JVM, even if the listener is registered more than once
+	private static final AtomicBoolean finalReportDone = new AtomicBoolean(false);
+	private static volatile List<ISuite> executedSuites;
+	private static volatile LocalDateTime executionStart = LocalDateTime.now();
 
 	private final Path projectDir = Paths.get(System.getProperty("user.dir")).toAbsolutePath();
 
 	@Override
 	public void onExecutionStart() {
+		executionStart = LocalDateTime.now();
 		Path results = resultsDirectory();
 		try {
 			deleteDirectory(results);
 			Files.createDirectories(results);
-			log.info("[ALLURE] Old Allure results cleaned: " + results);
+			log.info("[REPORT] Old Allure results cleaned: " + results);
 		} catch (IOException e) {
-			log.warn("[ALLURE] Could not clean old Allure results " + results + " - " + e.getMessage());
+			log.warn("[REPORT] Could not clean old Allure results " + results + " - " + e.getMessage());
 		}
+	}
+
+	// called by TestNG after ALL suites have finished (before onExecutionFinish) - keeps the actual results
+	@Override
+	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+		executedSuites = suites;
 	}
 
 	@Override
 	public void onExecutionFinish() {
-		Path results = resultsDirectory();
+		if (!finalReportDone.compareAndSet(false, true)) {
+			return;
+		}
+		LocalDateTime executionEnd = LocalDateTime.now();
+		log.info("[REPORT] TestNG suite execution completed");
 		Path report = projectDir.resolve(REPORT_DIRECTORY);
+		boolean reportGenerated = generateAllureReport(report);
+
+		log.info("[REPORT] PDF summary: not configured in this project - skipped");
+		sendSlackReport(executionEnd, reportGenerated ? report.resolve("index.html").toFile() : null);
+	}
+
+	// latest Allure report -> <project>/allure; returns true only when it was generated for THIS execution
+	private boolean generateAllureReport(Path report) {
+		Path results = resultsDirectory();
 		try {
 			if (!Files.isDirectory(results) || isEmpty(results)) {
-				log.warn("[ALLURE] No Allure results in " + results + " - report not generated");
-				return;
+				log.warn("[REPORT] No Allure results in " + results + " - Allure report not generated");
+				return false;
 			}
-			log.info("[ALLURE] TestNG execution completed - generating the latest Allure report");
+			log.info("[REPORT] Generating Allure report from " + results);
 			Path allure = allureCommandLine();
 			Path buildDir = projectDir.resolve("target");
 			Path newReport = buildDir.resolve("allure-report-latest");
@@ -83,18 +124,105 @@ public class AllureReportListener implements IExecutionListener {
 
 			// replace the old report only after the new one was generated successfully
 			deleteDirectory(report);
-			log.info("[ALLURE] Old Allure report removed: " + report);
+			log.info("[REPORT] Old Allure report removed: " + report);
 			copyDirectory(newReport, report);
 			deleteDirectory(newReport);
 			if (!Files.isRegularFile(report.resolve("index.html"))) {
 				throw new IOException("allure/index.html was not created");
 			}
-			log.info("[ALLURE] Latest Allure report ready: " + report.resolve("index.html"));
+			log.info("[REPORT] Allure report generated successfully: " + report.resolve("index.html"));
+			return true;
 		} catch (Exception e) {
-			log.error("[ALLURE] Allure report generation failed: " + e.getClass().getSimpleName() + " - " + e.getMessage());
+			log.error("[REPORT] Allure report generation failed: " + e.getClass().getSimpleName() + " - " + e.getMessage());
+			return false;
 		}
 	}
 
+	private void sendSlackReport(LocalDateTime executionEnd, File currentReport) {
+		List<ISuite> suites = executedSuites;
+		if (suites == null || suites.isEmpty()) {
+			log.warn("[SLACK] No TestNG suite results available - final Slack report not sent");
+			return;
+		}
+		if (suites.stream().allMatch(s -> AD_HOC_SUITE_NAME.equals(s.getName()))) {
+			log.info("[SLACK] Ad-hoc class/method run (no suite XML) - final Slack report sent only for suite runs such as testng.xml");
+			return;
+		}
+		try {
+			Properties config = new Baseclass().prop;
+			ReportToSlack.ExecutionSummary summary = summarize(suites, config, executionEnd);
+			if (summary.total() == 0) {
+				log.warn("[SLACK] No tests were executed - final Slack report not sent");
+				return;
+			}
+			log.info("[SLACK] Summary: " + summary.execution + " | Total " + summary.total() + " | Passed " + summary.passed
+					+ " | Failed " + summary.failed + " | Skipped " + summary.skipped + " | Pass rate " + summary.passRate() + "%");
+			ReportToSlack.sendFinalReport(config, summary, currentReport);
+		} catch (Exception e) {
+			log.error("[SLACK FAIL] Unable to send final report: " + e.getClass().getSimpleName() + " - " + e.getMessage());
+		}
+	}
+
+	// actual counts / failed tests of this execution from the TestNG results
+	private ReportToSlack.ExecutionSummary summarize(List<ISuite> suites, Properties config, LocalDateTime executionEnd) {
+		ReportToSlack.ExecutionSummary summary = new ReportToSlack.ExecutionSummary();
+		summary.start = executionStart;
+		summary.end = executionEnd;
+		summary.environment = environment(config.getProperty("baseURL", ""));
+		summary.account = config.getProperty("company_Name", "") + " (" + config.getProperty("username", "") + ")";
+		List<String> executions = new ArrayList<>();
+		for (ISuite suite : suites) {
+			executions.add(executionType(suite));
+			for (ISuiteResult suiteResult : suite.getResults().values()) {
+				ITestContext context = suiteResult.getTestContext();
+				summary.passed += context.getPassedTests().size();
+				summary.skipped += context.getSkippedTests().size();
+				summary.failed += context.getFailedTests().size() + context.getFailedButWithinSuccessPercentageTests().size();
+				context.getFailedTests().getAllResults().stream()
+						.sorted(Comparator.comparingLong(ITestResult::getStartMillis))
+						.forEach(result -> summary.failedTests.add(describe(result)));
+			}
+		}
+		summary.execution = String.join(" + ", executions);
+		return summary;
+	}
+
+	// "Regression" / "Sanity" from the groups the suite runs, otherwise the suite name
+	private static String executionType(ISuite suite) {
+		List<String> groups = new ArrayList<>();
+		suite.getXmlSuite().getTests().forEach(test -> groups.addAll(test.getIncludedGroups()));
+		if (groups.contains("sanity") && !groups.contains("regression")) {
+			return "Sanity";
+		}
+		if (groups.contains("regression")) {
+			return "Regression";
+		}
+		return suite.getName();
+	}
+
+	// UAT / STAGING / QA from the application host (config baseURL), otherwise the host itself
+	private static String environment(String baseUrl) {
+		String host = baseUrl.replaceFirst("^[a-zA-Z]+://", "").replaceFirst("[/:].*$", "");
+		String lower = host.toLowerCase();
+		String name = lower.contains("uat") ? "UAT" : lower.contains("stag") ? "STAGING" : lower.contains("qa") ? "QA" : host;
+		return host.isEmpty() || name.equals(host) ? host : name + " (" + host + ")";
+	}
+
+	// "Job Category > Create Job Category Test - <first line of the failure>"
+	private static String describe(ITestResult result) {
+		String module = result.getTestClass().getRealClass().getSimpleName().replaceFirst("^TC_", "").replace('_', ' ');
+		String description = result.getMethod().getDescription();
+		String test = description != null && !description.trim().isEmpty() ? description : result.getName();
+		String error = "";
+		if (result.getThrowable() != null) {
+			String message = String.valueOf(result.getThrowable().getMessage()).split("\\R")[0].trim();
+			error = result.getThrowable().getClass().getSimpleName() + (message.isEmpty() || "null".equals(message) ? "" : ": " + message);
+			if (error.length() > 160) {
+				error = error.substring(0, 157) + "...";
+			}
+		}
+		return module + " > " + test + (error.isEmpty() ? "" : " - " + error);
+	}
 	// same lookup as Allure: system property (mvn test / surefire), then allure.properties on the classpath
 	private Path resultsDirectory() {
 		String directory = System.getProperty("allure.results.directory");
@@ -130,7 +258,7 @@ public class AllureReportListener implements IExecutionListener {
 			throw new IOException("Allure command line not found: " + zip
 					+ " - download it once with: mvn dependency:get -Dartifact=io.qameta.allure:allure-commandline:" + version + ":zip");
 		}
-		log.info("[ALLURE] Unpacking Allure command line " + version + " into " + home);
+		log.info("[REPORT] Unpacking Allure command line " + version + " into " + home);
 		unzip(zip, home);
 		executable.toFile().setExecutable(true);
 		return executable;

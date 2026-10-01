@@ -22,6 +22,7 @@
     <classes>
       <class name="RunnerClass.TC_Company_Login"/>
       <class name="RunnerClass.TC_Settings_UserManagement"/>
+      <class name="RunnerClass.TC_Settings_SideMenu_Navigation"/>
       <class name="RunnerClass.TC_Job_Category"/>
       <class name="RunnerClass.TC_Job_Card_Template"/>
       <class name="RunnerClass.TC_Inspection_Form"/>

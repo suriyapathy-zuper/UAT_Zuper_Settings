@@ -53,6 +53,12 @@
 			<artifactId>allure-testng</artifactId>
 			<version>${allure.version}</version>
 		</dependency>
+		<!-- JSON for the Slack Web API calls (TestUtility.ReportToSlack) -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20240303</version>
+		</dependency>
 
 	</dependencies>
 
